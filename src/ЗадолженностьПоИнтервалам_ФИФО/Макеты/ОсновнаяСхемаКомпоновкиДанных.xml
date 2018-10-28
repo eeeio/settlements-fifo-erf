@@ -5,11 +5,49 @@
 			<name>ИсточникДанных1</name>
 			<dataSourceType>Local</dataSourceType>
 		</dataSource>
-		<dataSet xsi:type="DataSetQuery">
-			<name>НаборДанных1</name>
+		<dataSet xsi:type="DataSetUnion">
+			<name>НаборДанных3</name>
 			<field xsi:type="DataSetFieldField">
-				<dataPath>ДоговорКонтрагента</dataPath>
-				<field>ДоговорКонтрагента</field>
+				<dataPath>Организация</dataPath>
+				<field>Организация</field>
+				<role>
+					<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
+					<parentDimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">АналитикаУчетаПоПартнерам</parentDimension>
+				</role>
+				<appearance/>
+				<inputParameters/>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Партнер</dataPath>
+				<field>Партнер</field>
+				<title xmlns:d5p1="http://v8.1c.ru/8.1/data/core" xsi:type="d5p1:LocalStringType">
+					<d5p1:item>
+						<d5p1:lang>ru</d5p1:lang>
+						<d5p1:content>Партнер</d5p1:content>
+					</d5p1:item>
+				</title>
+				<role>
+					<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
+					<parentDimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">АналитикаУчетаПоПартнерам</parentDimension>
+				</role>
+				<appearance/>
+				<inputParameters/>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Договор</dataPath>
+				<field>Договор</field>
+				<title xmlns:d5p1="http://v8.1c.ru/8.1/data/core" xsi:type="d5p1:LocalStringType">
+					<d5p1:item>
+						<d5p1:lang>ru</d5p1:lang>
+						<d5p1:content>Договор</d5p1:content>
+					</d5p1:item>
+				</title>
+				<role>
+					<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
+					<parentDimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">АналитикаУчетаПоПартнерам</parentDimension>
+				</role>
+				<appearance/>
+				<inputParameters/>
 			</field>
 			<field xsi:type="DataSetFieldField">
 				<dataPath>Долг</dataPath>
@@ -17,213 +55,3827 @@
 				<title xmlns:d5p1="http://v8.1c.ru/8.1/data/core" xsi:type="d5p1:LocalStringType">
 					<d5p1:item>
 						<d5p1:lang>ru</d5p1:lang>
-						<d5p1:content>Долг</d5p1:content>
+						<d5p1:content>Долг партнера</d5p1:content>
 					</d5p1:item>
 				</title>
+				<attributeUseRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</attributeUseRestriction>
 				<appearance>
 					<item xmlns="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xsi:type="dcsset:SettingsParameterValue">
 						<parameter>Формат</parameter>
-						<value xsi:type="xs:string">ЧДЦ=2</value>
+						<value xmlns:d7p1="http://v8.1c.ru/8.1/data/core" xsi:type="d7p1:LocalStringType">
+							<d7p1:item>
+								<d7p1:lang>ru</d7p1:lang>
+								<d7p1:content>ЧДЦ=2; ЧН=' '</d7p1:content>
+							</d7p1:item>
+						</value>
 					</item>
 				</appearance>
+				<inputParameters/>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СрокЗадолженностиДней</dataPath>
+				<field>СрокЗадолженностиДней</field>
+				<title xmlns:d5p1="http://v8.1c.ru/8.1/data/core" xsi:type="d5p1:LocalStringType">
+					<d5p1:item>
+						<d5p1:lang>ru</d5p1:lang>
+						<d5p1:content>Срок (дней)</d5p1:content>
+					</d5p1:item>
+				</title>
+				<attributeUseRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</attributeUseRestriction>
+				<appearance/>
+				<inputParameters/>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Просрочено</dataPath>
+				<field>Просрочено</field>
+				<title xmlns:d5p1="http://v8.1c.ru/8.1/data/core" xsi:type="d5p1:LocalStringType">
+					<d5p1:item>
+						<d5p1:lang>ru</d5p1:lang>
+						<d5p1:content>Просрочено</d5p1:content>
+					</d5p1:item>
+				</title>
+				<attributeUseRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</attributeUseRestriction>
+				<appearance>
+					<item xmlns="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xsi:type="dcsset:SettingsParameterValue">
+						<parameter>Формат</parameter>
+						<value xmlns:d7p1="http://v8.1c.ru/8.1/data/core" xsi:type="d7p1:LocalStringType">
+							<d7p1:item>
+								<d7p1:lang>ru</d7p1:lang>
+								<d7p1:content>ЧДЦ=2; ЧН=' '</d7p1:content>
+							</d7p1:item>
+						</value>
+					</item>
+				</appearance>
+				<inputParameters/>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ЗадержкаДней</dataPath>
+				<field>ЗадержкаДней</field>
+				<title xmlns:d5p1="http://v8.1c.ru/8.1/data/core" xsi:type="d5p1:LocalStringType">
+					<d5p1:item>
+						<d5p1:lang>ru</d5p1:lang>
+						<d5p1:content>Просрочка (дней)</d5p1:content>
+					</d5p1:item>
+				</title>
+				<attributeUseRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</attributeUseRestriction>
+				<appearance/>
+				<inputParameters/>
 			</field>
 			<field xsi:type="DataSetFieldField">
 				<dataPath>Контрагент</dataPath>
 				<field>Контрагент</field>
+				<title xmlns:d5p1="http://v8.1c.ru/8.1/data/core" xsi:type="d5p1:LocalStringType">
+					<d5p1:item>
+						<d5p1:lang>ru</d5p1:lang>
+						<d5p1:content>Контрагент</d5p1:content>
+					</d5p1:item>
+				</title>
+				<role>
+					<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
+					<parentDimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">АналитикаУчетаПоПартнерам</parentDimension>
+				</role>
+				<appearance/>
+				<inputParameters/>
 			</field>
 			<field xsi:type="DataSetFieldField">
-				<dataPath>Организация</dataPath>
-				<field>Организация</field>
-			</field>
-			<field xsi:type="DataSetFieldField">
-				<dataPath>Период</dataPath>
-				<field>Период</field>
+				<dataPath>ДатаРегистратора</dataPath>
+				<field>ДатаРегистратора</field>
+				<title xmlns:d5p1="http://v8.1c.ru/8.1/data/core" xsi:type="d5p1:LocalStringType">
+					<d5p1:item>
+						<d5p1:lang>ru</d5p1:lang>
+						<d5p1:content>Дата регистратора</d5p1:content>
+					</d5p1:item>
+				</title>
+				<useRestriction>
+					<condition>true</condition>
+				</useRestriction>
+				<attributeUseRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</attributeUseRestriction>
 				<role>
 					<periodNumber xmlns="http://v8.1c.ru/8.1/data-composition-system/common">2</periodNumber>
 					<periodType xmlns="http://v8.1c.ru/8.1/data-composition-system/common">Main</periodType>
 				</role>
+				<appearance>
+					<item xmlns="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xsi:type="dcsset:SettingsParameterValue">
+						<parameter>Формат</parameter>
+						<value xmlns:d7p1="http://v8.1c.ru/8.1/data/core" xsi:type="d7p1:LocalStringType">
+							<d7p1:item>
+								<d7p1:lang>ru</d7p1:lang>
+								<d7p1:content>ДФ=dd.MM.yyyy</d7p1:content>
+							</d7p1:item>
+						</value>
+					</item>
+				</appearance>
+				<inputParameters/>
 			</field>
 			<field xsi:type="DataSetFieldField">
 				<dataPath>Регистратор</dataPath>
 				<field>Регистратор</field>
+				<title xmlns:d5p1="http://v8.1c.ru/8.1/data/core" xsi:type="d5p1:LocalStringType">
+					<d5p1:item>
+						<d5p1:lang>ru</d5p1:lang>
+						<d5p1:content>Документ</d5p1:content>
+					</d5p1:item>
+				</title>
+				<useRestriction>
+					<condition>true</condition>
+				</useRestriction>
+				<attributeUseRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</attributeUseRestriction>
 				<role>
 					<periodNumber xmlns="http://v8.1c.ru/8.1/data-composition-system/common">1</periodNumber>
 					<periodType xmlns="http://v8.1c.ru/8.1/data-composition-system/common">Main</periodType>
 				</role>
+				<appearance/>
+				<inputParameters/>
 			</field>
 			<field xsi:type="DataSetFieldField">
-				<dataPath>Долгота</dataPath>
-				<field>Долгота</field>
+				<dataPath>ОтсрочкаДней</dataPath>
+				<field>ОтсрочкаДней</field>
 				<title xmlns:d5p1="http://v8.1c.ru/8.1/data/core" xsi:type="d5p1:LocalStringType">
 					<d5p1:item>
 						<d5p1:lang>ru</d5p1:lang>
-						<d5p1:content>Прошло дней</d5p1:content>
+						<d5p1:content>Отсрочка (по граф.)</d5p1:content>
 					</d5p1:item>
 				</title>
-				<role>
-					<periodNumber xmlns="http://v8.1c.ru/8.1/data-composition-system/common">3</periodNumber>
-					<periodType xmlns="http://v8.1c.ru/8.1/data-composition-system/common">Main</periodType>
-				</role>
+				<attributeUseRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</attributeUseRestriction>
+				<appearance/>
+				<inputParameters/>
 			</field>
-			<dataSource>ИсточникДанных1</dataSource>
-			<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ
-	Остатки.Организация,
-	Остатки.Контрагент,
-	Остатки.ДоговорКонтрагента,
-	&amp;Дата КАК Край,
-	Остатки.СуммаВзаиморасчетовОстаток КАК Долг,
-	0 КАК ПолуСумма,
-	0 КАК Сдвиг
-ПОМЕСТИТЬ Шаг536870912
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ДатаПлатежа</dataPath>
+				<field>ДатаПлатежа</field>
+				<title xmlns:d5p1="http://v8.1c.ru/8.1/data/core" xsi:type="d5p1:LocalStringType">
+					<d5p1:item>
+						<d5p1:lang>ru</d5p1:lang>
+						<d5p1:content>Дата платежа</d5p1:content>
+					</d5p1:item>
+				</title>
+				<attributeUseRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</attributeUseRestriction>
+				<appearance>
+					<item xmlns="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xsi:type="dcsset:SettingsParameterValue">
+						<parameter>Формат</parameter>
+						<value xmlns:d7p1="http://v8.1c.ru/8.1/data/core" xsi:type="d7p1:LocalStringType">
+							<d7p1:item>
+								<d7p1:lang>ru</d7p1:lang>
+								<d7p1:content>ДФ=dd.MM.yyyy</d7p1:content>
+							</d7p1:item>
+						</value>
+					</item>
+				</appearance>
+				<inputParameters/>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>НомерИнтервала</dataPath>
+				<field>НомерИнтервала</field>
+				<title xmlns:d5p1="http://v8.1c.ru/8.1/data/core" xsi:type="d5p1:LocalStringType">
+					<d5p1:item>
+						<d5p1:lang>ru</d5p1:lang>
+						<d5p1:content>Номер интервала</d5p1:content>
+					</d5p1:item>
+				</title>
+				<useRestriction>
+					<condition>true</condition>
+				</useRestriction>
+				<attributeUseRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</attributeUseRestriction>
+				<appearance/>
+				<inputParameters/>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>НижняяГраницаИнтервала</dataPath>
+				<field>НижняяГраницаИнтервала</field>
+				<title xmlns:d5p1="http://v8.1c.ru/8.1/data/core" xsi:type="d5p1:LocalStringType">
+					<d5p1:item>
+						<d5p1:lang>ru</d5p1:lang>
+						<d5p1:content>Нижняя граница интервала</d5p1:content>
+					</d5p1:item>
+				</title>
+				<useRestriction>
+					<condition>true</condition>
+				</useRestriction>
+				<attributeUseRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</attributeUseRestriction>
+				<appearance/>
+				<inputParameters/>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>НаименованиеИнтервала</dataPath>
+				<field>НаименованиеИнтервала</field>
+				<title xmlns:d5p1="http://v8.1c.ru/8.1/data/core" xsi:type="d5p1:LocalStringType">
+					<d5p1:item>
+						<d5p1:lang>ru</d5p1:lang>
+						<d5p1:content>Наименование интервала</d5p1:content>
+					</d5p1:item>
+				</title>
+				<attributeUseRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</attributeUseRestriction>
+				<appearance/>
+				<inputParameters/>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>АналитикаУчетаПоПартнерам</dataPath>
+				<field>АналитикаУчетаПоПартнерам</field>
+				<useRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</useRestriction>
+				<attributeUseRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</attributeUseRestriction>
+				<role>
+					<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
+					<required xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</required>
+				</role>
+				<appearance/>
+				<inputParameters/>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ЗаказКлиента</dataPath>
+				<field>ЗаказКлиента</field>
+				<useRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</useRestriction>
+				<attributeUseRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</attributeUseRestriction>
+				<appearance/>
+				<inputParameters/>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ГруппировкаВсего</dataPath>
+				<field>ГруппировкаВсего</field>
+				<title xmlns:d5p1="http://v8.1c.ru/8.1/data/core" xsi:type="d5p1:LocalStringType">
+					<d5p1:item>
+						<d5p1:lang>ru</d5p1:lang>
+						<d5p1:content>Группировка всего</d5p1:content>
+					</d5p1:item>
+				</title>
+				<useRestriction>
+					<condition>true</condition>
+					<order>true</order>
+				</useRestriction>
+				<attributeUseRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</attributeUseRestriction>
+				<role>
+					<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
+				</role>
+				<appearance/>
+				<inputParameters/>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Валюта</dataPath>
+				<field>Валюта</field>
+				<useRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</useRestriction>
+				<attributeUseRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</attributeUseRestriction>
+				<appearance/>
+				<inputParameters/>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ЗаказПоставщику</dataPath>
+				<field>ЗаказПоставщику</field>
+				<useRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</useRestriction>
+				<attributeUseRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<order>true</order>
+				</attributeUseRestriction>
+				<appearance/>
+				<inputParameters/>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>НашДолг</dataPath>
+				<field>НашДолг</field>
+				<title xmlns:d5p1="http://v8.1c.ru/8.1/data/core" xsi:type="d5p1:LocalStringType">
+					<d5p1:item>
+						<d5p1:lang>ru</d5p1:lang>
+						<d5p1:content>Наш долг</d5p1:content>
+					</d5p1:item>
+				</title>
+				<attributeUseRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</attributeUseRestriction>
+				<appearance>
+					<item xmlns="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xsi:type="dcsset:SettingsParameterValue">
+						<parameter>Формат</parameter>
+						<value xmlns:d7p1="http://v8.1c.ru/8.1/data/core" xsi:type="d7p1:LocalStringType">
+							<d7p1:item>
+								<d7p1:lang>ru</d7p1:lang>
+								<d7p1:content>ЧДЦ=2; ЧН=' '</d7p1:content>
+							</d7p1:item>
+						</value>
+					</item>
+				</appearance>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Соглашение</dataPath>
+				<field>Соглашение</field>
+				<title xmlns:d5p1="http://v8.1c.ru/8.1/data/core" xsi:type="d5p1:LocalStringType">
+					<d5p1:item>
+						<d5p1:lang>ru</d5p1:lang>
+						<d5p1:content>Соглашение</d5p1:content>
+					</d5p1:item>
+				</title>
+				<useRestriction>
+					<condition>true</condition>
+				</useRestriction>
+				<attributeUseRestriction>
+					<condition>true</condition>
+				</attributeUseRestriction>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ТипСоглашения</dataPath>
+				<field>ТипСоглашения</field>
+				<title xmlns:d5p1="http://v8.1c.ru/8.1/data/core" xsi:type="d5p1:LocalStringType">
+					<d5p1:item>
+						<d5p1:lang>ru</d5p1:lang>
+						<d5p1:content>Тип соглашения</d5p1:content>
+					</d5p1:item>
+				</title>
+				<attributeUseRestriction>
+					<field>true</field>
+					<condition>true</condition>
+					<group>true</group>
+					<order>true</order>
+				</attributeUseRestriction>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Склад</dataPath>
+				<field>Склад</field>
+				<title xmlns:d5p1="http://v8.1c.ru/8.1/data/core" xsi:type="d5p1:LocalStringType">
+					<d5p1:item>
+						<d5p1:lang>ru</d5p1:lang>
+						<d5p1:content>Склад</d5p1:content>
+					</d5p1:item>
+				</title>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>ВходитВСегмент</dataPath>
+				<field>ВходитВСегмент</field>
+				<title xmlns:d5p1="http://v8.1c.ru/8.1/data/core" xsi:type="d5p1:LocalStringType">
+					<d5p1:item>
+						<d5p1:lang>ru</d5p1:lang>
+						<d5p1:content>Входит в сегмент</d5p1:content>
+					</d5p1:item>
+				</title>
+				<useRestriction>
+					<condition>true</condition>
+				</useRestriction>
+				<attributeUseRestriction>
+					<condition>true</condition>
+				</attributeUseRestriction>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СоглашениеОтбор</dataPath>
+				<field>СоглашениеОтбор</field>
+				<title xmlns:d5p1="http://v8.1c.ru/8.1/data/core" xsi:type="d5p1:LocalStringType">
+					<d5p1:item>
+						<d5p1:lang>ru</d5p1:lang>
+						<d5p1:content>Соглашение</d5p1:content>
+					</d5p1:item>
+				</title>
+				<useRestriction>
+					<field>true</field>
+					<group>true</group>
+					<order>true</order>
+				</useRestriction>
+				<attributeUseRestriction>
+					<field>true</field>
+					<group>true</group>
+					<order>true</order>
+				</attributeUseRestriction>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>СегментПартнеров</dataPath>
+				<field>СегментПартнеров</field>
+				<title xmlns:d5p1="http://v8.1c.ru/8.1/data/core" xsi:type="d5p1:LocalStringType">
+					<d5p1:item>
+						<d5p1:lang>ru</d5p1:lang>
+						<d5p1:content>Сегмент </d5p1:content>
+					</d5p1:item>
+				</title>
+				<useRestriction>
+					<field>true</field>
+					<group>true</group>
+					<order>true</order>
+				</useRestriction>
+				<attributeUseRestriction>
+					<field>true</field>
+					<group>true</group>
+					<order>true</order>
+				</attributeUseRestriction>
+			</field>
+			<field xsi:type="DataSetFieldField">
+				<dataPath>Календарь</dataPath>
+				<field>Календарь</field>
+				<title xmlns:d5p1="http://v8.1c.ru/8.1/data/core" xsi:type="d5p1:LocalStringType">
+					<d5p1:item>
+						<d5p1:lang>ru</d5p1:lang>
+						<d5p1:content>Календарь</d5p1:content>
+					</d5p1:item>
+				</title>
+			</field>
+			<item xsi:type="DataSetQuery">
+				<name>НаборДанных1</name>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Организация</dataPath>
+					<field>Организация</field>
+					<role>
+						<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
+						<parentDimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">АналитикаУчетаПоПартнерам</parentDimension>
+					</role>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Партнер</dataPath>
+					<field>Партнер</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Партнер</d6p1:content>
+						</d6p1:item>
+					</title>
+					<role>
+						<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
+						<parentDimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">АналитикаУчетаПоПартнерам</parentDimension>
+					</role>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Договор</dataPath>
+					<field>Договор</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Договор</d6p1:content>
+						</d6p1:item>
+					</title>
+					<role>
+						<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
+						<parentDimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">АналитикаУчетаПоПартнерам</parentDimension>
+					</role>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Долг</dataPath>
+					<field>Долг</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Сумма долга</d6p1:content>
+						</d6p1:item>
+					</title>
+					<appearance>
+						<item xmlns="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xsi:type="dcsset:SettingsParameterValue">
+							<parameter>Формат</parameter>
+							<value xmlns:d8p1="http://v8.1c.ru/8.1/data/core" xsi:type="d8p1:LocalStringType">
+								<d8p1:item>
+									<d8p1:lang>ru</d8p1:lang>
+									<d8p1:content>ЧДЦ=2; ЧН=</d8p1:content>
+								</d8p1:item>
+							</value>
+						</item>
+					</appearance>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>СрокЗадолженностиДней</dataPath>
+					<field>СрокЗадолженностиДней</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Срок задолженности (дней)</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Просрочено</dataPath>
+					<field>Просрочено</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Сумма просрочено</d6p1:content>
+						</d6p1:item>
+					</title>
+					<appearance>
+						<item xmlns="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xsi:type="dcsset:SettingsParameterValue">
+							<parameter>Формат</parameter>
+							<value xmlns:d8p1="http://v8.1c.ru/8.1/data/core" xsi:type="d8p1:LocalStringType">
+								<d8p1:item>
+									<d8p1:lang>ru</d8p1:lang>
+									<d8p1:content>ЧДЦ=2; ЧН=</d8p1:content>
+								</d8p1:item>
+							</value>
+						</item>
+					</appearance>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ЗадержкаДней</dataPath>
+					<field>ЗадержкаДней</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Задержка (дней)</d6p1:content>
+						</d6p1:item>
+					</title>
+					<role>
+						<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
+					</role>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Контрагент</dataPath>
+					<field>Контрагент</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Контрагент</d6p1:content>
+						</d6p1:item>
+					</title>
+					<role>
+						<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
+						<parentDimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">АналитикаУчетаПоПартнерам</parentDimension>
+					</role>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ДатаРегистратора</dataPath>
+					<field>ДатаРегистратора</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Дата регистратора</d6p1:content>
+						</d6p1:item>
+					</title>
+					<useRestriction>
+						<condition>true</condition>
+					</useRestriction>
+					<role>
+						<periodNumber xmlns="http://v8.1c.ru/8.1/data-composition-system/common">2</periodNumber>
+						<periodType xmlns="http://v8.1c.ru/8.1/data-composition-system/common">Main</periodType>
+					</role>
+					<appearance>
+						<item xmlns="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xsi:type="dcsset:SettingsParameterValue">
+							<parameter>Формат</parameter>
+							<value xmlns:d8p1="http://v8.1c.ru/8.1/data/core" xsi:type="d8p1:LocalStringType">
+								<d8p1:item>
+									<d8p1:lang>ru</d8p1:lang>
+									<d8p1:content>ДФ=dd.MM.yyyy</d8p1:content>
+								</d8p1:item>
+							</value>
+						</item>
+					</appearance>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Регистратор</dataPath>
+					<field>Регистратор</field>
+					<useRestriction>
+						<condition>true</condition>
+					</useRestriction>
+					<attributeUseRestriction>
+						<condition>true</condition>
+					</attributeUseRestriction>
+					<role>
+						<periodNumber xmlns="http://v8.1c.ru/8.1/data-composition-system/common">1</periodNumber>
+						<periodType xmlns="http://v8.1c.ru/8.1/data-composition-system/common">Main</periodType>
+					</role>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ОтсрочкаДней</dataPath>
+					<field>ОтсрочкаДней</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Отсрочка (дней)</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ДатаПлатежа</dataPath>
+					<field>ДатаПлатежа</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Дата платежа</d6p1:content>
+						</d6p1:item>
+					</title>
+					<role>
+						<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
+					</role>
+					<appearance>
+						<item xmlns="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xsi:type="dcsset:SettingsParameterValue">
+							<parameter>Формат</parameter>
+							<value xmlns:d8p1="http://v8.1c.ru/8.1/data/core" xsi:type="d8p1:LocalStringType">
+								<d8p1:item>
+									<d8p1:lang>ru</d8p1:lang>
+									<d8p1:content>ДФ=dd.MM.yyyy</d8p1:content>
+								</d8p1:item>
+							</value>
+						</item>
+					</appearance>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>НомерИнтервала</dataPath>
+					<field>НомерИнтервала</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Номер интервала</d6p1:content>
+						</d6p1:item>
+					</title>
+					<useRestriction>
+						<condition>true</condition>
+					</useRestriction>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>НижняяГраницаИнтервала</dataPath>
+					<field>НижняяГраницаИнтервала</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Нижняя граница интервала</d6p1:content>
+						</d6p1:item>
+					</title>
+					<useRestriction>
+						<condition>true</condition>
+					</useRestriction>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>НаименованиеИнтервала</dataPath>
+					<field>НаименованиеИнтервала</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Наименование интервала</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>АналитикаУчетаПоПартнерам</dataPath>
+					<field>АналитикаУчетаПоПартнерам</field>
+					<useRestriction>
+						<field>true</field>
+						<condition>true</condition>
+						<group>true</group>
+						<order>true</order>
+					</useRestriction>
+					<attributeUseRestriction>
+						<field>true</field>
+						<condition>true</condition>
+						<group>true</group>
+						<order>true</order>
+					</attributeUseRestriction>
+					<role>
+						<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
+						<required xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</required>
+					</role>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ЗаказКлиента</dataPath>
+					<field>ЗаказКлиента</field>
+					<useRestriction>
+						<condition>true</condition>
+					</useRestriction>
+					<attributeUseRestriction>
+						<condition>true</condition>
+					</attributeUseRestriction>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ГруппировкаВсего</dataPath>
+					<field>ГруппировкаВсего</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Группировка всего</d6p1:content>
+						</d6p1:item>
+					</title>
+					<useRestriction>
+						<condition>true</condition>
+					</useRestriction>
+					<role>
+						<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
+					</role>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Валюта</dataPath>
+					<field>Валюта</field>
+					<useRestriction>
+						<condition>true</condition>
+					</useRestriction>
+					<attributeUseRestriction>
+						<condition>true</condition>
+					</attributeUseRestriction>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>НашДолг</dataPath>
+					<field>НашДолг</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Наш долг</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Соглашение</dataPath>
+					<field>Соглашение</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Соглашение</d6p1:content>
+						</d6p1:item>
+					</title>
+					<useRestriction>
+						<condition>true</condition>
+					</useRestriction>
+					<attributeUseRestriction>
+						<condition>true</condition>
+					</attributeUseRestriction>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ТипСоглашения</dataPath>
+					<field>ТипСоглашения</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Тип соглашения</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Склад</dataPath>
+					<field>Склад</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Склад</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ВходитВСегмент</dataPath>
+					<field>ВходитВСегмент</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Входит в сегмент</d6p1:content>
+						</d6p1:item>
+					</title>
+					<useRestriction>
+						<condition>true</condition>
+					</useRestriction>
+					<attributeUseRestriction>
+						<condition>true</condition>
+					</attributeUseRestriction>
+					<role>
+						<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
+					</role>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>СоглашениеОтбор</dataPath>
+					<field>СоглашениеОтбор</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Соглашение отбор</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>СегментПартнеров</dataPath>
+					<field>СегментПартнеров</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Сегмент партнеров</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Календарь</dataPath>
+					<field>Календарь</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Календарь</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<dataSource>ИсточникДанных1</dataSource>
+				<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
+	Сегменты.Партнер КАК Партнер,
+	ИСТИНА КАК ИспользуетсяОтборПоСегментуПартнеров
+ПОМЕСТИТЬ ОтборПоСегментуПартнеров
 ИЗ
-	РегистрНакопления.ВзаиморасчетыСКонтрагентами.Остатки(ДОБАВИТЬКДАТЕ(&amp;Дата, СЕКУНДА, 1), ДоговорКонтрагента.ВидДоговора = ЗНАЧЕНИЕ(Перечисление.ВидыДоговоровКонтрагентов.СПокупателем)) КАК Остатки
-ГДЕ
-	Остатки.СуммаВзаиморасчетовОстаток &gt; 0
+	РегистрСведений.ПартнерыСегмента КАК Сегменты
 {ГДЕ
-	Остатки.Организация.*,
-	Остатки.Контрагент.*,
-	Остатки.ДоговорКонтрагента.*}
+	Сегменты.Сегмент.* КАК СегментПартнеров,
+	Сегменты.Партнер.* КАК Партнер}
+
+ИНДЕКСИРОВАТЬ ПО
+	Партнер,
+	ИспользуетсяОтборПоСегментуПартнеров
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ РАЗРЕШЕННЫЕ
-	Обороты.ДоговорКонтрагента,
-	Обороты.Период КАК Период,
-	СУММА(Обороты.СуммаВзаиморасчетовОборот) КАК СуммаВзаиморасчетовОборот
-ПОМЕСТИТЬ Обороты
+	Остатки.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	ДОБАВИТЬКДАТЕ(&amp;Дата, ГОД, 5) КАК Край,
+	СУММА(Остатки.СуммаОстаток) КАК Долг,
+	СУММА(0) КАК ПолуСумма,
+	СУММА(0) КАК Сдвиг
+ПОМЕСТИТЬ Шаг536870912
 ИЗ
-	РегистрНакопления.ВзаиморасчетыСКонтрагентами.Обороты(
+	РегистрНакопления.РасчетыСКлиентами.Остатки(ДОБАВИТЬКДАТЕ(&amp;Дата, СЕКУНДА, 1), {(АналитикаУчетаПоПартнерам.Организация).* КАК Организация, (АналитикаУчетаПоПартнерам.Партнер).* КАК Партнер, (АналитикаУчетаПоПартнерам.Контрагент).* КАК Контрагент, (АналитикаУчетаПоПартнерам.Договор).* КАК Договор, (АналитикаУчетаПоПартнерам.Партнер В
+			    (ВЫБРАТЬ
+			        ОтборПоСегментуПартнеров.Партнер
+			    ИЗ
+			        ОтборПоСегментуПартнеров
+			    ГДЕ
+			        ОтборПоСегментуПартнеров.ИспользуетсяОтборПоСегментуПартнеров = &amp;ИспользуетсяОтборПоСегментуПартнеров))}) КАК Остатки
+
+СГРУППИРОВАТЬ ПО
+	Остатки.АналитикаУчетаПоПартнерам
+
+ИМЕЮЩИЕ
+	СУММА(Остатки.СуммаОстаток) &gt; 0
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	РасчетыСКлиентами.Регистратор КАК Регистратор,
+	РасчетыСКлиентами.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	РасчетыСКлиентами.ЗаказКлиента КАК ЗаказКлиента,
+	РасчетыСКлиентами.Валюта КАК Валюта,
+	ВЫБОР
+		КОГДА РасчетыСКлиентами.ДатаПлатежа &lt;= ДОБАВИТЬКДАТЕ(&amp;Дата, СЕКУНДА, -536870912)
+			ТОГДА РасчетыСКлиентами.Период
+		ИНАЧЕ РасчетыСКлиентами.ДатаПлатежа
+	КОНЕЦ КАК ДатаПлатежа,
+	СУММА(ВЫБОР
+			КОГДА РасчетыСКлиентами.Сумма &lt; 0
+				ТОГДА -1 * РасчетыСКлиентами.Сумма
+			ИНАЧЕ РасчетыСКлиентами.Сумма
+		КОНЕЦ) КАК Сумма
+ПОМЕСТИТЬ ДатыПлатежейПоВводамОстатков
+ИЗ
+	РегистрНакопления.РасчетыСКлиентами КАК РасчетыСКлиентами
+ГДЕ
+	РасчетыСКлиентами.АналитикаУчетаПоПартнерам В
+			(ВЫБРАТЬ
+				Шаг.АналитикаУчетаПоПартнерам
+			ИЗ
+				Шаг536870912 КАК Шаг)
+	И РасчетыСКлиентами.Активность
+	И РасчетыСКлиентами.ДатаПлатежа &lt;&gt; ДАТАВРЕМЯ(1, 1, 1)
+	И (РасчетыСКлиентами.Сумма &gt; 0
+				И РасчетыСКлиентами.ВидДвижения = &amp;Приход
+			ИЛИ РасчетыСКлиентами.Сумма &lt; 0
+				И РасчетыСКлиентами.ВидДвижения = &amp;Расход)
+
+СГРУППИРОВАТЬ ПО
+	РасчетыСКлиентами.Регистратор,
+	ВЫБОР
+		КОГДА РасчетыСКлиентами.ДатаПлатежа &lt;= ДОБАВИТЬКДАТЕ(&amp;Дата, СЕКУНДА, -536870912)
+			ТОГДА РасчетыСКлиентами.Период
+		ИНАЧЕ РасчетыСКлиентами.ДатаПлатежа
+	КОНЕЦ,
+	РасчетыСКлиентами.АналитикаУчетаПоПартнерам,
+	РасчетыСКлиентами.ЗаказКлиента,
+	РасчетыСКлиентами.Валюта
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Обороты.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	Обороты.ЗаказКлиента КАК ЗаказКлиента,
+	Обороты.Валюта КАК Валюта,
+	ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ВозвратТоваровОтКлиента).ДокументРеализации КАК Реализация,
+	-Обороты.СуммаОборот КАК СуммаВозврата
+ПОМЕСТИТЬ ОборотыПоВозвратам
+ИЗ
+	РегистрНакопления.РасчетыСКлиентами.Обороты(
 			,
 			&amp;Дата,
 			Регистратор,
-			ДоговорКонтрагента В
+			АналитикаУчетаПоПартнерам В
 				(ВЫБРАТЬ
-					Шаг.ДоговорКонтрагента
+					Шаг.АналитикаУчетаПоПартнерам
 				ИЗ
 					Шаг536870912 КАК Шаг)) КАК Обороты
 ГДЕ
-	Обороты.СуммаВзаиморасчетовОборот &gt; 0
+	Обороты.СуммаОборот &lt; 0
+	И Обороты.Регистратор ССЫЛКА Документ.ВозвратТоваровОтКлиента
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Обороты.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	Обороты.ЗаказКлиента КАК ЗаказКлиента,
+	Обороты.Валюта КАК Валюта,
+	Обороты.Период КАК Период,
+	Обороты.Регистратор КАК Регистратор,
+	Обороты.СуммаОборот - ЕСТЬNULL(ОборотыПоВозвратам.СуммаВозврата, 0) КАК СуммаОборот
+ПОМЕСТИТЬ ВсеОборотыПоДолгам
+ИЗ
+	РегистрНакопления.РасчетыСКлиентами.Обороты(
+			,
+			&amp;Дата,
+			Регистратор,
+			АналитикаУчетаПоПартнерам В
+				(ВЫБРАТЬ
+					Шаг.АналитикаУчетаПоПартнерам
+				ИЗ
+					Шаг536870912 КАК Шаг)) КАК Обороты
+		ЛЕВОЕ СОЕДИНЕНИЕ ОборотыПоВозвратам КАК ОборотыПоВозвратам
+		ПО Обороты.АналитикаУчетаПоПартнерам = ОборотыПоВозвратам.АналитикаУчетаПоПартнерам
+			И Обороты.ЗаказКлиента = ОборотыПоВозвратам.ЗаказКлиента
+			И Обороты.Валюта = ОборотыПоВозвратам.Валюта
+			И Обороты.Регистратор = ОборотыПоВозвратам.Реализация
+ГДЕ
+	Обороты.СуммаОборот - ЕСТЬNULL(ОборотыПоВозвратам.СуммаВозврата, 0) &gt; 0
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Обороты.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	Обороты.Период КАК Период,
+	Обороты.Период КАК ДатаРегистратора,
+	Обороты.Регистратор КАК Регистратор,
+	ВЫБОР
+		КОГДА Обороты.Регистратор ССЫЛКА Документ.РеализацияТоваровУслуг
+			ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).Соглашение
+		КОГДА Обороты.ЗаказКлиента ССЫЛКА Документ.РеализацияТоваровУслуг
+			ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).Соглашение
+		КОГДА Обороты.ЗаказКлиента ССЫЛКА Документ.ЗаказКлиента
+			ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ЗаказКлиента).Соглашение
+		ИНАЧЕ НЕОПРЕДЕЛЕНО
+	КОНЕЦ КАК Соглашение,
+	ВЫБОР
+		КОГДА Обороты.Регистратор ССЫЛКА Документ.РеализацияТоваровУслуг
+			ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).Склад
+		КОГДА Обороты.Регистратор ССЫЛКА Документ.ВводОстатков
+			ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ВводОстатков).Склад
+		КОГДА Обороты.ЗаказКлиента ССЫЛКА Документ.РеализацияТоваровУслуг
+			ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).Склад
+		КОГДА Обороты.ЗаказКлиента ССЫЛКА Документ.ЗаказКлиента
+			ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ЗаказКлиента).Склад
+		ИНАЧЕ НЕОПРЕДЕЛЕНО
+	КОНЕЦ КАК Склад,
+	ВЫБОР
+		КОГДА Обороты.Регистратор ССЫЛКА Документ.РеализацияТоваровУслуг
+				И &amp;ИспользоватьГрафикОплатыИзСоглашенияСКлиентом
+			ТОГДА ВЫБОР
+					КОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).Соглашение.ГрафикОплаты = &amp;ГрафикНеЗаполнен
+						ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).ЗаказКлиента
+					ИНАЧЕ ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).Соглашение.ГрафикОплаты
+				КОНЕЦ
+		КОГДА Обороты.Регистратор ССЫЛКА Документ.РеализацияТоваровУслуг
+				И НЕ &amp;ИспользоватьГрафикОплатыИзСоглашенияСКлиентом
+			ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).ЗаказКлиента
+		ИНАЧЕ НЕОПРЕДЕЛЕНО
+	КОНЕЦ КАК ГрафикПоСоглашениюИлиЗаказ,
+	ВЫБОР
+		КОГДА Обороты.Регистратор ССЫЛКА Документ.РеализацияТоваровУслуг
+			ТОГДА ВЫБОР
+					КОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).РеализацияПоЗаказам = ЛОЖЬ
+						ТОГДА ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.ДатаПлатежа, ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).ДатаПлатежа)
+					КОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).ПорядокРасчетов = &amp;ПоНакладным
+						ТОГДА ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.ДатаПлатежа, ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).ДатаПлатежа)
+					КОГДА ВЫРАЗИТЬ(ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).ЗаказКлиента КАК Документ.ЗаказКлиента).ПорядокРасчетов = &amp;ПоНакладным
+						ТОГДА ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.ДатаПлатежа, ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).ДатаПлатежа)
+					ИНАЧЕ ДАТАВРЕМЯ(1, 1, 1)
+				КОНЕЦ
+		ИНАЧЕ ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.ДатаПлатежа, ДАТАВРЕМЯ(1, 1, 1))
+	КОНЕЦ КАК ДатаПлатежа,
+	СУММА(ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.Сумма, Обороты.СуммаОборот)) КАК СуммаОборот
+ПОМЕСТИТЬ ОборотыБезРазбиенияНаЭтапы
+ИЗ
+	ВсеОборотыПоДолгам КАК Обороты
+		ЛЕВОЕ СОЕДИНЕНИЕ ДатыПлатежейПоВводамОстатков КАК ДатыПлатежейПоВводамОстатков
+		ПО Обороты.Регистратор = ДатыПлатежейПоВводамОстатков.Регистратор
+			И Обороты.АналитикаУчетаПоПартнерам = ДатыПлатежейПоВводамОстатков.АналитикаУчетаПоПартнерам
+			И Обороты.ЗаказКлиента = ДатыПлатежейПоВводамОстатков.ЗаказКлиента
+			И Обороты.Валюта = ДатыПлатежейПоВводамОстатков.Валюта
 
 СГРУППИРОВАТЬ ПО
-	Обороты.ДоговорКонтрагента,
+	Обороты.АналитикаУчетаПоПартнерам,
+	Обороты.Период,
+	Обороты.Регистратор,
+	ВЫБОР
+		КОГДА Обороты.Регистратор ССЫЛКА Документ.РеализацияТоваровУслуг
+			ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).Соглашение
+		КОГДА Обороты.ЗаказКлиента ССЫЛКА Документ.РеализацияТоваровУслуг
+			ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).Соглашение
+		КОГДА Обороты.ЗаказКлиента ССЫЛКА Документ.ЗаказКлиента
+			ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ЗаказКлиента).Соглашение
+		ИНАЧЕ НЕОПРЕДЕЛЕНО
+	КОНЕЦ,
+	ВЫБОР
+		КОГДА Обороты.Регистратор ССЫЛКА Документ.РеализацияТоваровУслуг
+			ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).Склад
+		КОГДА Обороты.Регистратор ССЫЛКА Документ.ВводОстатков
+			ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ВводОстатков).Склад
+		КОГДА Обороты.ЗаказКлиента ССЫЛКА Документ.РеализацияТоваровУслуг
+			ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).Склад
+		КОГДА Обороты.ЗаказКлиента ССЫЛКА Документ.ЗаказКлиента
+			ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ЗаказКлиента).Склад
+		ИНАЧЕ НЕОПРЕДЕЛЕНО
+	КОНЕЦ,
+	ВЫБОР
+		КОГДА Обороты.Регистратор ССЫЛКА Документ.РеализацияТоваровУслуг
+				И &amp;ИспользоватьГрафикОплатыИзСоглашенияСКлиентом
+			ТОГДА ВЫБОР
+					КОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).Соглашение.ГрафикОплаты = &amp;ГрафикНеЗаполнен
+						ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).ЗаказКлиента
+					ИНАЧЕ ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).Соглашение.ГрафикОплаты
+				КОНЕЦ
+		КОГДА Обороты.Регистратор ССЫЛКА Документ.РеализацияТоваровУслуг
+				И НЕ &amp;ИспользоватьГрафикОплатыИзСоглашенияСКлиентом
+			ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).ЗаказКлиента
+		ИНАЧЕ НЕОПРЕДЕЛЕНО
+	КОНЕЦ,
+	ВЫБОР
+		КОГДА Обороты.Регистратор ССЫЛКА Документ.РеализацияТоваровУслуг
+			ТОГДА ВЫБОР
+					КОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).РеализацияПоЗаказам = ЛОЖЬ
+						ТОГДА ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.ДатаПлатежа, ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).ДатаПлатежа)
+					КОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).ПорядокРасчетов = &amp;ПоНакладным
+						ТОГДА ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.ДатаПлатежа, ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).ДатаПлатежа)
+					КОГДА ВЫРАЗИТЬ(ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).ЗаказКлиента КАК Документ.ЗаказКлиента).ПорядокРасчетов = &amp;ПоНакладным
+						ТОГДА ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.ДатаПлатежа, ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).ДатаПлатежа)
+					ИНАЧЕ ДАТАВРЕМЯ(1, 1, 1)
+				КОНЕЦ
+		ИНАЧЕ ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.ДатаПлатежа, ДАТАВРЕМЯ(1, 1, 1))
+	КОНЕЦ,
 	Обороты.Период
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Обороты.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	ЕСТЬNULL(ЭтапыГрафикаОплатыПоЗаказу.ДатаПлатежа, Обороты.ДатаПлатежа) КАК ДатаПлатежа,
+	Обороты.Период КАК Период,
+	Обороты.Период КАК ДатаРегистратора,
+	Обороты.Регистратор КАК Регистратор,
+	Обороты.Соглашение КАК Соглашение,
+	Обороты.Склад КАК Склад,
+	ВЫБОР
+		КОГДА ЕСТЬNULL(ЭтапыГрафикаОплаты.ВариантОплаты, НЕОПРЕДЕЛЕНО) = ЗНАЧЕНИЕ(Перечисление.ВариантыОплатыКлиентом.КредитПослеОтгрузки)
+			ТОГДА ЕСТЬNULL(ЭтапыГрафикаОплаты.Сдвиг, 0)
+		ИНАЧЕ 0
+	КОНЕЦ КАК Сдвиг,
+	ВЫБОР
+		КОГДА ЕСТЬNULL(ЭтапыГрафикаОплатыПоЗаказу.ДатаПлатежа, Обороты.ДатаПлатежа) &gt; ДАТАВРЕМЯ(1, 1, 1)
+			ТОГДА НЕОПРЕДЕЛЕНО
+		ИНАЧЕ ВЫРАЗИТЬ(Обороты.ГрафикПоСоглашениюИлиЗаказ КАК Справочник.ГрафикиОплаты).Календарь
+	КОНЕЦ КАК Календарь,
+	СУММА(Обороты.СуммаОборот * ЕСТЬNULL(ЭтапыГрафикаОплаты.ПроцентПлатежа, 100) / 100 * ЕСТЬNULL(ЭтапыГрафикаОплатыПоЗаказу.ПроцентПлатежа, 100) / 100) КАК СуммаОборот
+ПОМЕСТИТЬ ОборотыСоСдвигом
+ИЗ
+	ОборотыБезРазбиенияНаЭтапы КАК Обороты
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.ГрафикиОплаты.Этапы КАК ЭтапыГрафикаОплаты
+		ПО Обороты.ГрафикПоСоглашениюИлиЗаказ = ЭтапыГрафикаОплаты.Ссылка
+			И (Обороты.ДатаПлатежа = ДАТАВРЕМЯ(1, 1, 1))
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.ЗаказКлиента.ЭтапыГрафикаОплаты КАК ЭтапыГрафикаОплатыПоЗаказу
+		ПО Обороты.ГрафикПоСоглашениюИлиЗаказ = ЭтапыГрафикаОплатыПоЗаказу.Ссылка
+			И (Обороты.ДатаПлатежа = ДАТАВРЕМЯ(1, 1, 1))
+
+СГРУППИРОВАТЬ ПО
+	Обороты.АналитикаУчетаПоПартнерам,
+	ЕСТЬNULL(ЭтапыГрафикаОплатыПоЗаказу.ДатаПлатежа, Обороты.ДатаПлатежа),
+	Обороты.Период,
+	Обороты.Регистратор,
+	Обороты.Соглашение,
+	Обороты.Склад,
+	ВЫБОР
+		КОГДА ЕСТЬNULL(ЭтапыГрафикаОплатыПоЗаказу.ДатаПлатежа, Обороты.ДатаПлатежа) &gt; ДАТАВРЕМЯ(1, 1, 1)
+			ТОГДА НЕОПРЕДЕЛЕНО
+		ИНАЧЕ ВЫРАЗИТЬ(Обороты.ГрафикПоСоглашениюИлиЗаказ КАК Справочник.ГрафикиОплаты).Календарь
+	КОНЕЦ,
+	ВЫБОР
+		КОГДА ЕСТЬNULL(ЭтапыГрафикаОплаты.ВариантОплаты, НЕОПРЕДЕЛЕНО) = ЗНАЧЕНИЕ(Перечисление.ВариантыОплатыКлиентом.КредитПослеОтгрузки)
+			ТОГДА ЕСТЬNULL(ЭтапыГрафикаОплаты.Сдвиг, 0)
+		ИНАЧЕ 0
+	КОНЕЦ,
+	Обороты.Период
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
+	ОборотыСоСдвигом.Период КАК Период,
+	ОборотыСоСдвигом.Календарь КАК Календарь
+ПОМЕСТИТЬ ОборотыСоСдвигомСвернуто
+ИЗ
+	ОборотыСоСдвигом КАК ОборотыСоСдвигом
+ГДЕ
+	ОборотыСоСдвигом.Календарь &lt;&gt; НЕОПРЕДЕЛЕНО
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
+	ОборотыСоСдвигомСвернуто.Период КАК ДатаНачала,
+	ОборотыСоСдвигомСвернуто.Календарь КАК Календарь,
+	ГрафикиРаботы.Дата КАК ДатаОкончания,
+	ВЫБОР
+		КОГДА ГрафикиРаботы.ВидДня = ЗНАЧЕНИЕ(Перечисление.ВидыДнейПроизводственногоКалендаря.Рабочий)
+				ИЛИ ГрафикиРаботы.ВидДня = ЗНАЧЕНИЕ(Перечисление.ВидыДнейПроизводственногоКалендаря.Предпраздничный)
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК РабочийДень
+ПОМЕСТИТЬ Графики
+ИЗ
+	ОборотыСоСдвигомСвернуто КАК ОборотыСоСдвигомСвернуто
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ДанныеПроизводственногоКалендаря КАК ГрафикиРаботы
+		ПО ОборотыСоСдвигомСвернуто.Календарь = ГрафикиРаботы.ПроизводственныйКалендарь
+ГДЕ
+	ГрафикиРаботы.Дата &gt;= ОборотыСоСдвигомСвернуто.Период
+	И ОборотыСоСдвигомСвернуто.Период &lt;&gt; ДАТАВРЕМЯ(1, 1, 1)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
+	ВложенныйЗапрос.Календарь КАК Календарь,
+	ВложенныйЗапрос.ДатаНачала КАК ДатаНачала,
+	ВложенныйЗапрос.ДатаОкончания КАК ДатаОкончания,
+	ЕСТЬNULL(СУММА(Графики.РабочийДень), 0) КАК КоличествоДней
+ПОМЕСТИТЬ РазностиДат
+ИЗ
+	Графики КАК ВложенныйЗапрос
+		ЛЕВОЕ СОЕДИНЕНИЕ Графики КАК Графики
+		ПО ВложенныйЗапрос.Календарь = Графики.Календарь
+			И ВложенныйЗапрос.ДатаНачала = Графики.ДатаНачала
+			И ВложенныйЗапрос.ДатаОкончания &gt; Графики.ДатаОкончания
+
+СГРУППИРОВАТЬ ПО
+	ВложенныйЗапрос.Календарь,
+	ВложенныйЗапрос.ДатаНачала,
+	ВложенныйЗапрос.ДатаОкончания
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
+	РазностиДат.Календарь КАК Календарь,
+	РазностиДат.ДатаНачала КАК ДатаНачала,
+	РазностиДат.КоличествоДней КАК КоличествоДней,
+	МАКСИМУМ(РазностиДат.ДатаОкончания) КАК ДатаОкончания
+ПОМЕСТИТЬ РазностиДатСМаксимальнойДатой
+ИЗ
+	РазностиДат КАК РазностиДат
+
+СГРУППИРОВАТЬ ПО
+	РазностиДат.Календарь,
+	РазностиДат.ДатаНачала,
+	РазностиДат.КоличествоДней
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ОборотыСоСдвигом.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	ОборотыСоСдвигом.Период КАК Период,
+	ОборотыСоСдвигом.ДатаРегистратора КАК ДатаРегистратора,
+	ОборотыСоСдвигом.Регистратор КАК Регистратор,
+	ОборотыСоСдвигом.Соглашение КАК Соглашение,
+	ОборотыСоСдвигом.Календарь КАК Календарь,
+	ОборотыСоСдвигом.Сдвиг КАК Сдвиг,
+	ОборотыСоСдвигом.Склад КАК Склад,
+	ЕСТЬNULL(РазностиДат.ДатаОкончания, ВЫБОР
+			КОГДА ОборотыСоСдвигом.ДатаПлатежа = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА ДОБАВИТЬКДАТЕ(ОборотыСоСдвигом.Период, ДЕНЬ, ОборотыСоСдвигом.Сдвиг)
+			ИНАЧЕ ОборотыСоСдвигом.ДатаПлатежа
+		КОНЕЦ) КАК ДатаПлатежа,
+	СУММА(ОборотыСоСдвигом.СуммаОборот) КАК СуммаОборот
+ПОМЕСТИТЬ ОборотыРазвернуто
+ИЗ
+	ОборотыСоСдвигом КАК ОборотыСоСдвигом
+		ЛЕВОЕ СОЕДИНЕНИЕ РазностиДатСМаксимальнойДатой КАК РазностиДат
+		ПО ОборотыСоСдвигом.Календарь = РазностиДат.Календарь
+			И ОборотыСоСдвигом.Сдвиг = РазностиДат.КоличествоДней
+			И ОборотыСоСдвигом.Период = РазностиДат.ДатаНачала
+
+СГРУППИРОВАТЬ ПО
+	ОборотыСоСдвигом.АналитикаУчетаПоПартнерам,
+	ОборотыСоСдвигом.Период,
+	ОборотыСоСдвигом.ДатаРегистратора,
+	ОборотыСоСдвигом.Регистратор,
+	ОборотыСоСдвигом.Соглашение,
+	ОборотыСоСдвигом.Календарь,
+	ОборотыСоСдвигом.Сдвиг,
+	ОборотыСоСдвигом.Склад,
+	ЕСТЬNULL(РазностиДат.ДатаОкончания, ВЫБОР
+			КОГДА ОборотыСоСдвигом.ДатаПлатежа = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА ДОБАВИТЬКДАТЕ(ОборотыСоСдвигом.Период, ДЕНЬ, ОборотыСоСдвигом.Сдвиг)
+			ИНАЧЕ ОборотыСоСдвигом.ДатаПлатежа
+		КОНЕЦ)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ОборотыРазвернуто.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	ОборотыРазвернуто.ДатаПлатежа КАК Период,
+	СУММА(ОборотыРазвернуто.СуммаОборот) КАК СуммаОборот
+ПОМЕСТИТЬ Обороты
+ИЗ
+	ОборотыРазвернуто КАК ОборотыРазвернуто
+
+СГРУППИРОВАТЬ ПО
+	ОборотыРазвернуто.АналитикаУчетаПоПартнерам,
+	ОборотыРазвернуто.ДатаПлатежа
 
 ИНДЕКСИРОВАТЬ ПО
-	Обороты.ДоговорКонтрагента,
+	ОборотыРазвернуто.АналитикаУчетаПоПартнерам,
 	Период
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
-	Шаг.ДоговорКонтрагента,
-	Шаг.Край,
-	Шаг.Долг,
-	ЕСТЬNULL(СУММА(Обороты.СуммаВзаиморасчетовОборот), 0) КАК ПолуСумма,
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Шаг.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	Шаг.Край КАК Край,
+	Шаг.Долг КАК Долг,
+	ЕСТЬNULL(СУММА(Обороты.СуммаОборот), 0) КАК ПолуСумма,
 	ВЫБОР
-		КОГДА Шаг.Долг &gt; ЕСТЬNULL(СУММА(Обороты.СуммаВзаиморасчетовОборот), 0)
+		КОГДА Шаг.Долг &gt; ЕСТЬNULL(СУММА(Обороты.СуммаОборот), 0)
 			ТОГДА -1
 		ИНАЧЕ 0
 	КОНЕЦ КАК Сдвиг
 ПОМЕСТИТЬ Шаг1
 ИЗ
 	(ВЫБРАТЬ
-		Шаг.ДоговорКонтрагента КАК ДоговорКонтрагента,
+		Шаг.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
 		Шаг.Долг + Шаг.Сдвиг * Шаг.ПолуСумма КАК Долг,
 		ДОБАВИТЬКДАТЕ(Шаг.Край, СЕКУНДА, 536870912 * (Шаг.Сдвиг - 0.5) + 1) КАК Центр,
 		ДОБАВИТЬКДАТЕ(Шаг.Край, СЕКУНДА, 536870912 * Шаг.Сдвиг) КАК Край
 	ИЗ
 		Шаг536870912 КАК Шаг) КАК Шаг
 		ЛЕВОЕ СОЕДИНЕНИЕ Обороты КАК Обороты
-		ПО Шаг.ДоговорКонтрагента = Обороты.ДоговорКонтрагента
+		ПО Шаг.АналитикаУчетаПоПартнерам = Обороты.АналитикаУчетаПоПартнерам
 			И (Обороты.Период МЕЖДУ Шаг.Центр И Шаг.Край)
 
 СГРУППИРОВАТЬ ПО
-	Шаг.ДоговорКонтрагента,
-	Шаг.Край,
-	Шаг.Долг
-;
-
-////////////////////////////////////////////////////////////////////////////////
-ВЫБРАТЬ
-	Шаг.ДоговорКонтрагента,
-	Шаг.Край,
-	Шаг.Долг,
-	ЕСТЬNULL(СУММА(Обороты.СуммаВзаиморасчетовОборот), 0) КАК Сумма
-ПОМЕСТИТЬ Шаг0
-ИЗ
-	(ВЫБРАТЬ
-		Шаг.ДоговорКонтрагента КАК ДоговорКонтрагента,
-		Шаг.Долг + Шаг.Сдвиг * Шаг.ПолуСумма КАК Долг,
-		ДОБАВИТЬКДАТЕ(Шаг.Край, СЕКУНДА, Шаг.Сдвиг) КАК Край
-	ИЗ
-		Шаг1 КАК Шаг) КАК Шаг
-		ЛЕВОЕ СОЕДИНЕНИЕ Обороты КАК Обороты
-		ПО Шаг.ДоговорКонтрагента = Обороты.ДоговорКонтрагента
-			И (Обороты.Период = Шаг.Край)
-
-СГРУППИРОВАТЬ ПО
-	Шаг.ДоговорКонтрагента,
+	Шаг.АналитикаУчетаПоПартнерам,
 	Шаг.Край,
 	Шаг.Долг
 ;
 
 ////////////////////////////////////////////////////////////////////////////////
 ВЫБРАТЬ РАЗРЕШЕННЫЕ
-	Шаг.ДоговорКонтрагента.Организация КАК Организация,
-	Шаг.ДоговорКонтрагента.Владелец КАК Контрагент,
-	Шаг.ДоговорКонтрагента КАК ДоговорКонтрагента,
-	Обороты.Период КАК Период,
+	Шаг.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	Шаг.Край КАК Край,
+	Шаг.Долг КАК Долг,
+	ЕСТЬNULL(СУММА(Обороты.СуммаОборот), 0) КАК Сумма
+ПОМЕСТИТЬ Шаг0
+ИЗ
+	(ВЫБРАТЬ
+		Шаг.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+		Шаг.Долг + Шаг.Сдвиг * Шаг.ПолуСумма КАК Долг,
+		ДОБАВИТЬКДАТЕ(Шаг.Край, СЕКУНДА, Шаг.Сдвиг) КАК Край
+	ИЗ
+		Шаг1 КАК Шаг) КАК Шаг
+		ЛЕВОЕ СОЕДИНЕНИЕ Обороты КАК Обороты
+		ПО Шаг.АналитикаУчетаПоПартнерам = Обороты.АналитикаУчетаПоПартнерам
+			И (Обороты.Период = Шаг.Край)
+
+СГРУППИРОВАТЬ ПО
+	Шаг.АналитикаУчетаПоПартнерам,
+	Шаг.Край,
+	Шаг.Долг
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Обороты.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	Обороты.АналитикаУчетаПоПартнерам.Организация КАК Организация,
+	Обороты.АналитикаУчетаПоПартнерам.Партнер КАК Партнер,
+	Обороты.АналитикаУчетаПоПартнерам.Контрагент КАК Контрагент,
+	Обороты.АналитикаУчетаПоПартнерам.Договор КАК Договор,
+	Обороты.Регистратор КАК Регистратор,
+	Обороты.Соглашение КАК Соглашение,
+	Обороты.Склад КАК Склад,
+	Обороты.Сдвиг КАК Сдвиг,
+	Обороты.Календарь КАК Календарь,
+	Обороты.ДатаРегистратора КАК ДатаРегистратора,
+	Обороты.ДатаПлатежа КАК Период,
+	СУММА(Обороты.СуммаОборот) КАК СуммаОборот
+ПОМЕСТИТЬ ОборотыКрай
+ИЗ
+	ОборотыРазвернуто КАК Обороты
+
+СГРУППИРОВАТЬ ПО
+	Обороты.АналитикаУчетаПоПартнерам,
+	Обороты.АналитикаУчетаПоПартнерам.Организация,
+	Обороты.АналитикаУчетаПоПартнерам.Партнер,
+	Обороты.АналитикаУчетаПоПартнерам.Контрагент,
+	Обороты.АналитикаУчетаПоПартнерам.Договор,
+	Обороты.Регистратор,
+	Обороты.Соглашение,
+	Обороты.Склад,
+	Обороты.Сдвиг,
+	Обороты.Календарь,
+	Обороты.ДатаРегистратора,
+	Обороты.ДатаПлатежа
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	&amp;СтрокаСостояниеВзаиморасчетов КАК ГруппировкаВсего,
+	Обороты.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	Обороты.Организация КАК Организация,
+	Обороты.Партнер КАК Партнер,
+	Обороты.Контрагент КАК Контрагент,
+	Обороты.Договор КАК Договор,
+	Обороты.Склад КАК Склад,
+	Обороты.Соглашение КАК Соглашение,
+	"С клиентом" КАК ТипСоглашения,
+	Обороты.Период КАК ДатаПлатежа,
+	Обороты.ДатаРегистратора КАК ДатаРегистратора,
 	Обороты.Регистратор КАК Регистратор,
 	ВЫБОР
 		КОГДА Обороты.Период = Шаг.Край
-			ТОГДА Шаг.Долг * Обороты.СуммаВзаиморасчетовОборот / Шаг.Сумма
-		ИНАЧЕ Обороты.СуммаВзаиморасчетовОборот
+			ТОГДА Шаг.Долг * Обороты.СуммаОборот / Шаг.Сумма
+		ИНАЧЕ Обороты.СуммаОборот
 	КОНЕЦ КАК Долг,
-	РАЗНОСТЬДАТ(Обороты.Период, &amp;Дата, ДЕНЬ) КАК Долгота
-{ВЫБРАТЬ
-	Организация.*,
-	Контрагент.*,
-	ДоговорКонтрагента.*,
-	Период,
-	Регистратор.*,
-	Долг,
-	Долгота}
+	0 КАК НашДолг,
+	РАЗНОСТЬДАТ(Обороты.ДатаРегистратора, &amp;Дата, ДЕНЬ) КАК СрокЗадолженностиДней,
+	Обороты.Сдвиг КАК ОтсрочкаДней,
+	Обороты.Календарь КАК Календарь,
+	РАЗНОСТЬДАТ(Обороты.Период, &amp;Дата, ДЕНЬ) КАК ЗадержкаДней,
+	ВЫБОР
+		КОГДА &amp;ЭтоАнализДебиторки
+				И РАЗНОСТЬДАТ(Обороты.Период, &amp;Дата, ДЕНЬ) &gt; 0
+			ТОГДА ВЫБОР
+					КОГДА Обороты.Период = Шаг.Край
+						ТОГДА Шаг.Долг * Обороты.СуммаОборот / Шаг.Сумма
+					ИНАЧЕ Обороты.СуммаОборот
+				КОНЕЦ
+		ИНАЧЕ 0
+	КОНЕЦ КАК Просрочено,
+	ЕСТЬNULL(Интервалы.НаименованиеИнтервала, &amp;СтрокаДолгНеПросрочен) КАК НаименованиеИнтервала,
+	ЕСТЬNULL(Интервалы.НомерСтроки, 0) КАК НомерИнтервала,
+	ЕСТЬNULL(Интервалы.НижняяГраницаИнтервала, 0) КАК НижняяГраницаИнтервала,
+	ЕСТЬNULL(ПартнерыСегмента.Сегмент, НЕОПРЕДЕЛЕНО) КАК ВходитВСегмент
 ИЗ
 	Шаг0 КАК Шаг
-		ВНУТРЕННЕЕ СОЕДИНЕНИЕ РегистрНакопления.ВзаиморасчетыСКонтрагентами.Обороты(
-				,
-				&amp;Дата,
-				Регистратор,
-				ДоговорКонтрагента В
-					(ВЫБРАТЬ
-						Шаг.ДоговорКонтрагента
-					ИЗ
-						Шаг0 КАК Шаг)) КАК Обороты
-		ПО Шаг.ДоговорКонтрагента = Обороты.ДоговорКонтрагента
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ОборотыКрай КАК Обороты
+			ЛЕВОЕ СОЕДИНЕНИЕ Справочник.ВариантыКлассификацииЗадолженности.Интервалы КАК Интервалы
+			ПО (&amp;ЭтоАнализДебиторки)
+				И (Интервалы.Ссылка = &amp;ВариантКлассификацииЗадолженности)
+				И (РАЗНОСТЬДАТ(Обороты.Период, &amp;Дата, ДЕНЬ) МЕЖДУ Интервалы.НижняяГраницаИнтервала И Интервалы.ВерхняяГраницаИнтервала)
+		ПО Шаг.АналитикаУчетаПоПартнерам = Обороты.АналитикаУчетаПоПартнерам
 			И Шаг.Край &lt;= Обороты.Период
-ГДЕ
-	Обороты.СуммаВзаиморасчетовОборот &gt; 0
+		{ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ПартнерыСегмента КАК ПартнерыСегмента
+		ПО (Обороты.Партнер = ПартнерыСегмента.Партнер)
+			И (ПартнерыСегмента.Сегмент В (&amp;Сегмент))}
 {ГДЕ
-	Обороты.Период,
-	Обороты.Регистратор,
+	Обороты.Склад.*,
+	(ВЫРАЗИТЬ(Обороты.Соглашение КАК Справочник.СоглашенияСКлиентами)).* КАК СоглашениеОтбор,
+	("С клиентом") КАК ТипСоглашения,
 	(ВЫБОР
 			КОГДА Обороты.Период = Шаг.Край
-				ТОГДА Шаг.Долг * Обороты.СуммаВзаиморасчетовОборот / Шаг.Сумма
-			ИНАЧЕ Обороты.СуммаВзаиморасчетовОборот
+				ТОГДА Шаг.Долг * Обороты.СуммаОборот / Шаг.Сумма
+			ИНАЧЕ Обороты.СуммаОборот
 		КОНЕЦ) КАК Долг,
-	(РАЗНОСТЬДАТ(Обороты.Период, &amp;Дата, ДЕНЬ)) КАК Долгота}</query>
-			<autoFillFields>false</autoFillFields>
+	(0) КАК НашДолг,
+	(РАЗНОСТЬДАТ(Обороты.ДатаРегистратора, &amp;Дата, ДЕНЬ)) КАК СрокЗадолженностиДней,
+	Обороты.Сдвиг КАК ОтсрочкаДней,
+	Обороты.Календарь КАК Календарь,
+	(РАЗНОСТЬДАТ(Обороты.Период, &amp;Дата, ДЕНЬ)) КАК ЗадержкаДней,
+	(ВЫБОР
+			КОГДА &amp;ЭтоАнализДебиторки
+					И РАЗНОСТЬДАТ(Обороты.Период, &amp;Дата, ДЕНЬ) &gt; 0
+				ТОГДА ВЫБОР
+						КОГДА Обороты.Период = Шаг.Край
+							ТОГДА Шаг.Долг * Обороты.СуммаОборот / Шаг.Сумма
+						ИНАЧЕ Обороты.СуммаОборот
+					КОНЕЦ
+			ИНАЧЕ 0
+		КОНЕЦ) КАК Просрочено}</query>
+			</item>
+			<item xsi:type="DataSetQuery">
+				<name>НаборДанных3</name>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ЗаказКлиента</dataPath>
+					<field>ЗаказКлиента</field>
+					<useRestriction>
+						<condition>true</condition>
+					</useRestriction>
+					<attributeUseRestriction>
+						<condition>true</condition>
+					</attributeUseRestriction>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ГруппировкаВсего</dataPath>
+					<field>ГруппировкаВсего</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Группировка всего</d6p1:content>
+						</d6p1:item>
+					</title>
+					<useRestriction>
+						<condition>true</condition>
+					</useRestriction>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>АналитикаУчетаПоПартнерам</dataPath>
+					<field>АналитикаУчетаПоПартнерам</field>
+					<useRestriction>
+						<field>true</field>
+						<condition>true</condition>
+						<group>true</group>
+						<order>true</order>
+					</useRestriction>
+					<attributeUseRestriction>
+						<field>true</field>
+						<condition>true</condition>
+						<group>true</group>
+						<order>true</order>
+					</attributeUseRestriction>
+					<role>
+						<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
+					</role>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>НомерИнтервала</dataPath>
+					<field>НомерИнтервала</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Номер интервала</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>СрокЗадолженностиДней</dataPath>
+					<field>СрокЗадолженностиДней</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Срок задолженности дней</d6p1:content>
+						</d6p1:item>
+					</title>
+					<role>
+						<periodNumber xmlns="http://v8.1c.ru/8.1/data-composition-system/common">3</periodNumber>
+						<periodType xmlns="http://v8.1c.ru/8.1/data-composition-system/common">Main</periodType>
+					</role>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Просрочено</dataPath>
+					<field>Просрочено</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Просрочено</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ЗадержкаДней</dataPath>
+					<field>ЗадержкаДней</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Задержка дней</d6p1:content>
+						</d6p1:item>
+					</title>
+					<role>
+						<periodNumber xmlns="http://v8.1c.ru/8.1/data-composition-system/common">5</periodNumber>
+						<periodType xmlns="http://v8.1c.ru/8.1/data-composition-system/common">Main</periodType>
+					</role>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Контрагент</dataPath>
+					<field>Контрагент</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Контрагент</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>НижняяГраницаИнтервала</dataPath>
+					<field>НижняяГраницаИнтервала</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Нижняя граница интервала</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Партнер</dataPath>
+					<field>Партнер</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Партнер</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Организация</dataPath>
+					<field>Организация</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Организация</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ДатаРегистратора</dataPath>
+					<field>ДатаРегистратора</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Дата регистратора</d6p1:content>
+						</d6p1:item>
+					</title>
+					<useRestriction>
+						<condition>true</condition>
+					</useRestriction>
+					<role>
+						<periodNumber xmlns="http://v8.1c.ru/8.1/data-composition-system/common">2</periodNumber>
+						<periodType xmlns="http://v8.1c.ru/8.1/data-composition-system/common">Main</periodType>
+					</role>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Регистратор</dataPath>
+					<field>Регистратор</field>
+					<useRestriction>
+						<condition>true</condition>
+					</useRestriction>
+					<attributeUseRestriction>
+						<condition>true</condition>
+					</attributeUseRestriction>
+					<role>
+						<periodNumber xmlns="http://v8.1c.ru/8.1/data-composition-system/common">1</periodNumber>
+						<periodType xmlns="http://v8.1c.ru/8.1/data-composition-system/common">Main</periodType>
+					</role>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>НаименованиеИнтервала</dataPath>
+					<field>НаименованиеИнтервала</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Наименование интервала</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Валюта</dataPath>
+					<field>Валюта</field>
+					<useRestriction>
+						<condition>true</condition>
+					</useRestriction>
+					<attributeUseRestriction>
+						<condition>true</condition>
+					</attributeUseRestriction>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ОтсрочкаДней</dataPath>
+					<field>ОтсрочкаДней</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Отсрочка дней</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ДатаПлатежа</dataPath>
+					<field>ДатаПлатежа</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Дата платежа</d6p1:content>
+						</d6p1:item>
+					</title>
+					<role>
+						<periodNumber xmlns="http://v8.1c.ru/8.1/data-composition-system/common">4</periodNumber>
+						<periodType xmlns="http://v8.1c.ru/8.1/data-composition-system/common">Main</periodType>
+					</role>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Договор</dataPath>
+					<field>Договор</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Договор</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>НашДолг</dataPath>
+					<field>НашДолг</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Наш долг</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Долг</dataPath>
+					<field>Долг</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Долг</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Соглашение</dataPath>
+					<field>Соглашение</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Соглашение</d6p1:content>
+						</d6p1:item>
+					</title>
+					<useRestriction>
+						<condition>true</condition>
+					</useRestriction>
+					<attributeUseRestriction>
+						<condition>true</condition>
+					</attributeUseRestriction>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ТипСоглашения</dataPath>
+					<field>ТипСоглашения</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Тип соглашения</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Склад</dataPath>
+					<field>Склад</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Склад</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ВходитВСегмент</dataPath>
+					<field>ВходитВСегмент</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Входит в сегмент</d6p1:content>
+						</d6p1:item>
+					</title>
+					<useRestriction>
+						<condition>true</condition>
+					</useRestriction>
+					<attributeUseRestriction>
+						<condition>true</condition>
+					</attributeUseRestriction>
+					<role>
+						<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
+					</role>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>СоглашениеОтбор</dataPath>
+					<field>СоглашениеОтбор</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Соглашение отбор</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>СегментПартнеров</dataPath>
+					<field>СегментПартнеров</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Сегмент партнеров</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Календарь</dataPath>
+					<field>Календарь</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Календарь</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<dataSource>ИсточникДанных1</dataSource>
+				<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
+	Сегменты.Партнер КАК Партнер,
+	ИСТИНА КАК ИспользуетсяОтборПоСегментуПартнеров
+ПОМЕСТИТЬ ОтборПоСегментуПартнеров
+ИЗ
+	РегистрСведений.ПартнерыСегмента КАК Сегменты
+{ГДЕ
+	Сегменты.Сегмент.* КАК СегментПартнеров,
+	Сегменты.Партнер.* КАК Партнер}
+
+ИНДЕКСИРОВАТЬ ПО
+	Партнер,
+	ИспользуетсяОтборПоСегментуПартнеров
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Остатки.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	ДОБАВИТЬКДАТЕ(&amp;Дата, ГОД, 5) КАК Край,
+	СУММА(-Остатки.СуммаОстаток) КАК Долг,
+	СУММА(0) КАК ПолуСумма,
+	СУММА(0) КАК Сдвиг
+ПОМЕСТИТЬ Шаг536870912
+ИЗ
+	РегистрНакопления.РасчетыСКлиентами.Остатки(ДОБАВИТЬКДАТЕ(&amp;Дата, СЕКУНДА, 1), {(АналитикаУчетаПоПартнерам.Организация).* КАК Организация, (АналитикаУчетаПоПартнерам.Партнер).* КАК Партнер, (АналитикаУчетаПоПартнерам.Контрагент).* КАК Контрагент, (АналитикаУчетаПоПартнерам.Договор).* КАК Договор, (АналитикаУчетаПоПартнерам.Партнер В
+			    (ВЫБРАТЬ
+			        ОтборПоСегментуПартнеров.Партнер
+			    ИЗ
+			        ОтборПоСегментуПартнеров
+			    ГДЕ
+			        ОтборПоСегментуПартнеров.ИспользуетсяОтборПоСегментуПартнеров = &amp;ИспользуетсяОтборПоСегментуПартнеров))}) КАК Остатки
+
+СГРУППИРОВАТЬ ПО
+	Остатки.АналитикаУчетаПоПартнерам
+
+ИМЕЮЩИЕ
+	СУММА(Остатки.СуммаОстаток) &lt; 0
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	РасчетыСКлиентами.Регистратор КАК Регистратор,
+	РасчетыСКлиентами.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	РасчетыСКлиентами.ЗаказКлиента КАК ЗаказКлиента,
+	РасчетыСКлиентами.Валюта КАК Валюта,
+	ВЫБОР КОГДА РасчетыСКлиентами.ДатаПлатежа &lt;= ДОБАВИТЬКДАТЕ(&amp;Дата, СЕКУНДА, -536870912)
+			ТОГДА РасчетыСКлиентами.Период
+		ИНАЧЕ РасчетыСКлиентами.ДатаПлатежа
+	КОНЕЦ КАК ДатаПлатежа,
+	СУММА(ВЫБОР
+			КОГДА РасчетыСКлиентами.Сумма &lt; 0
+				ТОГДА -1 * РасчетыСКлиентами.Сумма
+			ИНАЧЕ РасчетыСКлиентами.Сумма
+		КОНЕЦ) КАК Сумма
+ПОМЕСТИТЬ ДатыПлатежейПоВводамОстатков
+ИЗ
+	РегистрНакопления.РасчетыСКлиентами КАК РасчетыСКлиентами
+ГДЕ
+	РасчетыСКлиентами.АналитикаУчетаПоПартнерам В
+			(ВЫБРАТЬ
+				Шаг.АналитикаУчетаПоПартнерам
+			ИЗ
+				Шаг536870912 КАК Шаг)
+	//И РасчетыСКлиентами.Регистратор ССЫЛКА Документ.ВводОстатков
+	И РасчетыСКлиентами.Активность
+	И РасчетыСКлиентами.ДатаПлатежа &lt;&gt; ДАТАВРЕМЯ(1,1,1)
+	И ((РасчетыСКлиентами.Сумма &gt; 0
+				И РасчетыСКлиентами.ВидДвижения = &amp;Приход)
+			ИЛИ (РасчетыСКлиентами.Сумма &lt; 0
+				И РасчетыСКлиентами.ВидДвижения = &amp;Расход))
+
+СГРУППИРОВАТЬ ПО
+	РасчетыСКлиентами.Регистратор,
+	ВЫБОР КОГДА РасчетыСКлиентами.ДатаПлатежа &lt;= ДОБАВИТЬКДАТЕ(&amp;Дата, СЕКУНДА, -536870912)
+			ТОГДА РасчетыСКлиентами.Период
+		ИНАЧЕ РасчетыСКлиентами.ДатаПлатежа
+	КОНЕЦ,
+	РасчетыСКлиентами.АналитикаУчетаПоПартнерам,
+	РасчетыСКлиентами.ЗаказКлиента,
+	РасчетыСКлиентами.Валюта
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Обороты.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	Обороты.ЗаказКлиента КАК ЗаказКлиента,
+	Обороты.Валюта КАК Валюта,
+	Обороты.Период КАК Период,
+	Обороты.Регистратор КАК Регистратор,
+	-Обороты.СуммаОборот КАК СуммаОборот
+ПОМЕСТИТЬ ВсеОборотыПоДолгам
+ИЗ
+	РегистрНакопления.РасчетыСКлиентами.Обороты(
+			,
+			&amp;Дата,
+			Регистратор,
+			АналитикаУчетаПоПартнерам В
+				(ВЫБРАТЬ
+					Шаг.АналитикаУчетаПоПартнерам
+				ИЗ
+					Шаг536870912 КАК Шаг)) КАК Обороты
+ГДЕ
+	Обороты.СуммаОборот &lt; 0
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Обороты.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	Обороты.Период КАК Период,
+	Обороты.Период КАК ДатаРегистратора,
+	Обороты.Регистратор КАК Регистратор,
+	ВЫБОР
+		КОГДА Обороты.Регистратор ССЫЛКА Документ.РеализацияТоваровУслуг ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).Соглашение
+		КОГДА Обороты.ЗаказКлиента ССЫЛКА Документ.РеализацияТоваровУслуг ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).Соглашение
+		КОГДА Обороты.ЗаказКлиента ССЫЛКА Документ.ЗаказКлиента ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ЗаказКлиента).Соглашение
+	    ИНАЧЕ НЕОПРЕДЕЛЕНО
+	КОНЕЦ КАК Соглашение,
+	ВЫБОР
+		КОГДА Обороты.Регистратор ССЫЛКА Документ.РеализацияТоваровУслуг ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).Склад
+		КОГДА Обороты.Регистратор ССЫЛКА Документ.ВводОстатков ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ВводОстатков).Склад
+		КОГДА Обороты.ЗаказКлиента ССЫЛКА Документ.РеализацияТоваровУслуг ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).Склад
+		КОГДА Обороты.ЗаказКлиента ССЫЛКА Документ.ЗаказКлиента ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ЗаказКлиента).Склад
+	    ИНАЧЕ НЕОПРЕДЕЛЕНО
+	КОНЕЦ КАК Склад,
+	ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.ДатаПлатежа, Обороты.Период) КАК ДатаПлатежа,
+	СУММА(ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.Сумма, Обороты.СуммаОборот)) КАК СуммаОборот
+ПОМЕСТИТЬ ОборотыБезРазбиенияНаЭтапы
+ИЗ
+	ВсеОборотыПоДолгам КАК Обороты
+		ЛЕВОЕ СОЕДИНЕНИЕ ДатыПлатежейПоВводамОстатков КАК ДатыПлатежейПоВводамОстатков
+		ПО Обороты.Регистратор = ДатыПлатежейПоВводамОстатков.Регистратор
+			И Обороты.АналитикаУчетаПоПартнерам = ДатыПлатежейПоВводамОстатков.АналитикаУчетаПоПартнерам
+			И Обороты.ЗаказКлиента = ДатыПлатежейПоВводамОстатков.ЗаказКлиента
+			И Обороты.Валюта = ДатыПлатежейПоВводамОстатков.Валюта
+
+СГРУППИРОВАТЬ ПО
+	Обороты.АналитикаУчетаПоПартнерам,
+	Обороты.Период,
+	НАЧАЛОПЕРИОДА(Обороты.Период, ДЕНЬ),
+	Обороты.Регистратор,
+	ВЫБОР
+		КОГДА Обороты.Регистратор ССЫЛКА Документ.РеализацияТоваровУслуг ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).Соглашение
+		КОГДА Обороты.ЗаказКлиента ССЫЛКА Документ.РеализацияТоваровУслуг ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).Соглашение
+		КОГДА Обороты.ЗаказКлиента ССЫЛКА Документ.ЗаказКлиента ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ЗаказКлиента).Соглашение
+	    ИНАЧЕ НЕОПРЕДЕЛЕНО
+	КОНЕЦ,
+	ВЫБОР
+		КОГДА Обороты.Регистратор ССЫЛКА Документ.РеализацияТоваровУслуг ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).Склад
+		КОГДА Обороты.Регистратор ССЫЛКА Документ.ВводОстатков ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ВводОстатков).Склад
+		КОГДА Обороты.ЗаказКлиента ССЫЛКА Документ.РеализацияТоваровУслуг ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).Склад
+		КОГДА Обороты.ЗаказКлиента ССЫЛКА Документ.ЗаказКлиента ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ЗаказКлиента).Склад
+	    ИНАЧЕ НЕОПРЕДЕЛЕНО
+	КОНЕЦ,
+	ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.ДатаПлатежа, Обороты.Период),
+	Обороты.Период
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Обороты.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	Обороты.ДатаПлатежа КАК Период,
+	СУММА(Обороты.СуммаОборот) КАК СуммаОборот
+ПОМЕСТИТЬ Обороты
+ИЗ
+	ОборотыБезРазбиенияНаЭтапы КАК Обороты
+
+СГРУППИРОВАТЬ ПО
+	Обороты.АналитикаУчетаПоПартнерам,
+	Обороты.ДатаПлатежа
+
+ИНДЕКСИРОВАТЬ ПО
+	Обороты.АналитикаУчетаПоПартнерам,
+	Период
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Шаг.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	Шаг.Край КАК Край,
+	Шаг.Долг КАК Долг,
+	ЕСТЬNULL(СУММА(Обороты.СуммаОборот), 0) КАК ПолуСумма,
+	ВЫБОР
+		КОГДА Шаг.Долг &gt; ЕСТЬNULL(СУММА(Обороты.СуммаОборот), 0)
+			ТОГДА -1
+		ИНАЧЕ 0
+	КОНЕЦ КАК Сдвиг
+ПОМЕСТИТЬ Шаг1
+ИЗ
+	(ВЫБРАТЬ
+		Шаг.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+		Шаг.Долг + Шаг.Сдвиг * Шаг.ПолуСумма КАК Долг,
+		ДОБАВИТЬКДАТЕ(Шаг.Край, СЕКУНДА, 536870912 * (Шаг.Сдвиг - 0.5) + 1) КАК Центр,
+		ДОБАВИТЬКДАТЕ(Шаг.Край, СЕКУНДА, 536870912 * Шаг.Сдвиг) КАК Край
+	ИЗ
+		Шаг536870912 КАК Шаг) КАК Шаг
+		ЛЕВОЕ СОЕДИНЕНИЕ Обороты КАК Обороты
+		ПО Шаг.АналитикаУчетаПоПартнерам = Обороты.АналитикаУчетаПоПартнерам
+			И (Обороты.Период МЕЖДУ Шаг.Центр И Шаг.Край)
+
+СГРУППИРОВАТЬ ПО
+	Шаг.АналитикаУчетаПоПартнерам,
+	Шаг.Край,
+	Шаг.Долг
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Шаг.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	Шаг.Край КАК Край,
+	Шаг.Долг КАК Долг,
+	ЕСТЬNULL(СУММА(Обороты.СуммаОборот), 0) КАК Сумма
+ПОМЕСТИТЬ Шаг0
+ИЗ
+	(ВЫБРАТЬ
+		Шаг.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+		Шаг.Долг + Шаг.Сдвиг * Шаг.ПолуСумма КАК Долг,
+		ДОБАВИТЬКДАТЕ(Шаг.Край, СЕКУНДА, Шаг.Сдвиг) КАК Край
+	ИЗ
+		Шаг1 КАК Шаг) КАК Шаг
+		ЛЕВОЕ СОЕДИНЕНИЕ Обороты КАК Обороты
+		ПО Шаг.АналитикаУчетаПоПартнерам = Обороты.АналитикаУчетаПоПартнерам
+			И (Обороты.Период = Шаг.Край)
+
+СГРУППИРОВАТЬ ПО
+	Шаг.АналитикаУчетаПоПартнерам,
+	Шаг.Край,
+	Шаг.Долг
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Обороты.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	Обороты.АналитикаУчетаПоПартнерам.Организация КАК Организация,
+	Обороты.АналитикаУчетаПоПартнерам.Партнер КАК Партнер,
+	Обороты.АналитикаУчетаПоПартнерам.Контрагент КАК Контрагент,
+	Обороты.АналитикаУчетаПоПартнерам.Договор КАК Договор,
+	Обороты.Регистратор КАК Регистратор,
+	Обороты.Соглашение КАК Соглашение,
+	Обороты.Склад КАК Склад,
+	Обороты.ДатаРегистратора КАК ДатаРегистратора,
+	Обороты.ДатаПлатежа КАК Период,
+	0 КАК Сдвиг,
+	СУММА(Обороты.СуммаОборот) КАК СуммаОборот
+ПОМЕСТИТЬ ОборотыКрай
+ИЗ
+	ОборотыБезРазбиенияНаЭтапы КАК Обороты
+
+СГРУППИРОВАТЬ ПО
+	Обороты.АналитикаУчетаПоПартнерам,
+	Обороты.АналитикаУчетаПоПартнерам.Организация,
+	Обороты.АналитикаУчетаПоПартнерам.Партнер,
+	Обороты.АналитикаУчетаПоПартнерам.Контрагент,
+	Обороты.АналитикаУчетаПоПартнерам.Договор,
+	Обороты.Регистратор,
+	Обороты.Соглашение,
+	Обороты.Склад,
+	Обороты.ДатаПлатежа,
+	Обороты.ДатаРегистратора
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	&amp;СтрокаСостояниеВзаиморасчетов КАК ГруппировкаВсего,
+	Обороты.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	Обороты.Организация КАК Организация,
+	Обороты.Партнер КАК Партнер,
+	Обороты.Контрагент КАК Контрагент,
+	Обороты.Договор КАК Договор,
+	Обороты.Склад КАК Склад,
+	Обороты.Соглашение КАК Соглашение,
+	"С клиентом" КАК ТипСоглашения,
+	Обороты.Период КАК ДатаПлатежа,
+	Обороты.ДатаРегистратора КАК ДатаРегистратора,
+	Обороты.Регистратор КАК Регистратор,
+	ВЫБОР
+		КОГДА Обороты.Период = Шаг.Край
+			ТОГДА Шаг.Долг * Обороты.СуммаОборот / Шаг.Сумма
+		ИНАЧЕ Обороты.СуммаОборот
+	КОНЕЦ КАК НашДолг,
+	0 КАК Долг,
+	РАЗНОСТЬДАТ(Обороты.ДатаРегистратора, &amp;Дата, ДЕНЬ) КАК СрокЗадолженностиДней,
+	Обороты.Сдвиг КАК ОтсрочкаДней,
+	НЕОПРЕДЕЛЕНО КАК Календарь,
+	РАЗНОСТЬДАТ(Обороты.Период, &amp;Дата, ДЕНЬ) КАК ЗадержкаДней,
+	ВЫБОР
+		КОГДА НЕ &amp;ЭтоАнализДебиторки И РАЗНОСТЬДАТ(Обороты.Период, &amp;Дата, ДЕНЬ) &gt; 0
+			ТОГДА ВЫБОР
+					КОГДА Обороты.Период = Шаг.Край
+						ТОГДА Шаг.Долг * Обороты.СуммаОборот / Шаг.Сумма
+					ИНАЧЕ Обороты.СуммаОборот
+				КОНЕЦ
+		ИНАЧЕ 0
+	КОНЕЦ КАК Просрочено,
+	ЕСТЬNULL(Интервалы.НаименованиеИнтервала, &amp;СтрокаДолгНеПросрочен) КАК НаименованиеИнтервала,
+	ЕСТЬNULL(Интервалы.НомерСтроки, 0) КАК НомерИнтервала,
+	ЕСТЬNULL(Интервалы.НижняяГраницаИнтервала, 0) КАК НижняяГраницаИнтервала,
+	ЕСТЬNULL(ПартнерыСегмента.Сегмент, НЕОПРЕДЕЛЕНО) КАК ВходитВСегмент
+ИЗ
+	Шаг0 КАК Шаг
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ОборотыКрай КАК Обороты
+			ЛЕВОЕ СОЕДИНЕНИЕ Справочник.ВариантыКлассификацииЗадолженности.Интервалы КАК Интервалы
+			ПО (НЕ &amp;ЭтоАнализДебиторки И Интервалы.Ссылка = &amp;ВариантКлассификацииЗадолженности)
+				И (РАЗНОСТЬДАТ(Обороты.Период, &amp;Дата, ДЕНЬ) МЕЖДУ Интервалы.НижняяГраницаИнтервала И Интервалы.ВерхняяГраницаИнтервала)
+		ПО Шаг.АналитикаУчетаПоПартнерам = Обороты.АналитикаУчетаПоПартнерам
+			И Шаг.Край &lt;= Обороты.Период
+		{ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ПартнерыСегмента КАК ПартнерыСегмента
+		ПО (Обороты.Партнер = ПартнерыСегмента.Партнер)
+			И (ПартнерыСегмента.Сегмент В (&amp;Сегмент))}
+{ГДЕ
+	Обороты.Склад.*,
+	ВЫРАЗИТЬ(Обороты.Соглашение КАК Справочник.СоглашенияСКлиентами).* КАК СоглашениеОтбор,
+	("С клиентом") КАК ТипСоглашения,
+	(ВЫБОР
+			КОГДА Обороты.Период = Шаг.Край
+				ТОГДА Шаг.Долг * Обороты.СуммаОборот / Шаг.Сумма
+			ИНАЧЕ Обороты.СуммаОборот
+		КОНЕЦ) КАК НашДолг,
+	(0) КАК Долг,
+	(РАЗНОСТЬДАТ(Обороты.ДатаРегистратора, &amp;Дата, ДЕНЬ)) КАК СрокЗадолженностиДней,
+	Обороты.Сдвиг КАК ОтсрочкаДней,
+	(РАЗНОСТЬДАТ(Обороты.Период, &amp;Дата, ДЕНЬ)) КАК ЗадержкаДней,
+	(ВЫБОР
+			КОГДА НЕ &amp;ЭтоАнализДебиторки
+					И РАЗНОСТЬДАТ(Обороты.Период, &amp;Дата, ДЕНЬ) &gt; 0
+				ТОГДА ВЫБОР
+						КОГДА Обороты.Период = Шаг.Край
+							ТОГДА Шаг.Долг * Обороты.СуммаОборот / Шаг.Сумма
+						ИНАЧЕ Обороты.СуммаОборот
+					КОНЕЦ
+			ИНАЧЕ 0
+		КОНЕЦ) КАК Просрочено}</query>
+			</item>
+			<item xsi:type="DataSetQuery">
+				<name>НаборДанных2</name>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ГруппировкаВсего</dataPath>
+					<field>ГруппировкаВсего</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Группировка всего</d6p1:content>
+						</d6p1:item>
+					</title>
+					<useRestriction>
+						<condition>true</condition>
+					</useRestriction>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>АналитикаУчетаПоПартнерам</dataPath>
+					<field>АналитикаУчетаПоПартнерам</field>
+					<useRestriction>
+						<field>true</field>
+						<condition>true</condition>
+						<group>true</group>
+						<order>true</order>
+					</useRestriction>
+					<attributeUseRestriction>
+						<field>true</field>
+						<condition>true</condition>
+						<group>true</group>
+						<order>true</order>
+					</attributeUseRestriction>
+					<role>
+						<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
+					</role>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>НомерИнтервала</dataPath>
+					<field>НомерИнтервала</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Номер интервала</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>СрокЗадолженностиДней</dataPath>
+					<field>СрокЗадолженностиДней</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Срок задолженности дней</d6p1:content>
+						</d6p1:item>
+					</title>
+					<role>
+						<periodNumber xmlns="http://v8.1c.ru/8.1/data-composition-system/common">3</periodNumber>
+						<periodType xmlns="http://v8.1c.ru/8.1/data-composition-system/common">Main</periodType>
+					</role>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Просрочено</dataPath>
+					<field>Просрочено</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Просрочено</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ЗадержкаДней</dataPath>
+					<field>ЗадержкаДней</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Задержка дней</d6p1:content>
+						</d6p1:item>
+					</title>
+					<role>
+						<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
+					</role>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Контрагент</dataPath>
+					<field>Контрагент</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Контрагент</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>НижняяГраницаИнтервала</dataPath>
+					<field>НижняяГраницаИнтервала</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Нижняя граница интервала</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Партнер</dataPath>
+					<field>Партнер</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Партнер</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Организация</dataPath>
+					<field>Организация</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Организация</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ДатаРегистратора</dataPath>
+					<field>ДатаРегистратора</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Дата регистратора</d6p1:content>
+						</d6p1:item>
+					</title>
+					<useRestriction>
+						<field>true</field>
+						<condition>true</condition>
+						<group>true</group>
+						<order>true</order>
+					</useRestriction>
+					<role>
+						<periodNumber xmlns="http://v8.1c.ru/8.1/data-composition-system/common">2</periodNumber>
+						<periodType xmlns="http://v8.1c.ru/8.1/data-composition-system/common">Main</periodType>
+					</role>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Регистратор</dataPath>
+					<field>Регистратор</field>
+					<useRestriction>
+						<field>true</field>
+						<condition>true</condition>
+						<group>true</group>
+						<order>true</order>
+					</useRestriction>
+					<attributeUseRestriction>
+						<field>true</field>
+						<condition>true</condition>
+						<group>true</group>
+						<order>true</order>
+					</attributeUseRestriction>
+					<role>
+						<periodNumber xmlns="http://v8.1c.ru/8.1/data-composition-system/common">1</periodNumber>
+						<periodType xmlns="http://v8.1c.ru/8.1/data-composition-system/common">Main</periodType>
+					</role>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>НаименованиеИнтервала</dataPath>
+					<field>НаименованиеИнтервала</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Наименование интервала</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Валюта</dataPath>
+					<field>Валюта</field>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ОтсрочкаДней</dataPath>
+					<field>ОтсрочкаДней</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Отсрочка дней</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ДатаПлатежа</dataPath>
+					<field>ДатаПлатежа</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Дата платежа</d6p1:content>
+						</d6p1:item>
+					</title>
+					<role>
+						<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
+					</role>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Договор</dataPath>
+					<field>Договор</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Договор</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ЗаказПоставщику</dataPath>
+					<field>ЗаказПоставщику</field>
+					<useRestriction>
+						<condition>true</condition>
+					</useRestriction>
+					<attributeUseRestriction>
+						<condition>true</condition>
+					</attributeUseRestriction>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>НашДолг</dataPath>
+					<field>НашДолг</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Наш долг</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Долг</dataPath>
+					<field>Долг</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Долг</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Соглашение</dataPath>
+					<field>Соглашение</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Соглашение</d6p1:content>
+						</d6p1:item>
+					</title>
+					<useRestriction>
+						<condition>true</condition>
+					</useRestriction>
+					<attributeUseRestriction>
+						<condition>true</condition>
+					</attributeUseRestriction>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ТипСоглашения</dataPath>
+					<field>ТипСоглашения</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Тип соглашения</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Склад</dataPath>
+					<field>Склад</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Склад</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ВходитВСегмент</dataPath>
+					<field>ВходитВСегмент</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Входит в сегмент</d6p1:content>
+						</d6p1:item>
+					</title>
+					<useRestriction>
+						<condition>true</condition>
+					</useRestriction>
+					<attributeUseRestriction>
+						<condition>true</condition>
+					</attributeUseRestriction>
+					<role>
+						<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
+					</role>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>СоглашениеОтбор</dataPath>
+					<field>СоглашениеОтбор</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Соглашение отбор</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>СегментПартнеров</dataPath>
+					<field>СегментПартнеров</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Сегмент партнеров</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Календарь</dataPath>
+					<field>Календарь</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Календарь</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ЗаказКлиента</dataPath>
+					<field>ЗаказКлиента</field>
+				</field>
+				<dataSource>ИсточникДанных1</dataSource>
+				<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
+	Сегменты.Партнер КАК Партнер,
+	ИСТИНА КАК ИспользуетсяОтборПоСегментуПартнеров
+ПОМЕСТИТЬ ОтборПоСегментуПартнеров
+ИЗ
+	РегистрСведений.ПартнерыСегмента КАК Сегменты
+{ГДЕ
+	Сегменты.Сегмент.* КАК СегментПартнеров,
+	Сегменты.Партнер.* КАК Партнер}
+
+ИНДЕКСИРОВАТЬ ПО
+	Партнер,
+	ИспользуетсяОтборПоСегментуПартнеров
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Остатки.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	ДОБАВИТЬКДАТЕ(&amp;Дата, ГОД, 5) КАК Край,
+	СУММА(-Остатки.СуммаОстаток) КАК Долг,
+	СУММА(0) КАК ПолуСумма,
+	СУММА(0) КАК Сдвиг
+ПОМЕСТИТЬ Шаг536870912
+ИЗ
+	РегистрНакопления.РасчетыСКлиентами.Остатки(ДОБАВИТЬКДАТЕ(&amp;Дата, СЕКУНДА, 1), {(АналитикаУчетаПоПартнерам.Организация).* КАК Организация, (АналитикаУчетаПоПартнерам.Партнер).* КАК Партнер, (АналитикаУчетаПоПартнерам.Контрагент).* КАК Контрагент, (АналитикаУчетаПоПартнерам.Договор).* КАК Договор, (АналитикаУчетаПоПартнерам.Партнер В
+			    (ВЫБРАТЬ
+			        ОтборПоСегментуПартнеров.Партнер
+			    ИЗ
+			        ОтборПоСегментуПартнеров
+			    ГДЕ
+			        ОтборПоСегментуПартнеров.ИспользуетсяОтборПоСегментуПартнеров = &amp;ИспользуетсяОтборПоСегментуПартнеров))}) КАК Остатки
+
+СГРУППИРОВАТЬ ПО
+	Остатки.АналитикаУчетаПоПартнерам
+
+ИМЕЮЩИЕ
+	СУММА(Остатки.СуммаОстаток) &lt; 0
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	РасчетыСПоставщиками.Регистратор КАК Регистратор,
+	РасчетыСПоставщиками.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	РасчетыСПоставщиками.ЗаказПоставщику КАК ЗаказПоставщику,
+	РасчетыСПоставщиками.Валюта КАК Валюта,
+	ВЫБОР
+		КОГДА РасчетыСПоставщиками.ДатаПлатежа &lt;= ДОБАВИТЬКДАТЕ(&amp;Дата, СЕКУНДА, -536870912)
+			ТОГДА РасчетыСПоставщиками.Период
+		ИНАЧЕ РасчетыСПоставщиками.ДатаПлатежа
+	КОНЕЦ КАК ДатаПлатежа,
+	СУММА(ВЫБОР
+			КОГДА РасчетыСПоставщиками.Сумма &lt; 0
+				ТОГДА -1 * РасчетыСПоставщиками.Сумма
+			ИНАЧЕ РасчетыСПоставщиками.Сумма
+		КОНЕЦ) КАК Сумма
+ПОМЕСТИТЬ ДатыПлатежейПоВводамОстатков
+ИЗ
+	РегистрНакопления.РасчетыСПоставщиками КАК РасчетыСПоставщиками
+ГДЕ
+	РасчетыСПоставщиками.АналитикаУчетаПоПартнерам В
+			(ВЫБРАТЬ
+				Шаг.АналитикаУчетаПоПартнерам
+			ИЗ
+				Шаг536870912 КАК Шаг)
+	И РасчетыСПоставщиками.ДатаПлатежа &lt;&gt; ДАТАВРЕМЯ(1, 1, 1)
+	И РасчетыСПоставщиками.Активность
+	И (РасчетыСПоставщиками.Сумма &lt; 0
+				И РасчетыСПоставщиками.ВидДвижения = &amp;Приход
+			ИЛИ РасчетыСПоставщиками.Сумма &gt; 0
+				И РасчетыСПоставщиками.ВидДвижения = &amp;Расход)
+
+СГРУППИРОВАТЬ ПО
+	РасчетыСПоставщиками.Регистратор,
+	ВЫБОР
+		КОГДА РасчетыСПоставщиками.ДатаПлатежа &lt;= ДОБАВИТЬКДАТЕ(&amp;Дата, СЕКУНДА, -536870912)
+			ТОГДА РасчетыСПоставщиками.Период
+		ИНАЧЕ РасчетыСПоставщиками.ДатаПлатежа
+	КОНЕЦ,
+	РасчетыСПоставщиками.АналитикаУчетаПоПартнерам,
+	РасчетыСПоставщиками.ЗаказПоставщику,
+	РасчетыСПоставщиками.Валюта
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Обороты.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	Обороты.ЗаказПоставщику КАК ЗаказПоставщику,
+	Обороты.Валюта КАК Валюта,
+	Обороты.Период КАК Период,
+	Обороты.Регистратор КАК Регистратор,
+	-Обороты.СуммаОборот КАК СуммаОборот
+ПОМЕСТИТЬ ВсеОборотыПоДолгам
+ИЗ
+	РегистрНакопления.РасчетыСПоставщиками.Обороты(
+			,
+			&amp;Дата,
+			Регистратор,
+			АналитикаУчетаПоПартнерам В
+				(ВЫБРАТЬ
+					Шаг.АналитикаУчетаПоПартнерам
+				ИЗ
+					Шаг536870912 КАК Шаг)) КАК Обороты
+ГДЕ
+	Обороты.СуммаОборот &lt; 0
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Обороты.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	Обороты.Период КАК Период,
+	Обороты.Период КАК ДатаРегистратора,
+	Обороты.Регистратор КАК Регистратор,
+	ВЫБОР
+		КОГДА Обороты.Регистратор ССЫЛКА Документ.ПриобретениеТоваровУслуг
+			ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ПриобретениеТоваровУслуг).Соглашение
+		КОГДА Обороты.ЗаказПоставщику ССЫЛКА Документ.ПриобретениеТоваровУслуг
+			ТОГДА ВЫРАЗИТЬ(Обороты.ЗаказПоставщику КАК Документ.ПриобретениеТоваровУслуг).Соглашение
+		КОГДА Обороты.ЗаказПоставщику ССЫЛКА Документ.ЗаказПоставщику
+			ТОГДА ВЫРАЗИТЬ(Обороты.ЗаказПоставщику КАК Документ.ЗаказПоставщику).Соглашение
+		ИНАЧЕ НЕОПРЕДЕЛЕНО
+	КОНЕЦ КАК Соглашение,
+	ВЫБОР
+		КОГДА Обороты.Регистратор ССЫЛКА Документ.ПриобретениеТоваровУслуг
+			ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ПриобретениеТоваровУслуг).Склад
+		КОГДА Обороты.Регистратор ССЫЛКА Документ.ВводОстатков
+			ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ВводОстатков).Склад
+		КОГДА Обороты.ЗаказПоставщику ССЫЛКА Документ.ПриобретениеТоваровУслуг
+			ТОГДА ВЫРАЗИТЬ(Обороты.ЗаказПоставщику КАК Документ.ПриобретениеТоваровУслуг).Склад
+		КОГДА Обороты.ЗаказПоставщику ССЫЛКА Документ.ЗаказПоставщику
+			ТОГДА ВЫРАЗИТЬ(Обороты.ЗаказПоставщику КАК Документ.ЗаказПоставщику).Склад
+		ИНАЧЕ НЕОПРЕДЕЛЕНО
+	КОНЕЦ КАК Склад,
+	ВЫБОР
+		КОГДА Обороты.Регистратор ССЫЛКА Документ.ПриобретениеТоваровУслуг
+				И ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ПриобретениеТоваровУслуг).ПоступлениеПоЗаказам = ИСТИНА
+				И ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ПриобретениеТоваровУслуг).ПорядокРасчетов &lt;&gt; &amp;ПоНакладным
+			ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ПриобретениеТоваровУслуг).ЗаказПоставщику
+		КОГДА Обороты.Регистратор ССЫЛКА Документ.ПриобретениеТоваровУслуг
+			ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ПриобретениеТоваровУслуг).Соглашение
+		ИНАЧЕ НЕОПРЕДЕЛЕНО
+	КОНЕЦ КАК СоглашениеИлиЗаказ,
+	ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.ДатаПлатежа, ЕСТЬNULL(ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ПриобретениеТоваровУслуг).ДатаПлатежа, ДАТАВРЕМЯ(1, 1, 1))) КАК ДатаПлатежа,
+	СУММА(ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.Сумма, Обороты.СуммаОборот)) КАК СуммаОборот
+ПОМЕСТИТЬ ОборотыБезРазбиенияНаЭтапы
+ИЗ
+	ВсеОборотыПоДолгам КАК Обороты
+		ЛЕВОЕ СОЕДИНЕНИЕ ДатыПлатежейПоВводамОстатков КАК ДатыПлатежейПоВводамОстатков
+		ПО Обороты.Регистратор = ДатыПлатежейПоВводамОстатков.Регистратор
+			И Обороты.АналитикаУчетаПоПартнерам = ДатыПлатежейПоВводамОстатков.АналитикаУчетаПоПартнерам
+			И Обороты.ЗаказПоставщику = ДатыПлатежейПоВводамОстатков.ЗаказПоставщику
+			И Обороты.Валюта = ДатыПлатежейПоВводамОстатков.Валюта
+
+СГРУППИРОВАТЬ ПО
+	Обороты.АналитикаУчетаПоПартнерам,
+	Обороты.Период,
+	Обороты.Регистратор,
+	ВЫБОР
+		КОГДА Обороты.Регистратор ССЫЛКА Документ.ПриобретениеТоваровУслуг
+			ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ПриобретениеТоваровУслуг).Соглашение
+		КОГДА Обороты.ЗаказПоставщику ССЫЛКА Документ.ПриобретениеТоваровУслуг
+			ТОГДА ВЫРАЗИТЬ(Обороты.ЗаказПоставщику КАК Документ.ПриобретениеТоваровУслуг).Соглашение
+		КОГДА Обороты.ЗаказПоставщику ССЫЛКА Документ.ЗаказПоставщику
+			ТОГДА ВЫРАЗИТЬ(Обороты.ЗаказПоставщику КАК Документ.ЗаказПоставщику).Соглашение
+		ИНАЧЕ НЕОПРЕДЕЛЕНО
+	КОНЕЦ,
+	ВЫБОР
+		КОГДА Обороты.Регистратор ССЫЛКА Документ.ПриобретениеТоваровУслуг
+			ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ПриобретениеТоваровУслуг).Склад
+		КОГДА Обороты.Регистратор ССЫЛКА Документ.ВводОстатков
+			ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ВводОстатков).Склад
+		КОГДА Обороты.ЗаказПоставщику ССЫЛКА Документ.ПриобретениеТоваровУслуг
+			ТОГДА ВЫРАЗИТЬ(Обороты.ЗаказПоставщику КАК Документ.ПриобретениеТоваровУслуг).Склад
+		КОГДА Обороты.ЗаказПоставщику ССЫЛКА Документ.ЗаказПоставщику
+			ТОГДА ВЫРАЗИТЬ(Обороты.ЗаказПоставщику КАК Документ.ЗаказПоставщику).Склад
+		ИНАЧЕ НЕОПРЕДЕЛЕНО
+	КОНЕЦ,
+	ВЫБОР
+		КОГДА Обороты.Регистратор ССЫЛКА Документ.ПриобретениеТоваровУслуг
+				И ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ПриобретениеТоваровУслуг).ПоступлениеПоЗаказам = ИСТИНА
+				И ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ПриобретениеТоваровУслуг).ПорядокРасчетов &lt;&gt; &amp;ПоНакладным
+			ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ПриобретениеТоваровУслуг).ЗаказПоставщику
+		КОГДА Обороты.Регистратор ССЫЛКА Документ.ПриобретениеТоваровУслуг
+			ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ПриобретениеТоваровУслуг).Соглашение
+		ИНАЧЕ НЕОПРЕДЕЛЕНО
+	КОНЕЦ,
+	ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.ДатаПлатежа, ЕСТЬNULL(ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ПриобретениеТоваровУслуг).ДатаПлатежа, ДАТАВРЕМЯ(1, 1, 1))),
+	Обороты.Период
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Обороты.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	ЕСТЬNULL(ЭтапыГрафикаОплатыПоЗаказу.ДатаПлатежа, Обороты.ДатаПлатежа) КАК ДатаПлатежа,
+	Обороты.Период КАК Период,
+	Обороты.Период КАК ДатаРегистратора,
+	Обороты.Регистратор КАК Регистратор,
+	Обороты.Соглашение КАК Соглашение,
+	Обороты.Склад КАК Склад,
+	ВЫБОР
+		КОГДА ЕСТЬNULL(ЭтапыГрафикаОплаты.ВариантОплаты, НЕОПРЕДЕЛЕНО) = ЗНАЧЕНИЕ(Перечисление.ВариантыОплатыПоставщику.КредитПослеПоступления)
+			ТОГДА ЕСТЬNULL(ЭтапыГрафикаОплаты.Сдвиг, 0)
+		ИНАЧЕ 0
+	КОНЕЦ КАК Сдвиг,
+	ВЫБОР
+		КОГДА ЕСТЬNULL(ЭтапыГрафикаОплатыПоЗаказу.ДатаПлатежа, Обороты.ДатаПлатежа) &gt; ДАТАВРЕМЯ(1, 1, 1)
+			ТОГДА НЕОПРЕДЕЛЕНО
+		КОГДА Обороты.СоглашениеИлиЗаказ ССЫЛКА Справочник.СоглашенияСПоставщиками
+			ТОГДА ВЫРАЗИТЬ(Обороты.СоглашениеИлиЗаказ КАК Справочник.СоглашенияСПоставщиками).Календарь
+		ИНАЧЕ НЕОПРЕДЕЛЕНО
+	КОНЕЦ КАК Календарь,
+	//ЕСТЬNULL(ВЫРАЗИТЬ(Обороты.СоглашениеИлиЗаказ КАК Справочник.СоглашенияСПоставщиками).Календарь, НЕОПРЕДЕЛЕНО) КАК КалендарьПоСоглашению,
+	СУММА(Обороты.СуммаОборот * ЕСТЬNULL(ЭтапыГрафикаОплаты.ПроцентПлатежа, 100) / 100 * ЕСТЬNULL(ЭтапыГрафикаОплатыПоЗаказу.ПроцентПлатежа, 100) / 100) КАК СуммаОборот
+ПОМЕСТИТЬ ОборотыСоСдвигом
+ИЗ
+	ОборотыБезРазбиенияНаЭтапы КАК Обороты
+		ЛЕВОЕ СОЕДИНЕНИЕ Документ.ЗаказПоставщику.ЭтапыГрафикаОплаты КАК ЭтапыГрафикаОплатыПоЗаказу
+		ПО Обороты.СоглашениеИлиЗаказ = ЭтапыГрафикаОплатыПоЗаказу.Ссылка
+			И (Обороты.ДатаПлатежа = ДАТАВРЕМЯ(1, 1, 1))
+		ЛЕВОЕ СОЕДИНЕНИЕ Справочник.СоглашенияСПоставщиками.ЭтапыГрафикаОплаты КАК ЭтапыГрафикаОплаты
+		ПО Обороты.СоглашениеИлиЗаказ = ЭтапыГрафикаОплаты.Ссылка
+			И (Обороты.ДатаПлатежа = ДАТАВРЕМЯ(1, 1, 1))
+
+СГРУППИРОВАТЬ ПО
+	Обороты.АналитикаУчетаПоПартнерам,
+	ЕСТЬNULL(ЭтапыГрафикаОплатыПоЗаказу.ДатаПлатежа, Обороты.ДатаПлатежа),
+	Обороты.Период,
+	Обороты.Регистратор,
+	Обороты.Соглашение,
+	Обороты.Склад,
+	ВЫБОР
+		КОГДА ЕСТЬNULL(ЭтапыГрафикаОплаты.ВариантОплаты, НЕОПРЕДЕЛЕНО) = ЗНАЧЕНИЕ(Перечисление.ВариантыОплатыПоставщику.КредитПослеПоступления)
+			ТОГДА ЕСТЬNULL(ЭтапыГрафикаОплаты.Сдвиг, 0)
+		ИНАЧЕ 0
+	КОНЕЦ,
+	ВЫБОР
+		КОГДА ЕСТЬNULL(ЭтапыГрафикаОплатыПоЗаказу.ДатаПлатежа, Обороты.ДатаПлатежа) &gt; ДАТАВРЕМЯ(1, 1, 1)
+			ТОГДА НЕОПРЕДЕЛЕНО
+		КОГДА Обороты.СоглашениеИлиЗаказ ССЫЛКА Справочник.СоглашенияСПоставщиками
+			ТОГДА ВЫРАЗИТЬ(Обороты.СоглашениеИлиЗаказ КАК Справочник.СоглашенияСПоставщиками).Календарь
+		ИНАЧЕ НЕОПРЕДЕЛЕНО
+	КОНЕЦ,
+	//ЕСТЬNULL(ВЫРАЗИТЬ(Обороты.СоглашениеИлиЗаказ КАК Справочник.СоглашенияСПоставщиками).Календарь, НЕОПРЕДЕЛЕНО),
+	Обороты.Период
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
+	ОборотыСоСдвигом.Период КАК Период,
+	ОборотыСоСдвигом.Календарь КАК Календарь
+ПОМЕСТИТЬ ОборотыСоСдвигомСвернуто
+ИЗ
+	ОборотыСоСдвигом КАК ОборотыСоСдвигом
+ГДЕ
+	ОборотыСоСдвигом.Календарь &lt;&gt; НЕОПРЕДЕЛЕНО
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
+	ОборотыСоСдвигомСвернуто.Период КАК ДатаНачала,
+	ОборотыСоСдвигомСвернуто.Календарь КАК Календарь,
+	ГрафикиРаботы.Дата КАК ДатаОкончания,
+	ВЫБОР
+		КОГДА ГрафикиРаботы.ВидДня = ЗНАЧЕНИЕ(Перечисление.ВидыДнейПроизводственногоКалендаря.Рабочий)
+				ИЛИ ГрафикиРаботы.ВидДня = ЗНАЧЕНИЕ(Перечисление.ВидыДнейПроизводственногоКалендаря.Предпраздничный)
+			ТОГДА 1
+		ИНАЧЕ 0
+	КОНЕЦ КАК РабочийДень
+ПОМЕСТИТЬ Графики
+ИЗ
+	ОборотыСоСдвигомСвернуто КАК ОборотыСоСдвигомСвернуто
+		ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ДанныеПроизводственногоКалендаря КАК ГрафикиРаботы
+		ПО ОборотыСоСдвигомСвернуто.Календарь = ГрафикиРаботы.ПроизводственныйКалендарь
+ГДЕ
+	ГрафикиРаботы.Дата &gt;= ОборотыСоСдвигомСвернуто.Период
+	И ОборотыСоСдвигомСвернуто.Период &lt;&gt; ДАТАВРЕМЯ(1, 1, 1)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
+	ВложенныйЗапрос.Календарь КАК Календарь,
+	ВложенныйЗапрос.ДатаНачала КАК ДатаНачала,
+	ВложенныйЗапрос.ДатаОкончания КАК ДатаОкончания,
+	ЕСТЬNULL(СУММА(Графики.РабочийДень), 0) КАК КоличествоДней
+ПОМЕСТИТЬ РазностиДат
+ИЗ
+	Графики КАК ВложенныйЗапрос
+		ЛЕВОЕ СОЕДИНЕНИЕ Графики КАК Графики
+		ПО ВложенныйЗапрос.Календарь = Графики.Календарь
+			И ВложенныйЗапрос.ДатаНачала = Графики.ДатаНачала
+			И ВложенныйЗапрос.ДатаОкончания &gt; Графики.ДатаОкончания
+
+СГРУППИРОВАТЬ ПО
+	ВложенныйЗапрос.Календарь,
+	ВложенныйЗапрос.ДатаНачала,
+	ВложенныйЗапрос.ДатаОкончания
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
+	РазностиДат.Календарь КАК Календарь,
+	РазностиДат.ДатаНачала КАК ДатаНачала,
+	РазностиДат.КоличествоДней КАК КоличествоДней,
+	МАКСИМУМ(РазностиДат.ДатаОкончания) КАК ДатаОкончания
+ПОМЕСТИТЬ РазностиДатСМаксимальнойДатой
+ИЗ
+	РазностиДат КАК РазностиДат
+
+СГРУППИРОВАТЬ ПО
+	РазностиДат.Календарь,
+	РазностиДат.ДатаНачала,
+	РазностиДат.КоличествоДней
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ОборотыСоСдвигом.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	ОборотыСоСдвигом.Период КАК Период,
+	ОборотыСоСдвигом.ДатаРегистратора КАК ДатаРегистратора,
+	ОборотыСоСдвигом.Регистратор КАК Регистратор,
+	ОборотыСоСдвигом.Соглашение КАК Соглашение,
+	ОборотыСоСдвигом.Календарь КАК Календарь,
+	ОборотыСоСдвигом.Сдвиг КАК Сдвиг,
+	ОборотыСоСдвигом.Склад КАК Склад,
+	ЕСТЬNULL(РазностиДат.ДатаОкончания, ВЫБОР
+			КОГДА ОборотыСоСдвигом.ДатаПлатежа = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА ДОБАВИТЬКДАТЕ(ОборотыСоСдвигом.Период, ДЕНЬ, ОборотыСоСдвигом.Сдвиг)
+			ИНАЧЕ ОборотыСоСдвигом.ДатаПлатежа
+		КОНЕЦ) КАК ДатаПлатежа,
+	СУММА(ОборотыСоСдвигом.СуммаОборот) КАК СуммаОборот
+ПОМЕСТИТЬ ОборотыРазвернуто
+ИЗ
+	ОборотыСоСдвигом КАК ОборотыСоСдвигом
+		ЛЕВОЕ СОЕДИНЕНИЕ РазностиДатСМаксимальнойДатой КАК РазностиДат
+		ПО ОборотыСоСдвигом.Календарь = РазностиДат.Календарь
+			И ОборотыСоСдвигом.Сдвиг = РазностиДат.КоличествоДней
+			И ОборотыСоСдвигом.Период = РазностиДат.ДатаНачала
+
+СГРУППИРОВАТЬ ПО
+	ОборотыСоСдвигом.АналитикаУчетаПоПартнерам,
+	ОборотыСоСдвигом.Период,
+	ОборотыСоСдвигом.ДатаРегистратора,
+	ОборотыСоСдвигом.Регистратор,
+	ОборотыСоСдвигом.Соглашение,
+	ОборотыСоСдвигом.Календарь,
+	ОборотыСоСдвигом.Сдвиг,
+	ОборотыСоСдвигом.Склад,
+	ЕСТЬNULL(РазностиДат.ДатаОкончания, ВЫБОР
+			КОГДА ОборотыСоСдвигом.ДатаПлатежа = ДАТАВРЕМЯ(1, 1, 1)
+				ТОГДА ДОБАВИТЬКДАТЕ(ОборотыСоСдвигом.Период, ДЕНЬ, ОборотыСоСдвигом.Сдвиг)
+			ИНАЧЕ ОборотыСоСдвигом.ДатаПлатежа
+		КОНЕЦ)
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ОборотыРазвернуто.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	ОборотыРазвернуто.ДатаПлатежа КАК Период,
+	СУММА(ОборотыРазвернуто.СуммаОборот) КАК СуммаОборот
+ПОМЕСТИТЬ Обороты
+ИЗ
+	ОборотыРазвернуто КАК ОборотыРазвернуто
+
+СГРУППИРОВАТЬ ПО
+	ОборотыРазвернуто.АналитикаУчетаПоПартнерам,
+	ОборотыРазвернуто.ДатаПлатежа
+
+ИНДЕКСИРОВАТЬ ПО
+	ОборотыРазвернуто.АналитикаУчетаПоПартнерам,
+	Период
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Шаг.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	Шаг.Край КАК Край,
+	Шаг.Долг КАК Долг,
+	ЕСТЬNULL(СУММА(Обороты.СуммаОборот), 0) КАК ПолуСумма,
+	ВЫБОР
+		КОГДА Шаг.Долг &gt; ЕСТЬNULL(СУММА(Обороты.СуммаОборот), 0)
+			ТОГДА -1
+		ИНАЧЕ 0
+	КОНЕЦ КАК Сдвиг
+ПОМЕСТИТЬ Шаг1
+ИЗ
+	(ВЫБРАТЬ
+		Шаг.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+		Шаг.Долг + Шаг.Сдвиг * Шаг.ПолуСумма КАК Долг,
+		ДОБАВИТЬКДАТЕ(Шаг.Край, СЕКУНДА, 536870912 * (Шаг.Сдвиг - 0.5) + 1) КАК Центр,
+		ДОБАВИТЬКДАТЕ(Шаг.Край, СЕКУНДА, 536870912 * Шаг.Сдвиг) КАК Край
+	ИЗ
+		Шаг536870912 КАК Шаг) КАК Шаг
+		ЛЕВОЕ СОЕДИНЕНИЕ Обороты КАК Обороты
+		ПО Шаг.АналитикаУчетаПоПартнерам = Обороты.АналитикаУчетаПоПартнерам
+			И (Обороты.Период МЕЖДУ Шаг.Центр И Шаг.Край)
+
+СГРУППИРОВАТЬ ПО
+	Шаг.АналитикаУчетаПоПартнерам,
+	Шаг.Край,
+	Шаг.Долг
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Шаг.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	Шаг.Край КАК Край,
+	Шаг.Долг КАК Долг,
+	ЕСТЬNULL(СУММА(Обороты.СуммаОборот), 0) КАК Сумма
+ПОМЕСТИТЬ Шаг0
+ИЗ
+	(ВЫБРАТЬ
+		Шаг.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+		Шаг.Долг + Шаг.Сдвиг * Шаг.ПолуСумма КАК Долг,
+		ДОБАВИТЬКДАТЕ(Шаг.Край, СЕКУНДА, Шаг.Сдвиг) КАК Край
+	ИЗ
+		Шаг1 КАК Шаг) КАК Шаг
+		ЛЕВОЕ СОЕДИНЕНИЕ Обороты КАК Обороты
+		ПО Шаг.АналитикаУчетаПоПартнерам = Обороты.АналитикаУчетаПоПартнерам
+			И (Обороты.Период = Шаг.Край)
+
+СГРУППИРОВАТЬ ПО
+	Шаг.АналитикаУчетаПоПартнерам,
+	Шаг.Край,
+	Шаг.Долг
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Обороты.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	Обороты.АналитикаУчетаПоПартнерам.Организация КАК Организация,
+	Обороты.АналитикаУчетаПоПартнерам.Партнер КАК Партнер,
+	Обороты.АналитикаУчетаПоПартнерам.Контрагент КАК Контрагент,
+	Обороты.АналитикаУчетаПоПартнерам.Договор КАК Договор,
+	Обороты.Регистратор КАК Регистратор,
+	Обороты.Соглашение КАК Соглашение,
+	Обороты.Склад КАК Склад,
+	Обороты.Сдвиг КАК Сдвиг,
+	Обороты.Календарь КАК Календарь,
+	Обороты.ДатаРегистратора КАК ДатаРегистратора,
+	Обороты.ДатаПлатежа КАК Период,
+	СУММА(Обороты.СуммаОборот) КАК СуммаОборот
+ПОМЕСТИТЬ ОборотыКрай
+ИЗ
+	ОборотыРазвернуто КАК Обороты
+
+СГРУППИРОВАТЬ ПО
+	Обороты.АналитикаУчетаПоПартнерам,
+	Обороты.АналитикаУчетаПоПартнерам.Организация,
+	Обороты.АналитикаУчетаПоПартнерам.Партнер,
+	Обороты.АналитикаУчетаПоПартнерам.Контрагент,
+	Обороты.АналитикаУчетаПоПартнерам.Договор,
+	Обороты.Регистратор,
+	Обороты.Соглашение,
+	Обороты.Склад,
+	Обороты.Сдвиг,
+	Обороты.Календарь,
+	Обороты.ДатаРегистратора,
+	Обороты.ДатаПлатежа
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	&amp;СтрокаСостояниеВзаиморасчетов КАК ГруппировкаВсего,
+	Обороты.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	Обороты.Организация КАК Организация,
+	Обороты.Партнер КАК Партнер,
+	Обороты.Контрагент КАК Контрагент,
+	Обороты.Договор КАК Договор,
+	Обороты.Склад КАК Склад,
+	Обороты.Соглашение КАК Соглашение,
+	"С поставщиком" КАК ТипСоглашения,
+	Обороты.Период КАК ДатаПлатежа,
+	Обороты.ДатаРегистратора КАК ДатаРегистратора,
+	Обороты.Регистратор КАК Регистратор,
+	ВЫБОР
+		КОГДА Обороты.Период = Шаг.Край
+			ТОГДА Шаг.Долг * Обороты.СуммаОборот / Шаг.Сумма
+		ИНАЧЕ Обороты.СуммаОборот
+	КОНЕЦ КАК НашДолг,
+	0 КАК Долг,
+	РАЗНОСТЬДАТ(Обороты.ДатаРегистратора, &amp;Дата, ДЕНЬ) КАК СрокЗадолженностиДней,
+	Обороты.Сдвиг КАК ОтсрочкаДней,
+	Обороты.Календарь КАК Календарь,
+	РАЗНОСТЬДАТ(Обороты.Период, &amp;Дата, ДЕНЬ) КАК ЗадержкаДней,
+	ВЫБОР
+		КОГДА НЕ &amp;ЭтоАнализДебиторки
+				И РАЗНОСТЬДАТ(Обороты.Период, &amp;Дата, ДЕНЬ) &gt; 0
+			ТОГДА ВЫБОР
+					КОГДА Обороты.Период = Шаг.Край
+						ТОГДА Шаг.Долг * Обороты.СуммаОборот / Шаг.Сумма
+					ИНАЧЕ Обороты.СуммаОборот
+				КОНЕЦ
+		ИНАЧЕ 0
+	КОНЕЦ КАК Просрочено,
+	ЕСТЬNULL(Интервалы.НаименованиеИнтервала, &amp;СтрокаДолгНеПросрочен) КАК НаименованиеИнтервала,
+	ЕСТЬNULL(Интервалы.НомерСтроки, 0) КАК НомерИнтервала,
+	ЕСТЬNULL(Интервалы.НижняяГраницаИнтервала, 0) КАК НижняяГраницаИнтервала,
+	ЕСТЬNULL(ПартнерыСегмента.Сегмент, НЕОПРЕДЕЛЕНО) КАК ВходитВСегмент
+ИЗ
+	Шаг0 КАК Шаг
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ОборотыКрай КАК Обороты
+			ЛЕВОЕ СОЕДИНЕНИЕ Справочник.ВариантыКлассификацииЗадолженности.Интервалы КАК Интервалы
+			ПО (НЕ &amp;ЭтоАнализДебиторки)
+				И (Интервалы.Ссылка = &amp;ВариантКлассификацииЗадолженности)
+				И (РАЗНОСТЬДАТ(Обороты.Период, &amp;Дата, ДЕНЬ) МЕЖДУ Интервалы.НижняяГраницаИнтервала И Интервалы.ВерхняяГраницаИнтервала)
+		ПО Шаг.АналитикаУчетаПоПартнерам = Обороты.АналитикаУчетаПоПартнерам
+			И Шаг.Край &lt;= Обороты.Период
+		{ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ПартнерыСегмента КАК ПартнерыСегмента
+		ПО (Обороты.Партнер = ПартнерыСегмента.Партнер)
+			И (ПартнерыСегмента.Сегмент В (&amp;Сегмент))}
+{ГДЕ
+	Обороты.Склад.*,
+	(ВЫРАЗИТЬ(Обороты.Соглашение КАК Справочник.СоглашенияСПоставщиками)).* КАК СоглашениеОтбор,
+	("С поставщиком") КАК ТипСоглашения,
+	(ВЫБОР
+			КОГДА Обороты.Период = Шаг.Край
+				ТОГДА Шаг.Долг * Обороты.СуммаОборот / Шаг.Сумма
+			ИНАЧЕ Обороты.СуммаОборот
+		КОНЕЦ) КАК НашДолг,
+	(0) КАК Долг,
+	(РАЗНОСТЬДАТ(Обороты.ДатаРегистратора, &amp;Дата, ДЕНЬ)) КАК СрокЗадолженностиДней,
+	Обороты.Сдвиг КАК ОтсрочкаДней,
+	Обороты.Календарь КАК Календарь,
+	(РАЗНОСТЬДАТ(Обороты.Период, &amp;Дата, ДЕНЬ)) КАК ЗадержкаДней,
+	(ВЫБОР
+			КОГДА НЕ &amp;ЭтоАнализДебиторки
+					И РАЗНОСТЬДАТ(Обороты.Период, &amp;Дата, ДЕНЬ) &gt; 0
+				ТОГДА ВЫБОР
+						КОГДА Обороты.Период = Шаг.Край
+							ТОГДА Шаг.Долг * Обороты.СуммаОборот / Шаг.Сумма
+						ИНАЧЕ Обороты.СуммаОборот
+					КОНЕЦ
+			ИНАЧЕ 0
+		КОНЕЦ) КАК Просрочено}</query>
+			</item>
+			<item xsi:type="DataSetQuery">
+				<name>НаборДанных4</name>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Долг</dataPath>
+					<field>Долг</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Долг</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ГруппировкаВсего</dataPath>
+					<field>ГруппировкаВсего</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Группировка всего</d6p1:content>
+						</d6p1:item>
+					</title>
+					<useRestriction>
+						<condition>true</condition>
+					</useRestriction>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>АналитикаУчетаПоПартнерам</dataPath>
+					<field>АналитикаУчетаПоПартнерам</field>
+					<useRestriction>
+						<field>true</field>
+						<condition>true</condition>
+						<group>true</group>
+						<order>true</order>
+					</useRestriction>
+					<attributeUseRestriction>
+						<field>true</field>
+						<condition>true</condition>
+						<group>true</group>
+						<order>true</order>
+					</attributeUseRestriction>
+					<role>
+						<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
+					</role>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>НомерИнтервала</dataPath>
+					<field>НомерИнтервала</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Номер интервала</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>СрокЗадолженностиДней</dataPath>
+					<field>СрокЗадолженностиДней</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Срок задолженности дней</d6p1:content>
+						</d6p1:item>
+					</title>
+					<role>
+						<periodNumber xmlns="http://v8.1c.ru/8.1/data-composition-system/common">3</periodNumber>
+						<periodType xmlns="http://v8.1c.ru/8.1/data-composition-system/common">Main</periodType>
+					</role>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Просрочено</dataPath>
+					<field>Просрочено</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Просрочено</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ЗадержкаДней</dataPath>
+					<field>ЗадержкаДней</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Задержка дней</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Контрагент</dataPath>
+					<field>Контрагент</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Контрагент</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>НижняяГраницаИнтервала</dataPath>
+					<field>НижняяГраницаИнтервала</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Нижняя граница интервала</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Партнер</dataPath>
+					<field>Партнер</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Партнер</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Организация</dataPath>
+					<field>Организация</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Организация</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ДатаРегистратора</dataPath>
+					<field>ДатаРегистратора</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Дата регистратора</d6p1:content>
+						</d6p1:item>
+					</title>
+					<useRestriction>
+						<field>true</field>
+						<condition>true</condition>
+						<group>true</group>
+						<order>true</order>
+					</useRestriction>
+					<role>
+						<periodNumber xmlns="http://v8.1c.ru/8.1/data-composition-system/common">2</periodNumber>
+						<periodType xmlns="http://v8.1c.ru/8.1/data-composition-system/common">Main</periodType>
+					</role>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Регистратор</dataPath>
+					<field>Регистратор</field>
+					<useRestriction>
+						<field>true</field>
+						<condition>true</condition>
+						<group>true</group>
+						<order>true</order>
+					</useRestriction>
+					<attributeUseRestriction>
+						<field>true</field>
+						<condition>true</condition>
+						<group>true</group>
+						<order>true</order>
+					</attributeUseRestriction>
+					<role>
+						<periodNumber xmlns="http://v8.1c.ru/8.1/data-composition-system/common">1</periodNumber>
+						<periodType xmlns="http://v8.1c.ru/8.1/data-composition-system/common">Main</periodType>
+					</role>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>НаименованиеИнтервала</dataPath>
+					<field>НаименованиеИнтервала</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Наименование интервала</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Валюта</dataPath>
+					<field>Валюта</field>
+					<useRestriction>
+						<condition>true</condition>
+					</useRestriction>
+					<attributeUseRestriction>
+						<condition>true</condition>
+					</attributeUseRestriction>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ОтсрочкаДней</dataPath>
+					<field>ОтсрочкаДней</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Отсрочка дней</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ДатаПлатежа</dataPath>
+					<field>ДатаПлатежа</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Дата платежа</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Договор</dataPath>
+					<field>Договор</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Договор</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ЗаказПоставщику</dataPath>
+					<field>ЗаказПоставщику</field>
+					<useRestriction>
+						<condition>true</condition>
+					</useRestriction>
+					<attributeUseRestriction>
+						<condition>true</condition>
+					</attributeUseRestriction>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>НашДолг</dataPath>
+					<field>НашДолг</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Наш долг</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Соглашение</dataPath>
+					<field>Соглашение</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Соглашение</d6p1:content>
+						</d6p1:item>
+					</title>
+					<useRestriction>
+						<condition>true</condition>
+					</useRestriction>
+					<attributeUseRestriction>
+						<condition>true</condition>
+					</attributeUseRestriction>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ТипСоглашения</dataPath>
+					<field>ТипСоглашения</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Тип соглашения</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Склад</dataPath>
+					<field>Склад</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Склад</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ВходитВСегмент</dataPath>
+					<field>ВходитВСегмент</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Входит в сегмент</d6p1:content>
+						</d6p1:item>
+					</title>
+					<useRestriction>
+						<condition>true</condition>
+					</useRestriction>
+					<attributeUseRestriction>
+						<condition>true</condition>
+					</attributeUseRestriction>
+					<role>
+						<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
+					</role>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>СоглашениеОтбор</dataPath>
+					<field>СоглашениеОтбор</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Соглашение отбор</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>СегментПартнеров</dataPath>
+					<field>СегментПартнеров</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Сегмент партнеров</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>Календарь</dataPath>
+					<field>Календарь</field>
+					<title xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>Календарь</d6p1:content>
+						</d6p1:item>
+					</title>
+				</field>
+				<field xsi:type="DataSetFieldField">
+					<dataPath>ЗаказКлиента</dataPath>
+					<field>ЗаказКлиента</field>
+				</field>
+				<dataSource>ИсточникДанных1</dataSource>
+				<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
+	Сегменты.Партнер КАК Партнер,
+	ИСТИНА КАК ИспользуетсяОтборПоСегментуПартнеров
+ПОМЕСТИТЬ ОтборПоСегментуПартнеров
+ИЗ
+	РегистрСведений.ПартнерыСегмента КАК Сегменты
+{ГДЕ
+	Сегменты.Сегмент.* КАК СегментПартнеров,
+	Сегменты.Партнер.* КАК Партнер}
+
+ИНДЕКСИРОВАТЬ ПО
+	Партнер,
+	ИспользуетсяОтборПоСегментуПартнеров
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Остатки.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	ДОБАВИТЬКДАТЕ(&amp;Дата, ГОД, 5) КАК Край,
+	СУММА(Остатки.СуммаОстаток) КАК Долг,
+	СУММА(0) КАК ПолуСумма,
+	СУММА(0) КАК Сдвиг
+ПОМЕСТИТЬ Шаг536870912
+ИЗ
+	РегистрНакопления.РасчетыСКлиентами.Остатки(ДОБАВИТЬКДАТЕ(&amp;Дата, СЕКУНДА, 1), {(АналитикаУчетаПоПартнерам.Организация).* КАК Организация, (АналитикаУчетаПоПартнерам.Партнер).* КАК Партнер, (АналитикаУчетаПоПартнерам.Контрагент).* КАК Контрагент, (АналитикаУчетаПоПартнерам.Договор).* КАК Договор, (АналитикаУчетаПоПартнерам.Партнер В
+			    (ВЫБРАТЬ
+			        ОтборПоСегментуПартнеров.Партнер
+			    ИЗ
+			        ОтборПоСегментуПартнеров
+			    ГДЕ
+			        ОтборПоСегментуПартнеров.ИспользуетсяОтборПоСегментуПартнеров = &amp;ИспользуетсяОтборПоСегментуПартнеров))}) КАК Остатки
+
+СГРУППИРОВАТЬ ПО
+	Остатки.АналитикаУчетаПоПартнерам
+
+ИМЕЮЩИЕ
+	СУММА(Остатки.СуммаОстаток) &gt; 0
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	РасчетыСПоставщиками.Регистратор КАК Регистратор,
+	РасчетыСПоставщиками.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	РасчетыСПоставщиками.ЗаказПоставщику КАК ЗаказПоставщику,
+	РасчетыСПоставщиками.Валюта КАК Валюта,
+	ВЫБОР
+		КОГДА РасчетыСПоставщиками.ДатаПлатежа &lt;= ДОБАВИТЬКДАТЕ(&amp;Дата, СЕКУНДА, -536870912)
+			ТОГДА РасчетыСПоставщиками.Период
+		ИНАЧЕ РасчетыСПоставщиками.ДатаПлатежа
+	КОНЕЦ КАК ДатаПлатежа,
+	СУММА(ВЫБОР
+			КОГДА РасчетыСПоставщиками.Сумма &lt; 0
+				ТОГДА -1 * РасчетыСПоставщиками.Сумма
+			ИНАЧЕ РасчетыСПоставщиками.Сумма
+		КОНЕЦ) КАК Сумма
+ПОМЕСТИТЬ ДатыПлатежейПоВводамОстатков
+ИЗ
+	РегистрНакопления.РасчетыСПоставщиками КАК РасчетыСПоставщиками
+ГДЕ
+	РасчетыСПоставщиками.АналитикаУчетаПоПартнерам В
+			(ВЫБРАТЬ
+				Шаг.АналитикаУчетаПоПартнерам
+			ИЗ
+				Шаг536870912 КАК Шаг)
+	И РасчетыСПоставщиками.ДатаПлатежа &lt;&gt; ДАТАВРЕМЯ(1, 1, 1)
+	И РасчетыСПоставщиками.Активность
+	И (РасчетыСПоставщиками.Сумма &gt; 0
+				И РасчетыСПоставщиками.ВидДвижения = &amp;Приход
+			ИЛИ РасчетыСПоставщиками.Сумма &lt; 0
+				И РасчетыСПоставщиками.ВидДвижения = &amp;Расход)
+
+СГРУППИРОВАТЬ ПО
+	РасчетыСПоставщиками.Регистратор,
+	ВЫБОР
+		КОГДА РасчетыСПоставщиками.ДатаПлатежа &lt;= ДОБАВИТЬКДАТЕ(&amp;Дата, СЕКУНДА, -536870912)
+			ТОГДА РасчетыСПоставщиками.Период
+		ИНАЧЕ РасчетыСПоставщиками.ДатаПлатежа
+	КОНЕЦ,
+	РасчетыСПоставщиками.АналитикаУчетаПоПартнерам,
+	РасчетыСПоставщиками.ЗаказПоставщику,
+	РасчетыСПоставщиками.Валюта
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Обороты.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	Обороты.ЗаказПоставщику КАК ЗаказПоставщику,
+	Обороты.Валюта КАК Валюта,
+	Обороты.Период КАК Период,
+	Обороты.Регистратор КАК Регистратор,
+	Обороты.СуммаОборот КАК СуммаОборот
+ПОМЕСТИТЬ ВсеОборотыПоДолгам
+ИЗ
+	РегистрНакопления.РасчетыСПоставщиками.Обороты(
+			,
+			&amp;Дата,
+			Регистратор,
+			АналитикаУчетаПоПартнерам В
+				(ВЫБРАТЬ
+					Шаг.АналитикаУчетаПоПартнерам
+				ИЗ
+					Шаг536870912 КАК Шаг)) КАК Обороты
+ГДЕ
+	Обороты.СуммаОборот &gt; 0
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Обороты.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	Обороты.Период КАК Период,
+	Обороты.Период КАК ДатаРегистратора,
+	Обороты.Регистратор КАК Регистратор,
+	ВЫБОР
+		КОГДА Обороты.Регистратор ССЫЛКА Документ.ПриобретениеТоваровУслуг
+			ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ПриобретениеТоваровУслуг).Соглашение
+		КОГДА Обороты.ЗаказПоставщику ССЫЛКА Документ.ПриобретениеТоваровУслуг
+			ТОГДА ВЫРАЗИТЬ(Обороты.ЗаказПоставщику КАК Документ.ПриобретениеТоваровУслуг).Соглашение
+		КОГДА Обороты.ЗаказПоставщику ССЫЛКА Документ.ЗаказПоставщику
+			ТОГДА ВЫРАЗИТЬ(Обороты.ЗаказПоставщику КАК Документ.ЗаказПоставщику).Соглашение
+		ИНАЧЕ НЕОПРЕДЕЛЕНО
+	КОНЕЦ КАК Соглашение,
+	ВЫБОР
+		КОГДА Обороты.Регистратор ССЫЛКА Документ.ПриобретениеТоваровУслуг
+			ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ПриобретениеТоваровУслуг).Склад
+		КОГДА Обороты.Регистратор ССЫЛКА Документ.ВводОстатков
+			ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ВводОстатков).Склад
+		КОГДА Обороты.ЗаказПоставщику ССЫЛКА Документ.ПриобретениеТоваровУслуг
+			ТОГДА ВЫРАЗИТЬ(Обороты.ЗаказПоставщику КАК Документ.ПриобретениеТоваровУслуг).Склад
+		КОГДА Обороты.ЗаказПоставщику ССЫЛКА Документ.ЗаказПоставщику
+			ТОГДА ВЫРАЗИТЬ(Обороты.ЗаказПоставщику КАК Документ.ЗаказПоставщику).Склад
+		ИНАЧЕ НЕОПРЕДЕЛЕНО
+	КОНЕЦ КАК Склад,
+	ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.ДатаПлатежа, ЕСТЬNULL(ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ПриобретениеТоваровУслуг).ДатаПлатежа, Обороты.Период)) КАК ДатаПлатежа,
+	СУММА(ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.Сумма, Обороты.СуммаОборот)) КАК СуммаОборот
+ПОМЕСТИТЬ ОборотыБезРазбиенияНаЭтапы
+ИЗ
+	ВсеОборотыПоДолгам КАК Обороты
+		ЛЕВОЕ СОЕДИНЕНИЕ ДатыПлатежейПоВводамОстатков КАК ДатыПлатежейПоВводамОстатков
+		ПО Обороты.Регистратор = ДатыПлатежейПоВводамОстатков.Регистратор
+			И Обороты.АналитикаУчетаПоПартнерам = ДатыПлатежейПоВводамОстатков.АналитикаУчетаПоПартнерам
+			И Обороты.ЗаказПоставщику = ДатыПлатежейПоВводамОстатков.ЗаказПоставщику
+			И Обороты.Валюта = ДатыПлатежейПоВводамОстатков.Валюта
+
+СГРУППИРОВАТЬ ПО
+	Обороты.АналитикаУчетаПоПартнерам,
+	Обороты.Период,
+	Обороты.Регистратор,
+	ВЫБОР
+		КОГДА Обороты.Регистратор ССЫЛКА Документ.ПриобретениеТоваровУслуг
+			ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ПриобретениеТоваровУслуг).Соглашение
+		КОГДА Обороты.ЗаказПоставщику ССЫЛКА Документ.ПриобретениеТоваровУслуг
+			ТОГДА ВЫРАЗИТЬ(Обороты.ЗаказПоставщику КАК Документ.ПриобретениеТоваровУслуг).Соглашение
+		КОГДА Обороты.ЗаказПоставщику ССЫЛКА Документ.ЗаказПоставщику
+			ТОГДА ВЫРАЗИТЬ(Обороты.ЗаказПоставщику КАК Документ.ЗаказПоставщику).Соглашение
+		ИНАЧЕ НЕОПРЕДЕЛЕНО
+	КОНЕЦ,
+	ВЫБОР
+		КОГДА Обороты.Регистратор ССЫЛКА Документ.ПриобретениеТоваровУслуг
+			ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ПриобретениеТоваровУслуг).Склад
+		КОГДА Обороты.Регистратор ССЫЛКА Документ.ВводОстатков
+			ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ВводОстатков).Склад
+		КОГДА Обороты.ЗаказПоставщику ССЫЛКА Документ.ПриобретениеТоваровУслуг
+			ТОГДА ВЫРАЗИТЬ(Обороты.ЗаказПоставщику КАК Документ.ПриобретениеТоваровУслуг).Склад
+		КОГДА Обороты.ЗаказПоставщику ССЫЛКА Документ.ЗаказПоставщику
+			ТОГДА ВЫРАЗИТЬ(Обороты.ЗаказПоставщику КАК Документ.ЗаказПоставщику).Склад
+		ИНАЧЕ НЕОПРЕДЕЛЕНО
+	КОНЕЦ,
+	ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.ДатаПлатежа, ЕСТЬNULL(ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ПриобретениеТоваровУслуг).ДатаПлатежа, Обороты.Период)),
+	Обороты.Период
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	ОборотыРазвернуто.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	ОборотыРазвернуто.ДатаПлатежа КАК Период,
+	СУММА(ОборотыРазвернуто.СуммаОборот) КАК СуммаОборот
+ПОМЕСТИТЬ Обороты
+ИЗ
+	ОборотыБезРазбиенияНаЭтапы КАК ОборотыРазвернуто
+
+СГРУППИРОВАТЬ ПО
+	ОборотыРазвернуто.АналитикаУчетаПоПартнерам,
+	ОборотыРазвернуто.ДатаПлатежа
+
+ИНДЕКСИРОВАТЬ ПО
+	ОборотыРазвернуто.АналитикаУчетаПоПартнерам,
+	Период
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Шаг.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	Шаг.Край КАК Край,
+	Шаг.Долг КАК Долг,
+	ЕСТЬNULL(СУММА(Обороты.СуммаОборот), 0) КАК ПолуСумма,
+	ВЫБОР
+		КОГДА Шаг.Долг &gt; ЕСТЬNULL(СУММА(Обороты.СуммаОборот), 0)
+			ТОГДА -1
+		ИНАЧЕ 0
+	КОНЕЦ КАК Сдвиг
+ПОМЕСТИТЬ Шаг1
+ИЗ
+	(ВЫБРАТЬ
+		Шаг.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+		Шаг.Долг + Шаг.Сдвиг * Шаг.ПолуСумма КАК Долг,
+		ДОБАВИТЬКДАТЕ(Шаг.Край, СЕКУНДА, 536870912 * (Шаг.Сдвиг - 0.5) + 1) КАК Центр,
+		ДОБАВИТЬКДАТЕ(Шаг.Край, СЕКУНДА, 536870912 * Шаг.Сдвиг) КАК Край
+	ИЗ
+		Шаг536870912 КАК Шаг) КАК Шаг
+		ЛЕВОЕ СОЕДИНЕНИЕ Обороты КАК Обороты
+		ПО Шаг.АналитикаУчетаПоПартнерам = Обороты.АналитикаУчетаПоПартнерам
+			И (Обороты.Период МЕЖДУ Шаг.Центр И Шаг.Край)
+
+СГРУППИРОВАТЬ ПО
+	Шаг.АналитикаУчетаПоПартнерам,
+	Шаг.Край,
+	Шаг.Долг
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Шаг.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	Шаг.Край КАК Край,
+	Шаг.Долг КАК Долг,
+	ЕСТЬNULL(СУММА(Обороты.СуммаОборот), 0) КАК Сумма
+ПОМЕСТИТЬ Шаг0
+ИЗ
+	(ВЫБРАТЬ
+		Шаг.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+		Шаг.Долг + Шаг.Сдвиг * Шаг.ПолуСумма КАК Долг,
+		ДОБАВИТЬКДАТЕ(Шаг.Край, СЕКУНДА, Шаг.Сдвиг) КАК Край
+	ИЗ
+		Шаг1 КАК Шаг) КАК Шаг
+		ЛЕВОЕ СОЕДИНЕНИЕ Обороты КАК Обороты
+		ПО Шаг.АналитикаУчетаПоПартнерам = Обороты.АналитикаУчетаПоПартнерам
+			И (Обороты.Период = Шаг.Край)
+
+СГРУППИРОВАТЬ ПО
+	Шаг.АналитикаУчетаПоПартнерам,
+	Шаг.Край,
+	Шаг.Долг
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	Обороты.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	Обороты.АналитикаУчетаПоПартнерам.Организация КАК Организация,
+	Обороты.АналитикаУчетаПоПартнерам.Партнер КАК Партнер,
+	Обороты.АналитикаУчетаПоПартнерам.Контрагент КАК Контрагент,
+	Обороты.АналитикаУчетаПоПартнерам.Договор КАК Договор,
+	Обороты.Регистратор КАК Регистратор,
+	Обороты.Соглашение КАК Соглашение,
+	Обороты.Склад КАК Склад,
+	Обороты.ДатаРегистратора КАК ДатаРегистратора,
+	Обороты.ДатаПлатежа КАК Период,
+	0 КАК Сдвиг,
+	СУММА(Обороты.СуммаОборот) КАК СуммаОборот
+ПОМЕСТИТЬ ОборотыКрай
+ИЗ
+	ОборотыБезРазбиенияНаЭтапы КАК Обороты
+
+СГРУППИРОВАТЬ ПО
+	Обороты.АналитикаУчетаПоПартнерам,
+	Обороты.АналитикаУчетаПоПартнерам.Организация,
+	Обороты.АналитикаУчетаПоПартнерам.Партнер,
+	Обороты.АналитикаУчетаПоПартнерам.Контрагент,
+	Обороты.АналитикаУчетаПоПартнерам.Договор,
+	Обороты.Регистратор,
+	Обороты.Соглашение,
+	Обороты.Склад,
+	Обороты.ДатаПлатежа,
+	Обороты.ДатаРегистратора
+;
+
+////////////////////////////////////////////////////////////////////////////////
+ВЫБРАТЬ РАЗРЕШЕННЫЕ
+	&amp;СтрокаСостояниеВзаиморасчетов КАК ГруппировкаВсего,
+	Обороты.АналитикаУчетаПоПартнерам КАК АналитикаУчетаПоПартнерам,
+	Обороты.Организация КАК Организация,
+	Обороты.Партнер КАК Партнер,
+	Обороты.Контрагент КАК Контрагент,
+	Обороты.Договор КАК Договор,
+	Обороты.Склад КАК Склад,
+	Обороты.Соглашение КАК Соглашение,
+	"С поставщиком" КАК ТипСоглашения,
+	Обороты.Период КАК ДатаПлатежа,
+	Обороты.ДатаРегистратора КАК ДатаРегистратора,
+	Обороты.Регистратор КАК Регистратор,
+	ВЫБОР
+		КОГДА Обороты.Период = Шаг.Край
+			ТОГДА Шаг.Долг * Обороты.СуммаОборот / Шаг.Сумма
+		ИНАЧЕ Обороты.СуммаОборот
+	КОНЕЦ КАК Долг,
+	0 КАК НашДолг,
+	РАЗНОСТЬДАТ(Обороты.ДатаРегистратора, &amp;Дата, ДЕНЬ) КАК СрокЗадолженностиДней,
+	Обороты.Сдвиг КАК ОтсрочкаДней,
+	НЕОПРЕДЕЛЕНО КАК Календарь,
+	РАЗНОСТЬДАТ(Обороты.Период, &amp;Дата, ДЕНЬ) КАК ЗадержкаДней,
+	ВЫБОР
+		КОГДА НЕ &amp;ЭтоАнализДебиторки
+				И РАЗНОСТЬДАТ(Обороты.Период, &amp;Дата, ДЕНЬ) &gt; 0
+			ТОГДА ВЫБОР
+					КОГДА Обороты.Период = Шаг.Край
+						ТОГДА Шаг.Долг * Обороты.СуммаОборот / Шаг.Сумма
+					ИНАЧЕ Обороты.СуммаОборот
+				КОНЕЦ
+		ИНАЧЕ 0
+	КОНЕЦ КАК Просрочено,
+	ЕСТЬNULL(Интервалы.НаименованиеИнтервала, &amp;СтрокаДолгНеПросрочен) КАК НаименованиеИнтервала,
+	ЕСТЬNULL(Интервалы.НомерСтроки, 0) КАК НомерИнтервала,
+	ЕСТЬNULL(Интервалы.НижняяГраницаИнтервала, 0) КАК НижняяГраницаИнтервала,
+	ЕСТЬNULL(ПартнерыСегмента.Сегмент, НЕОПРЕДЕЛЕНО) КАК ВходитВСегмент
+ИЗ
+	Шаг0 КАК Шаг
+		ВНУТРЕННЕЕ СОЕДИНЕНИЕ ОборотыКрай КАК Обороты
+			ЛЕВОЕ СОЕДИНЕНИЕ Справочник.ВариантыКлассификацииЗадолженности.Интервалы КАК Интервалы
+			ПО (НЕ &amp;ЭтоАнализДебиторки)
+				И (Интервалы.Ссылка = &amp;ВариантКлассификацииЗадолженности)
+				И (РАЗНОСТЬДАТ(Обороты.Период, &amp;Дата, ДЕНЬ) МЕЖДУ Интервалы.НижняяГраницаИнтервала И Интервалы.ВерхняяГраницаИнтервала)
+		ПО Шаг.АналитикаУчетаПоПартнерам = Обороты.АналитикаУчетаПоПартнерам
+			И Шаг.Край &lt;= Обороты.Период
+		{ЛЕВОЕ СОЕДИНЕНИЕ РегистрСведений.ПартнерыСегмента КАК ПартнерыСегмента
+		ПО (Обороты.Партнер = ПартнерыСегмента.Партнер)
+			И (ПартнерыСегмента.Сегмент В (&amp;Сегмент))}
+{ГДЕ
+	Обороты.Склад.*,
+	(ВЫРАЗИТЬ(Обороты.Соглашение КАК Справочник.СоглашенияСПоставщиками)).* КАК СоглашениеОтбор,
+	("С поставщиком") КАК ТипСоглашения,
+	(ВЫБОР
+			КОГДА Обороты.Период = Шаг.Край
+				ТОГДА Шаг.Долг * Обороты.СуммаОборот / Шаг.Сумма
+			ИНАЧЕ Обороты.СуммаОборот
+		КОНЕЦ) КАК Долг,
+	(0) КАК НашДолг,
+	(РАЗНОСТЬДАТ(Обороты.ДатаРегистратора, &amp;Дата, ДЕНЬ)) КАК СрокЗадолженностиДней,
+	Обороты.Сдвиг КАК ОтсрочкаДней,
+	(РАЗНОСТЬДАТ(Обороты.Период, &amp;Дата, ДЕНЬ)) КАК ЗадержкаДней,
+	(ВЫБОР
+			КОГДА НЕ &amp;ЭтоАнализДебиторки
+					И РАЗНОСТЬДАТ(Обороты.Период, &amp;Дата, ДЕНЬ) &gt; 0
+				ТОГДА ВЫБОР
+						КОГДА Обороты.Период = Шаг.Край
+							ТОГДА Шаг.Долг * Обороты.СуммаОборот / Шаг.Сумма
+						ИНАЧЕ Обороты.СуммаОборот
+					КОНЕЦ
+			ИНАЧЕ 0
+		КОНЕЦ) КАК Просрочено}</query>
+			</item>
 		</dataSet>
+		<calculatedField>
+			<dataPath>ДоляПросроченнойЗадолженности</dataPath>
+			<expression>ВЫБОР КОГДА &amp;ЭтоАнализДебиторки И Долг &lt;&gt; 0 ТОГДА Просрочено / Долг * 100 КОГДА НЕ &amp;ЭтоАнализДебиторки И НашДолг &lt;&gt; 0 ТОГДА Просрочено / НашДолг * 100 ИНАЧЕ 0 КОНЕЦ</expression>
+			<title xmlns:d4p1="http://v8.1c.ru/8.1/data/core" xsi:type="d4p1:LocalStringType">
+				<d4p1:item>
+					<d4p1:lang>ru</d4p1:lang>
+					<d4p1:content>Доля просроченной задолженности</d4p1:content>
+				</d4p1:item>
+			</title>
+			<appearance>
+				<item xmlns="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xsi:type="dcsset:SettingsParameterValue">
+					<parameter>ЦветТекста</parameter>
+					<value xmlns:d6p1="http://v8.1c.ru/8.1/data/ui" xsi:type="d6p1:Color">0:283ce432-3553-4de9-94a2-ca9a590437f5</value>
+				</item>
+				<item xmlns="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xsi:type="dcsset:SettingsParameterValue">
+					<parameter>Формат</parameter>
+					<value xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>ЧДЦ=; ЧН=' '</d6p1:content>
+						</d6p1:item>
+					</value>
+				</item>
+			</appearance>
+		</calculatedField>
+		<calculatedField>
+			<dataPath>ДоляДолга</dataPath>
+			<expression>0</expression>
+			<title xmlns:d4p1="http://v8.1c.ru/8.1/data/core" xsi:type="d4p1:LocalStringType">
+				<d4p1:item>
+					<d4p1:lang>ru</d4p1:lang>
+					<d4p1:content>Доля долга, %</d4p1:content>
+				</d4p1:item>
+			</title>
+			<appearance>
+				<item xmlns="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xsi:type="dcsset:SettingsParameterValue">
+					<parameter>Формат</parameter>
+					<value xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>ЧДЦ=1; ЧН=' '</d6p1:content>
+						</d6p1:item>
+					</value>
+				</item>
+			</appearance>
+		</calculatedField>
+		<calculatedField>
+			<dataPath>СуммаИнтервала</dataPath>
+			<expression>0</expression>
+			<title xmlns:d4p1="http://v8.1c.ru/8.1/data/core" xsi:type="d4p1:LocalStringType">
+				<d4p1:item>
+					<d4p1:lang>ru</d4p1:lang>
+					<d4p1:content>Сумма</d4p1:content>
+				</d4p1:item>
+			</title>
+			<useRestriction>
+				<condition>true</condition>
+				<group>true</group>
+				<order>true</order>
+			</useRestriction>
+			<appearance>
+				<item xmlns="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xsi:type="dcsset:SettingsParameterValue">
+					<parameter>Формат</parameter>
+					<value xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>ЧДЦ=2; ЧН=' '</d6p1:content>
+						</d6p1:item>
+					</value>
+				</item>
+			</appearance>
+		</calculatedField>
+		<calculatedField>
+			<dataPath>СуммаСвернуто</dataPath>
+			<expression>Долг-НашДолг</expression>
+			<title xmlns:d4p1="http://v8.1c.ru/8.1/data/core" xsi:type="d4p1:LocalStringType">
+				<d4p1:item>
+					<d4p1:lang>ru</d4p1:lang>
+					<d4p1:content>Сумма свернуто</d4p1:content>
+				</d4p1:item>
+			</title>
+			<appearance>
+				<item xmlns="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:dcsset="http://v8.1c.ru/8.1/data-composition-system/settings" xsi:type="dcsset:SettingsParameterValue">
+					<parameter>Формат</parameter>
+					<value xmlns:d6p1="http://v8.1c.ru/8.1/data/core" xsi:type="d6p1:LocalStringType">
+						<d6p1:item>
+							<d6p1:lang>ru</d6p1:lang>
+							<d6p1:content>ЧДЦ=2; ЧН=' '</d6p1:content>
+						</d6p1:item>
+					</value>
+				</item>
+			</appearance>
+		</calculatedField>
 		<totalField>
 			<dataPath>Долг</dataPath>
 			<expression>Сумма(Долг)</expression>
+		</totalField>
+		<totalField>
+			<dataPath>Просрочено</dataPath>
+			<expression>Сумма(Просрочено)</expression>
+		</totalField>
+		<totalField>
+			<dataPath>НижняяГраницаИнтервала</dataPath>
+			<expression>Максимум(НижняяГраницаИнтервала)</expression>
+			<group>Партнер</group>
+			<group>Партнер Иерархия</group>
+		</totalField>
+		<totalField>
+			<dataPath>НижняяГраницаИнтервала</dataPath>
+			<expression>Среднее(НижняяГраницаИнтервала)</expression>
+		</totalField>
+		<totalField>
+			<dataPath>ДоляПросроченнойЗадолженности</dataPath>
+			<expression>ВЫБОР  КОГДА (&amp;ЭтоАнализДебиторки И Сумма(Долг) &lt;&gt; 0) ТОГДА Сумма(Просрочено) / Сумма(Долг) * 100 КОГДА (НЕ  &amp;ЭтоАнализДебиторки И Сумма(НашДолг) &lt;&gt; 0) ТОГДА Сумма(Просрочено) / Сумма(НашДолг) * 100 ИНАЧЕ 0 КОНЕЦ</expression>
+		</totalField>
+		<totalField>
+			<dataPath>ДоляДолга</dataPath>
+			<expression>ВЫБОР
+	КОГДА &amp;ЭтоАнализДебиторки И ВычислитьВыражение("Сумма(Долг)", , "ОбщийИтог") &lt;&gt; 0
+		ТОГДА Сумма(Долг) * 100 / ВычислитьВыражение("Сумма(Долг)", , "ОбщийИтог") КОГДА НЕ &amp;ЭтоАнализДебиторки И ВычислитьВыражение("Сумма(НашДолг)", , "ОбщийИтог") &lt;&gt; 0
+		ТОГДА Сумма(НашДолг) * 100 / ВычислитьВыражение("Сумма(НашДолг)", , "ОбщийИтог")
+	ИНАЧЕ 0
+КОНЕЦ</expression>
+		</totalField>
+		<totalField>
+			<dataPath>ЗадержкаДней</dataPath>
+			<expression>Максимум(ЗадержкаДней)</expression>
+		</totalField>
+		<totalField>
+			<dataPath>СрокЗадолженностиДней</dataPath>
+			<expression>Максимум(СрокЗадолженностиДней)</expression>
+		</totalField>
+		<totalField>
+			<dataPath>ОтсрочкаДней</dataPath>
+			<expression>Максимум(ОтсрочкаДней)</expression>
+		</totalField>
+		<totalField>
+			<dataPath>НашДолг</dataPath>
+			<expression>Сумма(НашДолг)</expression>
+		</totalField>
+		<totalField>
+			<dataPath>СуммаИнтервала</dataPath>
+			<expression>ВЫБОР
+	КОГДА &amp;ЭтоАнализДебиторки ТОГДА Сумма(Долг) ИНАЧЕ Сумма(НашДолг) КОНЕЦ</expression>
+		</totalField>
+		<totalField>
+			<dataPath>СуммаСвернуто</dataPath>
+			<expression>Сумма(СуммаСвернуто)</expression>
 		</totalField>
 		<parameter>
 			<name>Дата</name>
 			<title xmlns:d4p1="http://v8.1c.ru/8.1/data/core" xsi:type="d4p1:LocalStringType">
 				<d4p1:item>
 					<d4p1:lang>ru</d4p1:lang>
-					<d4p1:content>Дата</d4p1:content>
+					<d4p1:content>Дата отчета</d4p1:content>
 				</d4p1:item>
 			</title>
 			<valueType>
@@ -234,51 +3886,415 @@
 			</valueType>
 			<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
 			<useRestriction>false</useRestriction>
+			<expression>НАЧАЛОПЕРИОДА(&amp;Дата, "ДЕНЬ")</expression>
+			<denyIncompleteValues>true</denyIncompleteValues>
+			<use>Always</use>
+		</parameter>
+		<parameter>
+			<name>ВариантКлассификацииЗадолженности</name>
+			<title xmlns:d4p1="http://v8.1c.ru/8.1/data/core" xsi:type="d4p1:LocalStringType">
+				<d4p1:item>
+					<d4p1:lang>ru</d4p1:lang>
+					<d4p1:content>Вариант классификации задолженности</d4p1:content>
+				</d4p1:item>
+			</title>
+			<valueType>
+				<TypeId xmlns="http://v8.1c.ru/8.1/data/core">a9cc407b-27f1-4c93-b83e-557a6d28fa25</TypeId>
+			</valueType>
+			<value xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xsi:type="dcscor:DesignTimeValue">Справочник.ВариантыКлассификацииЗадолженности.ПустаяСсылка</value>
+			<useRestriction>false</useRestriction>
+			<denyIncompleteValues>true</denyIncompleteValues>
+			<use>Always</use>
+		</parameter>
+		<parameter>
+			<name>СтрокаДолгНеПросрочен</name>
+			<title xmlns:d4p1="http://v8.1c.ru/8.1/data/core" xsi:type="d4p1:LocalStringType">
+				<d4p1:item>
+					<d4p1:lang>ru</d4p1:lang>
+					<d4p1:content>Долг не просрочен</d4p1:content>
+				</d4p1:item>
+			</title>
+			<valueType>
+				<Type xmlns="http://v8.1c.ru/8.1/data/core">xs:string</Type>
+				<StringQualifiers xmlns="http://v8.1c.ru/8.1/data/core">
+					<Length>40</Length>
+					<AllowedLength>Variable</AllowedLength>
+				</StringQualifiers>
+			</valueType>
+			<value xsi:type="xs:string"/>
+			<useRestriction>true</useRestriction>
+			<expression>НСтр("ru='Не просрочено'")</expression>
+			<availableAsField>false</availableAsField>
+			<use>Always</use>
+		</parameter>
+		<parameter>
+			<name>СтрокаСостояниеВзаиморасчетов</name>
+			<title xmlns:d4p1="http://v8.1c.ru/8.1/data/core" xsi:type="d4p1:LocalStringType">
+				<d4p1:item>
+					<d4p1:lang>ru</d4p1:lang>
+					<d4p1:content>Состояние взаиморасчетов</d4p1:content>
+				</d4p1:item>
+			</title>
+			<value xsi:nil="true"/>
+			<useRestriction>true</useRestriction>
+			<expression>НСтр("ru='Состояние взаиморасчетов'")</expression>
+			<availableAsField>false</availableAsField>
+		</parameter>
+		<parameter>
+			<name>НачалоПериода</name>
+			<title xmlns:d4p1="http://v8.1c.ru/8.1/data/core" xsi:type="d4p1:LocalStringType">
+				<d4p1:item>
+					<d4p1:lang>ru</d4p1:lang>
+					<d4p1:content>Начало периода</d4p1:content>
+				</d4p1:item>
+			</title>
+			<valueType>
+				<Type xmlns="http://v8.1c.ru/8.1/data/core">xs:dateTime</Type>
+				<DateQualifiers xmlns="http://v8.1c.ru/8.1/data/core">
+					<DateFractions>DateTime</DateFractions>
+				</DateQualifiers>
+			</valueType>
+			<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+			<useRestriction>true</useRestriction>
+			<availableAsField>false</availableAsField>
+		</parameter>
+		<parameter>
+			<name>КонецПериода</name>
+			<title xmlns:d4p1="http://v8.1c.ru/8.1/data/core" xsi:type="d4p1:LocalStringType">
+				<d4p1:item>
+					<d4p1:lang>ru</d4p1:lang>
+					<d4p1:content>Конец периода</d4p1:content>
+				</d4p1:item>
+			</title>
+			<valueType>
+				<Type xmlns="http://v8.1c.ru/8.1/data/core">xs:dateTime</Type>
+				<DateQualifiers xmlns="http://v8.1c.ru/8.1/data/core">
+					<DateFractions>DateTime</DateFractions>
+				</DateQualifiers>
+			</valueType>
+			<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+			<useRestriction>true</useRestriction>
+			<availableAsField>false</availableAsField>
+		</parameter>
+		<parameter>
+			<name>Период</name>
+			<title xmlns:d4p1="http://v8.1c.ru/8.1/data/core" xsi:type="d4p1:LocalStringType">
+				<d4p1:item>
+					<d4p1:lang>ru</d4p1:lang>
+					<d4p1:content>Период</d4p1:content>
+				</d4p1:item>
+			</title>
+			<valueType>
+				<Type xmlns="http://v8.1c.ru/8.1/data/core">xs:dateTime</Type>
+				<DateQualifiers xmlns="http://v8.1c.ru/8.1/data/core">
+					<DateFractions>DateTime</DateFractions>
+				</DateQualifiers>
+			</valueType>
+			<value xsi:type="xs:dateTime">0001-01-01T00:00:00</value>
+			<useRestriction>true</useRestriction>
+			<availableAsField>false</availableAsField>
+		</parameter>
+		<parameter>
+			<name>ГрафикНеЗаполнен</name>
+			<title xmlns:d4p1="http://v8.1c.ru/8.1/data/core" xsi:type="d4p1:LocalStringType">
+				<d4p1:item>
+					<d4p1:lang>ru</d4p1:lang>
+					<d4p1:content>График не заполнен</d4p1:content>
+				</d4p1:item>
+			</title>
+			<valueType>
+				<TypeId xmlns="http://v8.1c.ru/8.1/data/core">90feabf1-6e48-4daf-b9de-f19f27bf20f3</TypeId>
+			</valueType>
+			<value xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xsi:type="dcscor:DesignTimeValue">Справочник.ГрафикиОплаты.ПустаяСсылка</value>
+			<useRestriction>true</useRestriction>
+			<availableAsField>false</availableAsField>
+		</parameter>
+		<parameter>
+			<name>Приход</name>
+			<title xmlns:d4p1="http://v8.1c.ru/8.1/data/core" xsi:type="d4p1:LocalStringType">
+				<d4p1:item>
+					<d4p1:lang>ru</d4p1:lang>
+					<d4p1:content>Приход</d4p1:content>
+				</d4p1:item>
+			</title>
+			<valueType>
+				<Type xmlns="http://v8.1c.ru/8.1/data/core" xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise">d5p1:AccumulationRecordType</Type>
+			</valueType>
+			<value xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise" xsi:type="d4p1:AccumulationRecordType">Receipt</value>
+			<useRestriction>true</useRestriction>
+			<availableAsField>false</availableAsField>
+		</parameter>
+		<parameter>
+			<name>Расход</name>
+			<title xmlns:d4p1="http://v8.1c.ru/8.1/data/core" xsi:type="d4p1:LocalStringType">
+				<d4p1:item>
+					<d4p1:lang>ru</d4p1:lang>
+					<d4p1:content>Расход</d4p1:content>
+				</d4p1:item>
+			</title>
+			<valueType>
+				<Type xmlns="http://v8.1c.ru/8.1/data/core" xmlns:d5p1="http://v8.1c.ru/8.1/data/enterprise">d5p1:AccumulationRecordType</Type>
+			</valueType>
+			<value xmlns:d4p1="http://v8.1c.ru/8.1/data/enterprise" xsi:type="d4p1:AccumulationRecordType">Expense</value>
+			<useRestriction>true</useRestriction>
+			<availableAsField>false</availableAsField>
+		</parameter>
+		<parameter>
+			<name>РазбиватьПоИнтервалам</name>
+			<title xmlns:d4p1="http://v8.1c.ru/8.1/data/core" xsi:type="d4p1:LocalStringType">
+				<d4p1:item>
+					<d4p1:lang>ru</d4p1:lang>
+					<d4p1:content>Разбивать по интервалам</d4p1:content>
+				</d4p1:item>
+			</title>
+			<valueType>
+				<Type xmlns="http://v8.1c.ru/8.1/data/core">xs:string</Type>
+				<StringQualifiers xmlns="http://v8.1c.ru/8.1/data/core">
+					<Length>0</Length>
+					<AllowedLength>Variable</AllowedLength>
+				</StringQualifiers>
+			</valueType>
+			<value xsi:type="xs:string"/>
+			<useRestriction>false</useRestriction>
+			<availableValue>
+				<value xsi:type="xs:string">Дебиторку</value>
+				<presentation xmlns:d5p1="http://v8.1c.ru/8.1/data/core" xsi:type="d5p1:LocalStringType">
+					<d5p1:item>
+						<d5p1:lang>ru</d5p1:lang>
+						<d5p1:content>Дебиторку</d5p1:content>
+					</d5p1:item>
+				</presentation>
+			</availableValue>
+			<availableValue>
+				<value xsi:type="xs:string">Кредиторку</value>
+				<presentation xmlns:d5p1="http://v8.1c.ru/8.1/data/core" xsi:type="d5p1:LocalStringType">
+					<d5p1:item>
+						<d5p1:lang>ru</d5p1:lang>
+						<d5p1:content>Кредиторку</d5p1:content>
+					</d5p1:item>
+				</presentation>
+			</availableValue>
+			<inputParameters>
+				<item xmlns="http://v8.1c.ru/8.1/data-composition-system/core">
+					<parameter>БыстрыйВыбор</parameter>
+					<value xsi:type="xs:boolean">true</value>
+				</item>
+			</inputParameters>
+			<denyIncompleteValues>true</denyIncompleteValues>
+			<use>Always</use>
+		</parameter>
+		<parameter>
+			<name>ЭтоАнализДебиторки</name>
+			<title xmlns:d4p1="http://v8.1c.ru/8.1/data/core" xsi:type="d4p1:LocalStringType">
+				<d4p1:item>
+					<d4p1:lang>ru</d4p1:lang>
+					<d4p1:content>Это анализ дебиторки</d4p1:content>
+				</d4p1:item>
+			</title>
+			<valueType>
+				<Type xmlns="http://v8.1c.ru/8.1/data/core">xs:boolean</Type>
+			</valueType>
+			<value xsi:type="xs:boolean">false</value>
+			<useRestriction>true</useRestriction>
+			<expression>&amp;РазбиватьПоИнтервалам = "Дебиторку"</expression>
+			<availableAsField>false</availableAsField>
+			<inputParameters>
+				<item xmlns="http://v8.1c.ru/8.1/data-composition-system/core">
+					<use>false</use>
+					<parameter>БыстрыйВыбор</parameter>
+					<value xsi:type="xs:boolean">true</value>
+				</item>
+			</inputParameters>
+			<use>Always</use>
+		</parameter>
+		<parameter>
+			<name>Сегмент</name>
+			<title xmlns:d4p1="http://v8.1c.ru/8.1/data/core" xsi:type="d4p1:LocalStringType">
+				<d4p1:item>
+					<d4p1:lang>ru</d4p1:lang>
+					<d4p1:content>Признак сегмента</d4p1:content>
+				</d4p1:item>
+			</title>
+			<valueType>
+				<TypeId xmlns="http://v8.1c.ru/8.1/data/core">41aed0b9-4492-44a2-be9b-3ea55e15a8da</TypeId>
+			</valueType>
+			<useRestriction>false</useRestriction>
+			<valueListAllowed>true</valueListAllowed>
+		</parameter>
+		<parameter>
+			<name>ИспользуетсяОтборПоСегментуПартнеров</name>
+			<title xmlns:d4p1="http://v8.1c.ru/8.1/data/core" xsi:type="d4p1:LocalStringType">
+				<d4p1:item>
+					<d4p1:lang>ru</d4p1:lang>
+					<d4p1:content>Используется отбор по сегменту партнеров</d4p1:content>
+				</d4p1:item>
+			</title>
+			<valueType>
+				<Type xmlns="http://v8.1c.ru/8.1/data/core">xs:boolean</Type>
+			</valueType>
+			<value xsi:type="xs:boolean">false</value>
+			<useRestriction>true</useRestriction>
+			<availableAsField>false</availableAsField>
+		</parameter>
+		<parameter>
+			<name>ПоНакладным</name>
+			<title xmlns:d4p1="http://v8.1c.ru/8.1/data/core" xsi:type="d4p1:LocalStringType">
+				<d4p1:item>
+					<d4p1:lang>ru</d4p1:lang>
+					<d4p1:content>По накладным</d4p1:content>
+				</d4p1:item>
+			</title>
+			<valueType>
+				<TypeId xmlns="http://v8.1c.ru/8.1/data/core">b1bcfacd-dda8-4041-8278-6f0d25af4fb0</TypeId>
+			</valueType>
+			<value xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xsi:type="dcscor:DesignTimeValue">Перечисление.ПорядокРасчетов.ПоНакладным</value>
+			<useRestriction>true</useRestriction>
+			<availableAsField>false</availableAsField>
+		</parameter>
+		<parameter>
+			<name>ИспользоватьГрафикОплатыИзСоглашенияСКлиентом</name>
+			<title xmlns:d4p1="http://v8.1c.ru/8.1/data/core" xsi:type="d4p1:LocalStringType">
+				<d4p1:item>
+					<d4p1:lang>ru</d4p1:lang>
+					<d4p1:content>Динамический расчет дат оплат</d4p1:content>
+				</d4p1:item>
+			</title>
+			<valueType>
+				<Type xmlns="http://v8.1c.ru/8.1/data/core">xs:boolean</Type>
+			</valueType>
+			<value xsi:type="xs:boolean">false</value>
+			<useRestriction>false</useRestriction>
+			<availableAsField>false</availableAsField>
+			<inputParameters>
+				<item xmlns="http://v8.1c.ru/8.1/data-composition-system/core">
+					<parameter>БыстрыйВыбор</parameter>
+					<value xsi:type="xs:boolean">true</value>
+				</item>
+			</inputParameters>
+			<use>Always</use>
 		</parameter>
 		<settingsVariant>
-			<name xmlns="http://v8.1c.ru/8.1/data-composition-system/settings">Основной</name>
-			<presentation xmlns="http://v8.1c.ru/8.1/data-composition-system/settings" xsi:type="xs:string">Основной</presentation>
+			<name xmlns="http://v8.1c.ru/8.1/data-composition-system/settings">ВсяЗадолженностьПоСрокам</name>
+			<presentation xmlns="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:d4p1="http://v8.1c.ru/8.1/data/core" xsi:type="d4p1:LocalStringType">
+				<d4p1:item>
+					<d4p1:lang>ru</d4p1:lang>
+					<d4p1:content>Задолженность ФИФО по интервалам</d4p1:content>
+				</d4p1:item>
+			</presentation>
+		</settingsVariant>
+		<settingsVariant>
+			<name xmlns="http://v8.1c.ru/8.1/data-composition-system/settings">ПлоскийСписок</name>
+			<presentation xmlns="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:d4p1="http://v8.1c.ru/8.1/data/core" xsi:type="d4p1:LocalStringType">
+				<d4p1:item>
+					<d4p1:lang>ru</d4p1:lang>
+					<d4p1:content>Задолженность ФИФО плоским списком</d4p1:content>
+				</d4p1:item>
+			</presentation>
 		</settingsVariant>
 	</dataCompositionSchema>
 </SchemaFile>﻿<?xml version="1.0" encoding="UTF-8"?>
 <Settings xmlns="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<selection>
-		<item xsi:type="SelectedItemField">
-			<field>Организация</field>
+	<filter>
+		<item xsi:type="FilterItemComparison">
+			<use>false</use>
+			<left xsi:type="dcscor:Field">Организация</left>
+			<comparisonType>Equal</comparisonType>
+			<right xsi:type="dcscor:DesignTimeValue">Справочник.Организации.ПустаяСсылка</right>
+			<userSettingID>c622ce9c-1bf1-4cb3-84d7-0939d3e714d0</userSettingID>
 		</item>
-		<item xsi:type="SelectedItemField">
-			<field>Контрагент</field>
+		<item xsi:type="FilterItemComparison">
+			<use>false</use>
+			<left xsi:type="dcscor:Field">Партнер</left>
+			<comparisonType>Equal</comparisonType>
+			<right xsi:type="dcscor:DesignTimeValue">Справочник.Партнеры.ПустаяСсылка</right>
+			<userSettingID>0d885d01-2ea8-47da-8ae8-54b7e10453fb</userSettingID>
 		</item>
-		<item xsi:type="SelectedItemField">
-			<field>ДоговорКонтрагента</field>
+		<item xsi:type="FilterItemComparison">
+			<use>false</use>
+			<left xsi:type="dcscor:Field">СегментПартнеров</left>
+			<comparisonType>Equal</comparisonType>
+			<right xsi:type="dcscor:DesignTimeValue">Справочник.СегментыПартнеров.ПустаяСсылка</right>
 		</item>
-		<item xsi:type="SelectedItemField">
-			<field>Период</field>
-		</item>
-		<item xsi:type="SelectedItemField">
-			<field>Регистратор</field>
-		</item>
-		<item xsi:type="SelectedItemField">
-			<field>Долг</field>
-		</item>
-		<item xsi:type="SelectedItemField">
-			<field>Долгота</field>
-		</item>
-	</selection>
+	</filter>
 	<dataParameters>
 		<dcscor:item xsi:type="SettingsParameterValue">
 			<dcscor:parameter>Дата</dcscor:parameter>
 			<dcscor:value xsi:type="v8:StandardBeginningDate">
-				<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfNextDay</v8:variant>
+				<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisDay</v8:variant>
 			</dcscor:value>
 		</dcscor:item>
+		<dcscor:item xsi:type="SettingsParameterValue">
+			<dcscor:parameter>ВариантКлассификацииЗадолженности</dcscor:parameter>
+			<dcscor:value xsi:type="dcscor:DesignTimeValue">Справочник.ВариантыКлассификацииЗадолженности.ПустаяСсылка</dcscor:value>
+			<userSettingID>ca6dfe72-a123-45a3-89e3-7906072df3a8</userSettingID>
+		</dcscor:item>
+		<dcscor:item xsi:type="SettingsParameterValue">
+			<dcscor:parameter>РазбиватьПоИнтервалам</dcscor:parameter>
+			<dcscor:value xsi:type="xs:string">Дебиторку</dcscor:value>
+		</dcscor:item>
+		<dcscor:item xsi:type="SettingsParameterValue">
+			<dcscor:use>false</dcscor:use>
+			<dcscor:parameter>ЭтоАнализДебиторки</dcscor:parameter>
+			<dcscor:value xsi:type="xs:string"/>
+		</dcscor:item>
+		<dcscor:item xsi:type="SettingsParameterValue">
+			<dcscor:use>false</dcscor:use>
+			<dcscor:parameter>Сегмент</dcscor:parameter>
+			<dcscor:value xsi:type="dcscor:DesignTimeValue">Справочник.СегментыПартнеров.ПустаяСсылка</dcscor:value>
+		</dcscor:item>
+		<dcscor:item xsi:type="SettingsParameterValue">
+			<dcscor:use>false</dcscor:use>
+			<dcscor:parameter>ПоНакладным</dcscor:parameter>
+			<dcscor:value xsi:nil="true"/>
+		</dcscor:item>
+		<dcscor:item xsi:type="SettingsParameterValue">
+			<dcscor:parameter>ИспользоватьГрафикОплатыИзСоглашенияСКлиентом</dcscor:parameter>
+			<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+			<userSettingID>fbe5031a-a3dd-4344-b01a-f208e6915eaa</userSettingID>
+		</dcscor:item>
 	</dataParameters>
-	<order>
-		<item xsi:type="OrderItemField">
-			<field>Период</field>
-			<orderType>Asc</orderType>
+	<conditionalAppearance>
+		<item>
+			<selection>
+				<item>
+					<field>Просрочено</field>
+				</item>
+			</selection>
+			<filter>
+				<item xsi:type="FilterItemComparison">
+					<left xsi:type="dcscor:Field">Просрочено</left>
+					<comparisonType>Greater</comparisonType>
+					<right xsi:type="xs:decimal">0</right>
+				</item>
+			</filter>
+			<appearance>
+				<dcscor:item xsi:type="SettingsParameterValue">
+					<dcscor:parameter>ЦветТекста</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:Color">0:283ce432-3553-4de9-94a2-ca9a590437f5</dcscor:value>
+				</dcscor:item>
+			</appearance>
 		</item>
-	</order>
+		<item>
+			<selection>
+				<item>
+					<field>ЗадержкаДней</field>
+				</item>
+			</selection>
+			<filter>
+				<item xsi:type="FilterItemComparison">
+					<left xsi:type="dcscor:Field">ЗадержкаДней</left>
+					<comparisonType>Less</comparisonType>
+					<right xsi:type="xs:decimal">0</right>
+				</item>
+			</filter>
+			<appearance>
+				<dcscor:item xsi:type="SettingsParameterValue">
+					<dcscor:parameter>ЦветТекста</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:Color">web:Silver</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</item>
+	</conditionalAppearance>
 	<outputParameters>
 		<dcscor:item xsi:type="SettingsParameterValue">
 			<dcscor:use>false</dcscor:use>
@@ -295,27 +4311,88 @@
 			<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
 			<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
 		</dcscor:item>
+		<dcscor:item xsi:type="SettingsParameterValue">
+			<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+			<dcscor:value xsi:type="DataCompositionTextOutputType">Output</dcscor:value>
+		</dcscor:item>
+		<dcscor:item xsi:type="SettingsParameterValue">
+			<dcscor:parameter>Заголовок</dcscor:parameter>
+			<dcscor:value xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вся задолженность по срокам</v8:content>
+				</v8:item>
+			</dcscor:value>
+		</dcscor:item>
 	</outputParameters>
 	<item xsi:type="StructureItemGroup">
 		<groupItems>
 			<item xsi:type="GroupItemField">
-				<field>Организация</field>
+				<field>НаименованиеИнтервала</field>
 				<groupType>Items</groupType>
 				<periodAdditionType>None</periodAdditionType>
 				<periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</periodAdditionBegin>
 				<periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</periodAdditionEnd>
 			</item>
 		</groupItems>
+		<filter>
+			<item xsi:type="FilterItemComparison">
+				<left xsi:type="dcscor:Field">НаименованиеИнтервала</left>
+				<comparisonType>Filled</comparisonType>
+			</item>
+		</filter>
 		<order>
-			<item xsi:type="OrderItemAuto"/>
+			<item xsi:type="OrderItemAuto">
+				<use>false</use>
+			</item>
+			<item xsi:type="OrderItemField">
+				<field>НижняяГраницаИнтервала</field>
+				<orderType>Asc</orderType>
+			</item>
 		</order>
 		<selection>
-			<item xsi:type="SelectedItemAuto"/>
+			<item xsi:type="SelectedItemAuto">
+				<use>false</use>
+			</item>
+			<item xsi:type="SelectedItemField">
+				<field>СистемныеПоля.НомерПоПорядку</field>
+			</item>
+			<item xsi:type="SelectedItemField">
+				<field>НаименованиеИнтервала</field>
+			</item>
+			<item xsi:type="SelectedItemField">
+				<use>false</use>
+				<field>Долг</field>
+			</item>
+			<item xsi:type="SelectedItemField">
+				<use>false</use>
+				<field>НашДолг</field>
+			</item>
+			<item xsi:type="SelectedItemField">
+				<field>СуммаИнтервала</field>
+			</item>
+			<item xsi:type="SelectedItemField">
+				<field>ДоляДолга</field>
+				<lwsTitle>
+					<v8:item>
+						<v8:lang>ru</v8:lang>
+						<v8:content>%</v8:content>
+					</v8:item>
+				</lwsTitle>
+			</item>
 		</selection>
-		<item xsi:type="StructureItemGroup">
+		<outputParameters>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+				<dcscor:value xsi:type="DataCompositionTextOutputType">DontOutput</dcscor:value>
+			</dcscor:item>
+		</outputParameters>
+	</item>
+	<item xsi:type="StructureItemTable">
+		<column>
 			<groupItems>
 				<item xsi:type="GroupItemField">
-					<field>Контрагент</field>
+					<field>ГруппировкаВсего</field>
 					<groupType>Items</groupType>
 					<periodAdditionType>None</periodAdditionType>
 					<periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</periodAdditionBegin>
@@ -326,12 +4403,187 @@
 				<item xsi:type="OrderItemAuto"/>
 			</order>
 			<selection>
+				<item xsi:type="SelectedItemAuto">
+					<use>false</use>
+				</item>
+				<item xsi:type="SelectedItemFolder">
+					<lwsTitle>
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Состояние взаиморасчетов</v8:content>
+						</v8:item>
+					</lwsTitle>
+					<item xsi:type="SelectedItemField">
+						<field>ОтсрочкаДней</field>
+					</item>
+					<item xsi:type="SelectedItemField">
+						<field>Календарь</field>
+					</item>
+					<item xsi:type="SelectedItemField">
+						<field>СрокЗадолженностиДней</field>
+					</item>
+					<item xsi:type="SelectedItemField">
+						<field>ЗадержкаДней</field>
+					</item>
+					<item xsi:type="SelectedItemField">
+						<field>СуммаСвернуто</field>
+					</item>
+					<item xsi:type="SelectedItemField">
+						<field>Долг</field>
+					</item>
+					<item xsi:type="SelectedItemField">
+						<field>НашДолг</field>
+					</item>
+					<item xsi:type="SelectedItemField">
+						<field>Просрочено</field>
+					</item>
+					<item xsi:type="SelectedItemField">
+						<field>ДоляПросроченнойЗадолженности</field>
+						<lwsTitle>
+							<v8:item>
+								<v8:lang>ru</v8:lang>
+								<v8:content>%</v8:content>
+							</v8:item>
+						</lwsTitle>
+					</item>
+					<placement>Horizontally</placement>
+				</item>
+			</selection>
+			<outputParameters>
+				<dcscor:item xsi:type="SettingsParameterValue">
+					<dcscor:parameter>РасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="SettingsParameterValue">
+					<dcscor:use>false</dcscor:use>
+					<dcscor:parameter>АвтоПозицияРесурсов</dcscor:parameter>
+					<dcscor:value xsi:type="DataCompositionResourcesAutoPosition">DontUse</dcscor:value>
+				</dcscor:item>
+			</outputParameters>
+		</column>
+		<column>
+			<groupItems>
+				<item xsi:type="GroupItemField">
+					<field>НаименованиеИнтервала</field>
+					<groupType>Items</groupType>
+					<periodAdditionType>None</periodAdditionType>
+					<periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</periodAdditionBegin>
+					<periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</periodAdditionEnd>
+				</item>
+			</groupItems>
+			<filter>
+				<item xsi:type="FilterItemComparison">
+					<left xsi:type="dcscor:Field">НаименованиеИнтервала</left>
+					<comparisonType>Filled</comparisonType>
+				</item>
+			</filter>
+			<order>
+				<item xsi:type="OrderItemAuto">
+					<use>false</use>
+				</item>
+				<item xsi:type="OrderItemField">
+					<field>НижняяГраницаИнтервала</field>
+					<orderType>Asc</orderType>
+				</item>
+			</order>
+			<selection>
+				<item xsi:type="SelectedItemAuto">
+					<use>false</use>
+				</item>
+				<item xsi:type="SelectedItemField">
+					<use>false</use>
+					<field>Долг</field>
+				</item>
+				<item xsi:type="SelectedItemField">
+					<use>false</use>
+					<field>НашДолг</field>
+				</item>
+				<item xsi:type="SelectedItemField">
+					<field>СуммаИнтервала</field>
+				</item>
+				<item xsi:type="SelectedItemField">
+					<field>НаименованиеИнтервала</field>
+				</item>
+			</selection>
+			<outputParameters>
+				<dcscor:item xsi:type="SettingsParameterValue">
+					<dcscor:parameter>РасположениеОбщихИтогов</dcscor:parameter>
+					<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+				</dcscor:item>
+				<dcscor:item xsi:type="SettingsParameterValue">
+					<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+					<dcscor:value xsi:type="DataCompositionTextOutputType">DontOutput</dcscor:value>
+				</dcscor:item>
+			</outputParameters>
+		</column>
+		<row>
+			<groupItems>
+				<item xsi:type="GroupItemField">
+					<field>Партнер</field>
+					<groupType>Items</groupType>
+					<periodAdditionType>None</periodAdditionType>
+					<periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</periodAdditionBegin>
+					<periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</periodAdditionEnd>
+				</item>
+			</groupItems>
+			<filter>
+				<item xsi:type="FilterItemComparison">
+					<use>false</use>
+					<left xsi:type="dcscor:Field">НашДолг</left>
+					<comparisonType>Greater</comparisonType>
+					<right xsi:type="xs:decimal">0</right>
+					<presentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Только при наличии кредиторки</v8:content>
+						</v8:item>
+					</presentation>
+					<userSettingID>19b8bab5-d483-4610-8bcf-425625e1d6fa</userSettingID>
+					<userSettingPresentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Только при наличии кредиторки</v8:content>
+						</v8:item>
+					</userSettingPresentation>
+				</item>
+				<item xsi:type="FilterItemComparison">
+					<use>false</use>
+					<left xsi:type="dcscor:Field">Долг</left>
+					<comparisonType>Greater</comparisonType>
+					<right xsi:type="xs:decimal">0</right>
+					<presentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Только при наличии дебиторки</v8:content>
+						</v8:item>
+					</presentation>
+					<userSettingID>5cdede31-6b25-434f-aad6-c55d572b0ce2</userSettingID>
+					<userSettingPresentation xsi:type="v8:LocalStringType">
+						<v8:item>
+							<v8:lang>ru</v8:lang>
+							<v8:content>Только при наличии дебиторки</v8:content>
+						</v8:item>
+					</userSettingPresentation>
+				</item>
+			</filter>
+			<order>
+				<item xsi:type="OrderItemAuto"/>
+			</order>
+			<selection>
 				<item xsi:type="SelectedItemAuto"/>
 			</selection>
-			<item xsi:type="StructureItemGroup">
+			<outputParameters/>
+			<item>
 				<groupItems>
 					<item xsi:type="GroupItemField">
-						<field>ДоговорКонтрагента</field>
+						<field>Договор</field>
+						<groupType>Items</groupType>
+						<periodAdditionType>None</periodAdditionType>
+						<periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</periodAdditionBegin>
+						<periodAdditionEnd xsi:type="xs:dateTime">0001-01-01T00:00:00</periodAdditionEnd>
+					</item>
+					<item xsi:type="GroupItemField">
+						<field>Организация</field>
 						<groupType>Items</groupType>
 						<periodAdditionType>None</periodAdditionType>
 						<periodAdditionBegin xsi:type="xs:dateTime">0001-01-01T00:00:00</periodAdditionBegin>
@@ -343,17 +4595,266 @@
 				</order>
 				<selection>
 					<item xsi:type="SelectedItemAuto"/>
+					<item xsi:type="SelectedItemField">
+						<use>false</use>
+						<field>СистемныеПоля.НомерПоПорядкуВГруппировке</field>
+					</item>
 				</selection>
-				<item xsi:type="StructureItemGroup">
+				<outputParameters>
+					<dcscor:item xsi:type="SettingsParameterValue">
+						<dcscor:parameter>ВыводитьОтбор</dcscor:parameter>
+						<dcscor:value xsi:type="DataCompositionTextOutputType">DontOutput</dcscor:value>
+					</dcscor:item>
+				</outputParameters>
+				<item>
 					<order>
 						<item xsi:type="OrderItemAuto"/>
 					</order>
 					<selection>
-						<item xsi:type="SelectedItemAuto"/>
+						<item xsi:type="SelectedItemAuto">
+							<use>false</use>
+						</item>
+						<item xsi:type="SelectedItemField">
+							<field>Регистратор</field>
+						</item>
+						<item xsi:type="SelectedItemField">
+							<field>Соглашение</field>
+						</item>
+						<item xsi:type="SelectedItemField">
+							<field>ДатаПлатежа</field>
+						</item>
 					</selection>
+					<outputParameters/>
 				</item>
 			</item>
+		</row>
+		<outputParameters/>
+	</item>
+</Settings>﻿<?xml version="1.0" encoding="UTF-8"?>
+<Settings xmlns="http://v8.1c.ru/8.1/data-composition-system/settings" xmlns:dcscor="http://v8.1c.ru/8.1/data-composition-system/core" xmlns:style="http://v8.1c.ru/8.1/data/ui/style" xmlns:sys="http://v8.1c.ru/8.1/data/ui/fonts/system" xmlns:v8="http://v8.1c.ru/8.1/data/core" xmlns:v8ui="http://v8.1c.ru/8.1/data/ui" xmlns:web="http://v8.1c.ru/8.1/data/ui/colors/web" xmlns:win="http://v8.1c.ru/8.1/data/ui/colors/windows" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<selection>
+		<item xsi:type="SelectedItemField">
+			<field>Партнер</field>
 		</item>
+		<item xsi:type="SelectedItemField">
+			<field>Организация</field>
+		</item>
+		<item xsi:type="SelectedItemField">
+			<field>Регистратор</field>
+		</item>
+		<item xsi:type="SelectedItemField">
+			<field>ДатаПлатежа</field>
+		</item>
+		<item xsi:type="SelectedItemField">
+			<field>Партнер.ОсновнойМенеджер</field>
+			<lwsTitle>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Основной менеджер</v8:content>
+				</v8:item>
+			</lwsTitle>
+		</item>
+		<item xsi:type="SelectedItemField">
+			<field>Соглашение</field>
+		</item>
+		<item xsi:type="SelectedItemField">
+			<field>ТипСоглашения</field>
+		</item>
+		<item xsi:type="SelectedItemField">
+			<field>Долг</field>
+		</item>
+		<item xsi:type="SelectedItemField">
+			<field>НашДолг</field>
+		</item>
+		<item xsi:type="SelectedItemField">
+			<field>ПараметрыДанных.Дата</field>
+			<lwsTitle>
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Дата отчета</v8:content>
+				</v8:item>
+			</lwsTitle>
+		</item>
+		<item xsi:type="SelectedItemField">
+			<field>ЗадержкаДней</field>
+		</item>
+		<item xsi:type="SelectedItemField">
+			<field>НаименованиеИнтервала</field>
+		</item>
+		<item xsi:type="SelectedItemField">
+			<field>Просрочено</field>
+		</item>
+		<item xsi:type="SelectedItemField">
+			<field>Склад</field>
+		</item>
+		<item xsi:type="SelectedItemField">
+			<field>ВходитВСегмент</field>
+		</item>
+	</selection>
+	<filter>
+		<item xsi:type="FilterItemComparison">
+			<use>false</use>
+			<left xsi:type="dcscor:Field">Организация</left>
+			<comparisonType>Equal</comparisonType>
+			<right xsi:type="dcscor:DesignTimeValue">Справочник.Организации.ПустаяСсылка</right>
+			<userSettingID>c622ce9c-1bf1-4cb3-84d7-0939d3e714d0</userSettingID>
+		</item>
+		<item xsi:type="FilterItemComparison">
+			<use>false</use>
+			<left xsi:type="dcscor:Field">Партнер</left>
+			<comparisonType>Equal</comparisonType>
+			<right xsi:type="dcscor:DesignTimeValue">Справочник.Партнеры.ПустаяСсылка</right>
+			<userSettingID>0d885d01-2ea8-47da-8ae8-54b7e10453fb</userSettingID>
+		</item>
+		<item xsi:type="FilterItemComparison">
+			<use>false</use>
+			<left xsi:type="dcscor:Field">СегментПартнеров</left>
+			<comparisonType>Equal</comparisonType>
+			<right xsi:type="dcscor:DesignTimeValue">Справочник.СегментыПартнеров.ПустаяСсылка</right>
+		</item>
+	</filter>
+	<dataParameters>
+		<dcscor:item xsi:type="SettingsParameterValue">
+			<dcscor:parameter>Дата</dcscor:parameter>
+			<dcscor:value xsi:type="v8:StandardBeginningDate">
+				<v8:variant xsi:type="v8:StandardBeginningDateVariant">BeginningOfThisDay</v8:variant>
+			</dcscor:value>
+		</dcscor:item>
+		<dcscor:item xsi:type="SettingsParameterValue">
+			<dcscor:parameter>ВариантКлассификацииЗадолженности</dcscor:parameter>
+			<dcscor:value xsi:type="dcscor:DesignTimeValue">Справочник.ВариантыКлассификацииЗадолженности.ПустаяСсылка</dcscor:value>
+			<userSettingID>ca6dfe72-a123-45a3-89e3-7906072df3a8</userSettingID>
+		</dcscor:item>
+		<dcscor:item xsi:type="SettingsParameterValue">
+			<dcscor:parameter>РазбиватьПоИнтервалам</dcscor:parameter>
+			<dcscor:value xsi:type="xs:string">Дебиторку</dcscor:value>
+		</dcscor:item>
+		<dcscor:item xsi:type="SettingsParameterValue">
+			<dcscor:use>false</dcscor:use>
+			<dcscor:parameter>ЭтоАнализДебиторки</dcscor:parameter>
+			<dcscor:value xsi:type="xs:string"/>
+		</dcscor:item>
+		<dcscor:item xsi:type="SettingsParameterValue">
+			<dcscor:parameter>Сегмент</dcscor:parameter>
+			<dcscor:value xsi:type="dcscor:DesignTimeValue">Справочник.СегментыПартнеров.ПустаяСсылка</dcscor:value>
+			<userSettingID>1eaf2e2b-4cb2-4379-b882-acf83413ca21</userSettingID>
+		</dcscor:item>
+		<dcscor:item xsi:type="SettingsParameterValue">
+			<dcscor:parameter>ИспользоватьГрафикОплатыИзСоглашенияСКлиентом</dcscor:parameter>
+			<dcscor:value xsi:type="xs:boolean">true</dcscor:value>
+			<userSettingID>29f2a12d-902a-4587-9878-b0ca5e1d26a7</userSettingID>
+		</dcscor:item>
+	</dataParameters>
+	<order>
+		<item xsi:type="OrderItemField">
+			<field>Партнер</field>
+			<orderType>Asc</orderType>
+		</item>
+	</order>
+	<conditionalAppearance>
+		<item>
+			<selection>
+				<item>
+					<field>Просрочено</field>
+				</item>
+			</selection>
+			<filter>
+				<item xsi:type="FilterItemComparison">
+					<left xsi:type="dcscor:Field">Просрочено</left>
+					<comparisonType>Greater</comparisonType>
+					<right xsi:type="xs:decimal">0</right>
+				</item>
+			</filter>
+			<appearance>
+				<dcscor:item xsi:type="SettingsParameterValue">
+					<dcscor:parameter>ЦветТекста</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:Color">0:283ce432-3553-4de9-94a2-ca9a590437f5</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</item>
+		<item>
+			<selection>
+				<item>
+					<field>ЗадержкаДней</field>
+				</item>
+			</selection>
+			<filter>
+				<item xsi:type="FilterItemComparison">
+					<left xsi:type="dcscor:Field">ЗадержкаДней</left>
+					<comparisonType>Less</comparisonType>
+					<right xsi:type="xs:decimal">0</right>
+				</item>
+			</filter>
+			<appearance>
+				<dcscor:item xsi:type="SettingsParameterValue">
+					<dcscor:parameter>ЦветТекста</dcscor:parameter>
+					<dcscor:value xsi:type="v8ui:Color">web:Silver</dcscor:value>
+				</dcscor:item>
+			</appearance>
+		</item>
+	</conditionalAppearance>
+	<outputParameters>
+		<dcscor:item xsi:type="SettingsParameterValue">
+			<dcscor:use>false</dcscor:use>
+			<dcscor:parameter>РасположениеГруппировки</dcscor:parameter>
+			<dcscor:value xsi:type="DataCompositionGroupPlacement">None</dcscor:value>
+		</dcscor:item>
+		<dcscor:item xsi:type="SettingsParameterValue">
+			<dcscor:parameter>РасположениеРеквизитов</dcscor:parameter>
+			<dcscor:value xsi:type="DataCompositionAttributesPlacement">Separately</dcscor:value>
+		</dcscor:item>
+		<dcscor:item xsi:type="SettingsParameterValue">
+			<dcscor:use>false</dcscor:use>
+			<dcscor:parameter>ГоризонтальноеРасположениеОбщихИтогов</dcscor:parameter>
+			<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+		</dcscor:item>
+		<dcscor:item xsi:type="SettingsParameterValue">
+			<dcscor:use>false</dcscor:use>
+			<dcscor:parameter>ВертикальноеРасположениеОбщихИтогов</dcscor:parameter>
+			<dcscor:value xsi:type="dcscor:DataCompositionTotalPlacement">None</dcscor:value>
+		</dcscor:item>
+		<dcscor:item xsi:type="SettingsParameterValue">
+			<dcscor:parameter>ВыводитьЗаголовок</dcscor:parameter>
+			<dcscor:value xsi:type="DataCompositionTextOutputType">Output</dcscor:value>
+		</dcscor:item>
+		<dcscor:item xsi:type="SettingsParameterValue">
+			<dcscor:parameter>Заголовок</dcscor:parameter>
+			<dcscor:value xsi:type="v8:LocalStringType">
+				<v8:item>
+					<v8:lang>ru</v8:lang>
+					<v8:content>Вся задолженность по срокам</v8:content>
+				</v8:item>
+			</dcscor:value>
+		</dcscor:item>
+		<dcscor:item xsi:type="SettingsParameterValue">
+			<dcscor:parameter>АвтоПозицияРесурсов</dcscor:parameter>
+			<dcscor:value xsi:type="DataCompositionResourcesAutoPosition">DontUse</dcscor:value>
+		</dcscor:item>
+	</outputParameters>
+	<item xsi:type="StructureItemGroup">
+		<order>
+			<item xsi:type="OrderItemAuto"/>
+		</order>
+		<selection>
+			<item xsi:type="SelectedItemAuto"/>
+		</selection>
+		<outputParameters>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:use>false</dcscor:use>
+				<dcscor:parameter>РасположениеПолейГруппировки</dcscor:parameter>
+				<dcscor:value xsi:type="DataCompositionGroupFieldsPlacement">Separately</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:use>false</dcscor:use>
+				<dcscor:parameter>РасположениеРеквизитов</dcscor:parameter>
+				<dcscor:value xsi:type="DataCompositionAttributesPlacement">Separately</dcscor:value>
+			</dcscor:item>
+			<dcscor:item xsi:type="SettingsParameterValue">
+				<dcscor:use>false</dcscor:use>
+				<dcscor:parameter>АвтоПозицияРесурсов</dcscor:parameter>
+				<dcscor:value xsi:type="DataCompositionResourcesAutoPosition">DontUse</dcscor:value>
+			</dcscor:item>
+		</outputParameters>
 	</item>
 </Settings>﻿<?xml version="1.0" encoding="UTF-8"?>
 <SchemaFile xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
