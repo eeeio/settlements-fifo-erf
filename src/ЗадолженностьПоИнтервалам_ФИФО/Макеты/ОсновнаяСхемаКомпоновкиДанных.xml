@@ -15,7 +15,6 @@
 					<parentDimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">АналитикаУчетаПоПартнерам</parentDimension>
 				</role>
 				<appearance/>
-				<inputParameters/>
 			</field>
 			<field xsi:type="DataSetFieldField">
 				<dataPath>Партнер</dataPath>
@@ -31,7 +30,6 @@
 					<parentDimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">АналитикаУчетаПоПартнерам</parentDimension>
 				</role>
 				<appearance/>
-				<inputParameters/>
 			</field>
 			<field xsi:type="DataSetFieldField">
 				<dataPath>Договор</dataPath>
@@ -47,7 +45,6 @@
 					<parentDimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">АналитикаУчетаПоПартнерам</parentDimension>
 				</role>
 				<appearance/>
-				<inputParameters/>
 			</field>
 			<field xsi:type="DataSetFieldField">
 				<dataPath>Долг</dataPath>
@@ -75,7 +72,6 @@
 						</value>
 					</item>
 				</appearance>
-				<inputParameters/>
 			</field>
 			<field xsi:type="DataSetFieldField">
 				<dataPath>СрокЗадолженностиДней</dataPath>
@@ -93,7 +89,6 @@
 					<order>true</order>
 				</attributeUseRestriction>
 				<appearance/>
-				<inputParameters/>
 			</field>
 			<field xsi:type="DataSetFieldField">
 				<dataPath>Просрочено</dataPath>
@@ -121,7 +116,6 @@
 						</value>
 					</item>
 				</appearance>
-				<inputParameters/>
 			</field>
 			<field xsi:type="DataSetFieldField">
 				<dataPath>ЗадержкаДней</dataPath>
@@ -139,7 +133,6 @@
 					<order>true</order>
 				</attributeUseRestriction>
 				<appearance/>
-				<inputParameters/>
 			</field>
 			<field xsi:type="DataSetFieldField">
 				<dataPath>Контрагент</dataPath>
@@ -155,7 +148,6 @@
 					<parentDimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">АналитикаУчетаПоПартнерам</parentDimension>
 				</role>
 				<appearance/>
-				<inputParameters/>
 			</field>
 			<field xsi:type="DataSetFieldField">
 				<dataPath>ДатаРегистратора</dataPath>
@@ -190,7 +182,6 @@
 						</value>
 					</item>
 				</appearance>
-				<inputParameters/>
 			</field>
 			<field xsi:type="DataSetFieldField">
 				<dataPath>Регистратор</dataPath>
@@ -215,7 +206,6 @@
 					<periodType xmlns="http://v8.1c.ru/8.1/data-composition-system/common">Main</periodType>
 				</role>
 				<appearance/>
-				<inputParameters/>
 			</field>
 			<field xsi:type="DataSetFieldField">
 				<dataPath>ОтсрочкаДней</dataPath>
@@ -233,7 +223,6 @@
 					<order>true</order>
 				</attributeUseRestriction>
 				<appearance/>
-				<inputParameters/>
 			</field>
 			<field xsi:type="DataSetFieldField">
 				<dataPath>ДатаПлатежа</dataPath>
@@ -261,7 +250,6 @@
 						</value>
 					</item>
 				</appearance>
-				<inputParameters/>
 			</field>
 			<field xsi:type="DataSetFieldField">
 				<dataPath>НомерИнтервала</dataPath>
@@ -282,7 +270,6 @@
 					<order>true</order>
 				</attributeUseRestriction>
 				<appearance/>
-				<inputParameters/>
 			</field>
 			<field xsi:type="DataSetFieldField">
 				<dataPath>НижняяГраницаИнтервала</dataPath>
@@ -303,7 +290,6 @@
 					<order>true</order>
 				</attributeUseRestriction>
 				<appearance/>
-				<inputParameters/>
 			</field>
 			<field xsi:type="DataSetFieldField">
 				<dataPath>НаименованиеИнтервала</dataPath>
@@ -321,7 +307,6 @@
 					<order>true</order>
 				</attributeUseRestriction>
 				<appearance/>
-				<inputParameters/>
 			</field>
 			<field xsi:type="DataSetFieldField">
 				<dataPath>АналитикаУчетаПоПартнерам</dataPath>
@@ -342,6 +327,7 @@
 					<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
 					<required xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</required>
 				</role>
+				<appearance/>
 			</field>
 			<field xsi:type="DataSetFieldField">
 				<dataPath>ЗаказКлиента</dataPath>
@@ -358,6 +344,7 @@
 					<group>true</group>
 					<order>true</order>
 				</attributeUseRestriction>
+				<appearance/>
 			</field>
 			<field xsi:type="DataSetFieldField">
 				<dataPath>ГруппировкаВсего</dataPath>
@@ -381,6 +368,7 @@
 				<role>
 					<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
 				</role>
+				<appearance/>
 			</field>
 			<field xsi:type="DataSetFieldField">
 				<dataPath>Валюта</dataPath>
@@ -397,6 +385,7 @@
 					<group>true</group>
 					<order>true</order>
 				</attributeUseRestriction>
+				<appearance/>
 			</field>
 			<field xsi:type="DataSetFieldField">
 				<dataPath>ЗаказПоставщику</dataPath>
@@ -412,6 +401,7 @@
 					<condition>true</condition>
 					<order>true</order>
 				</attributeUseRestriction>
+				<appearance/>
 			</field>
 			<field xsi:type="DataSetFieldField">
 				<dataPath>НашДолг</dataPath>
@@ -455,6 +445,7 @@
 				<attributeUseRestriction>
 					<condition>true</condition>
 				</attributeUseRestriction>
+				<appearance/>
 			</field>
 			<field xsi:type="DataSetFieldField">
 				<dataPath>ТипСоглашения</dataPath>
@@ -471,6 +462,7 @@
 					<group>true</group>
 					<order>true</order>
 				</attributeUseRestriction>
+				<appearance/>
 			</field>
 			<field xsi:type="DataSetFieldField">
 				<dataPath>Склад</dataPath>
@@ -481,6 +473,7 @@
 						<d5p1:content>Склад</d5p1:content>
 					</d5p1:item>
 				</title>
+				<appearance/>
 			</field>
 			<field xsi:type="DataSetFieldField">
 				<dataPath>ВходитВСегмент</dataPath>
@@ -497,6 +490,7 @@
 				<attributeUseRestriction>
 					<condition>true</condition>
 				</attributeUseRestriction>
+				<appearance/>
 			</field>
 			<field xsi:type="DataSetFieldField">
 				<dataPath>СоглашениеОтбор</dataPath>
@@ -517,6 +511,7 @@
 					<group>true</group>
 					<order>true</order>
 				</attributeUseRestriction>
+				<appearance/>
 			</field>
 			<field xsi:type="DataSetFieldField">
 				<dataPath>СегментПартнеров</dataPath>
@@ -537,6 +532,7 @@
 					<group>true</group>
 					<order>true</order>
 				</attributeUseRestriction>
+				<appearance/>
 			</field>
 			<field xsi:type="DataSetFieldField">
 				<dataPath>Календарь</dataPath>
@@ -547,6 +543,7 @@
 						<d5p1:content>Календарь</d5p1:content>
 					</d5p1:item>
 				</title>
+				<appearance/>
 			</field>
 			<item xsi:type="DataSetQuery">
 				<name>НаборДанных1</name>
@@ -557,6 +554,7 @@
 						<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
 						<parentDimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">АналитикаУчетаПоПартнерам</parentDimension>
 					</role>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Партнер</dataPath>
@@ -571,6 +569,7 @@
 						<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
 						<parentDimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">АналитикаУчетаПоПартнерам</parentDimension>
 					</role>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Договор</dataPath>
@@ -585,6 +584,7 @@
 						<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
 						<parentDimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">АналитикаУчетаПоПартнерам</parentDimension>
 					</role>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Долг</dataPath>
@@ -616,6 +616,7 @@
 							<d6p1:content>Срок задолженности (дней)</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Просрочено</dataPath>
@@ -650,6 +651,7 @@
 					<role>
 						<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
 					</role>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Контрагент</dataPath>
@@ -664,6 +666,7 @@
 						<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
 						<parentDimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">АналитикаУчетаПоПартнерам</parentDimension>
 					</role>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>ДатаРегистратора</dataPath>
@@ -706,6 +709,7 @@
 						<periodNumber xmlns="http://v8.1c.ru/8.1/data-composition-system/common">1</periodNumber>
 						<periodType xmlns="http://v8.1c.ru/8.1/data-composition-system/common">Main</periodType>
 					</role>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>ОтсрочкаДней</dataPath>
@@ -716,6 +720,7 @@
 							<d6p1:content>Отсрочка (дней)</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>ДатаПлатежа</dataPath>
@@ -753,6 +758,7 @@
 					<useRestriction>
 						<condition>true</condition>
 					</useRestriction>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>НижняяГраницаИнтервала</dataPath>
@@ -766,6 +772,7 @@
 					<useRestriction>
 						<condition>true</condition>
 					</useRestriction>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>НаименованиеИнтервала</dataPath>
@@ -776,6 +783,7 @@
 							<d6p1:content>Наименование интервала</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>АналитикаУчетаПоПартнерам</dataPath>
@@ -796,6 +804,7 @@
 						<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
 						<required xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</required>
 					</role>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>ЗаказКлиента</dataPath>
@@ -806,6 +815,7 @@
 					<attributeUseRestriction>
 						<condition>true</condition>
 					</attributeUseRestriction>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>ГруппировкаВсего</dataPath>
@@ -822,6 +832,7 @@
 					<role>
 						<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
 					</role>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Валюта</dataPath>
@@ -832,6 +843,7 @@
 					<attributeUseRestriction>
 						<condition>true</condition>
 					</attributeUseRestriction>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>НашДолг</dataPath>
@@ -842,6 +854,7 @@
 							<d6p1:content>Наш долг</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Соглашение</dataPath>
@@ -858,6 +871,7 @@
 					<attributeUseRestriction>
 						<condition>true</condition>
 					</attributeUseRestriction>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>ТипСоглашения</dataPath>
@@ -868,6 +882,7 @@
 							<d6p1:content>Тип соглашения</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Склад</dataPath>
@@ -878,6 +893,7 @@
 							<d6p1:content>Склад</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>ВходитВСегмент</dataPath>
@@ -897,6 +913,7 @@
 					<role>
 						<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
 					</role>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>СоглашениеОтбор</dataPath>
@@ -907,6 +924,7 @@
 							<d6p1:content>Соглашение отбор</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>СегментПартнеров</dataPath>
@@ -917,6 +935,7 @@
 							<d6p1:content>Сегмент партнеров</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Календарь</dataPath>
@@ -927,6 +946,7 @@
 							<d6p1:content>Календарь</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<dataSource>ИсточникДанных1</dataSource>
 				<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
@@ -1108,11 +1128,11 @@
 		КОГДА Обороты.Регистратор ССЫЛКА Документ.РеализацияТоваровУслуг
 			ТОГДА ВЫБОР
 					КОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).РеализацияПоЗаказам = ЛОЖЬ
-						ТОГДА ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.ДатаПлатежа, ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).ДатаПлатежа)
+						ТОГДА ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.ДатаПлатежа, ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).УдалитьДатаПлатежа)
 					КОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).ПорядокРасчетов = &amp;ПоНакладным
-						ТОГДА ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.ДатаПлатежа, ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).ДатаПлатежа)
+						ТОГДА ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.ДатаПлатежа, ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).УдалитьДатаПлатежа)
 					КОГДА ВЫРАЗИТЬ(ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).ЗаказКлиента КАК Документ.ЗаказКлиента).ПорядокРасчетов = &amp;ПоНакладным
-						ТОГДА ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.ДатаПлатежа, ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).ДатаПлатежа)
+						ТОГДА ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.ДатаПлатежа, ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).УдалитьДатаПлатежа)
 					ИНАЧЕ ДАТАВРЕМЯ(1, 1, 1)
 				КОНЕЦ
 		ИНАЧЕ ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.ДатаПлатежа, ДАТАВРЕМЯ(1, 1, 1))
@@ -1168,11 +1188,11 @@
 		КОГДА Обороты.Регистратор ССЫЛКА Документ.РеализацияТоваровУслуг
 			ТОГДА ВЫБОР
 					КОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).РеализацияПоЗаказам = ЛОЖЬ
-						ТОГДА ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.ДатаПлатежа, ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).ДатаПлатежа)
+						ТОГДА ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.ДатаПлатежа, ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).УдалитьДатаПлатежа)
 					КОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).ПорядокРасчетов = &amp;ПоНакладным
-						ТОГДА ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.ДатаПлатежа, ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).ДатаПлатежа)
+						ТОГДА ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.ДатаПлатежа, ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).УдалитьДатаПлатежа)
 					КОГДА ВЫРАЗИТЬ(ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).ЗаказКлиента КАК Документ.ЗаказКлиента).ПорядокРасчетов = &amp;ПоНакладным
-						ТОГДА ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.ДатаПлатежа, ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).ДатаПлатежа)
+						ТОГДА ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.ДатаПлатежа, ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.РеализацияТоваровУслуг).УдалитьДатаПлатежа)
 					ИНАЧЕ ДАТАВРЕМЯ(1, 1, 1)
 				КОНЕЦ
 		ИНАЧЕ ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.ДатаПлатежа, ДАТАВРЕМЯ(1, 1, 1))
@@ -1531,6 +1551,7 @@
 					<attributeUseRestriction>
 						<condition>true</condition>
 					</attributeUseRestriction>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>ГруппировкаВсего</dataPath>
@@ -1544,6 +1565,7 @@
 					<useRestriction>
 						<condition>true</condition>
 					</useRestriction>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>АналитикаУчетаПоПартнерам</dataPath>
@@ -1563,6 +1585,7 @@
 					<role>
 						<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
 					</role>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>НомерИнтервала</dataPath>
@@ -1573,6 +1596,7 @@
 							<d6p1:content>Номер интервала</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>СрокЗадолженностиДней</dataPath>
@@ -1587,6 +1611,7 @@
 						<periodNumber xmlns="http://v8.1c.ru/8.1/data-composition-system/common">3</periodNumber>
 						<periodType xmlns="http://v8.1c.ru/8.1/data-composition-system/common">Main</periodType>
 					</role>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Просрочено</dataPath>
@@ -1597,6 +1622,7 @@
 							<d6p1:content>Просрочено</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>ЗадержкаДней</dataPath>
@@ -1611,6 +1637,7 @@
 						<periodNumber xmlns="http://v8.1c.ru/8.1/data-composition-system/common">5</periodNumber>
 						<periodType xmlns="http://v8.1c.ru/8.1/data-composition-system/common">Main</periodType>
 					</role>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Контрагент</dataPath>
@@ -1621,6 +1648,7 @@
 							<d6p1:content>Контрагент</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>НижняяГраницаИнтервала</dataPath>
@@ -1631,6 +1659,7 @@
 							<d6p1:content>Нижняя граница интервала</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Партнер</dataPath>
@@ -1641,6 +1670,7 @@
 							<d6p1:content>Партнер</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Организация</dataPath>
@@ -1651,6 +1681,7 @@
 							<d6p1:content>Организация</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>ДатаРегистратора</dataPath>
@@ -1668,6 +1699,7 @@
 						<periodNumber xmlns="http://v8.1c.ru/8.1/data-composition-system/common">2</periodNumber>
 						<periodType xmlns="http://v8.1c.ru/8.1/data-composition-system/common">Main</periodType>
 					</role>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Регистратор</dataPath>
@@ -1682,6 +1714,7 @@
 						<periodNumber xmlns="http://v8.1c.ru/8.1/data-composition-system/common">1</periodNumber>
 						<periodType xmlns="http://v8.1c.ru/8.1/data-composition-system/common">Main</periodType>
 					</role>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>НаименованиеИнтервала</dataPath>
@@ -1692,6 +1725,7 @@
 							<d6p1:content>Наименование интервала</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Валюта</dataPath>
@@ -1702,6 +1736,7 @@
 					<attributeUseRestriction>
 						<condition>true</condition>
 					</attributeUseRestriction>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>ОтсрочкаДней</dataPath>
@@ -1712,6 +1747,7 @@
 							<d6p1:content>Отсрочка дней</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>ДатаПлатежа</dataPath>
@@ -1726,6 +1762,7 @@
 						<periodNumber xmlns="http://v8.1c.ru/8.1/data-composition-system/common">4</periodNumber>
 						<periodType xmlns="http://v8.1c.ru/8.1/data-composition-system/common">Main</periodType>
 					</role>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Договор</dataPath>
@@ -1736,6 +1773,7 @@
 							<d6p1:content>Договор</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>НашДолг</dataPath>
@@ -1746,6 +1784,7 @@
 							<d6p1:content>Наш долг</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Долг</dataPath>
@@ -1756,6 +1795,7 @@
 							<d6p1:content>Долг</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Соглашение</dataPath>
@@ -1772,6 +1812,7 @@
 					<attributeUseRestriction>
 						<condition>true</condition>
 					</attributeUseRestriction>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>ТипСоглашения</dataPath>
@@ -1782,6 +1823,7 @@
 							<d6p1:content>Тип соглашения</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Склад</dataPath>
@@ -1792,6 +1834,7 @@
 							<d6p1:content>Склад</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>ВходитВСегмент</dataPath>
@@ -1811,6 +1854,7 @@
 					<role>
 						<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
 					</role>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>СоглашениеОтбор</dataPath>
@@ -1821,6 +1865,7 @@
 							<d6p1:content>Соглашение отбор</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>СегментПартнеров</dataPath>
@@ -1831,6 +1876,7 @@
 							<d6p1:content>Сегмент партнеров</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Календарь</dataPath>
@@ -1841,6 +1887,7 @@
 							<d6p1:content>Календарь</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<dataSource>ИсточникДанных1</dataSource>
 				<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
@@ -2192,6 +2239,7 @@
 					<useRestriction>
 						<condition>true</condition>
 					</useRestriction>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>АналитикаУчетаПоПартнерам</dataPath>
@@ -2211,6 +2259,7 @@
 					<role>
 						<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
 					</role>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>НомерИнтервала</dataPath>
@@ -2221,6 +2270,7 @@
 							<d6p1:content>Номер интервала</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>СрокЗадолженностиДней</dataPath>
@@ -2235,6 +2285,7 @@
 						<periodNumber xmlns="http://v8.1c.ru/8.1/data-composition-system/common">3</periodNumber>
 						<periodType xmlns="http://v8.1c.ru/8.1/data-composition-system/common">Main</periodType>
 					</role>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Просрочено</dataPath>
@@ -2245,6 +2296,7 @@
 							<d6p1:content>Просрочено</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>ЗадержкаДней</dataPath>
@@ -2258,6 +2310,7 @@
 					<role>
 						<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
 					</role>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Контрагент</dataPath>
@@ -2268,6 +2321,7 @@
 							<d6p1:content>Контрагент</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>НижняяГраницаИнтервала</dataPath>
@@ -2278,6 +2332,7 @@
 							<d6p1:content>Нижняя граница интервала</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Партнер</dataPath>
@@ -2288,6 +2343,7 @@
 							<d6p1:content>Партнер</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Организация</dataPath>
@@ -2298,6 +2354,7 @@
 							<d6p1:content>Организация</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>ДатаРегистратора</dataPath>
@@ -2318,6 +2375,7 @@
 						<periodNumber xmlns="http://v8.1c.ru/8.1/data-composition-system/common">2</periodNumber>
 						<periodType xmlns="http://v8.1c.ru/8.1/data-composition-system/common">Main</periodType>
 					</role>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Регистратор</dataPath>
@@ -2338,6 +2396,7 @@
 						<periodNumber xmlns="http://v8.1c.ru/8.1/data-composition-system/common">1</periodNumber>
 						<periodType xmlns="http://v8.1c.ru/8.1/data-composition-system/common">Main</periodType>
 					</role>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>НаименованиеИнтервала</dataPath>
@@ -2348,10 +2407,12 @@
 							<d6p1:content>Наименование интервала</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Валюта</dataPath>
 					<field>Валюта</field>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>ОтсрочкаДней</dataPath>
@@ -2362,6 +2423,7 @@
 							<d6p1:content>Отсрочка дней</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>ДатаПлатежа</dataPath>
@@ -2375,6 +2437,7 @@
 					<role>
 						<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
 					</role>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Договор</dataPath>
@@ -2385,6 +2448,7 @@
 							<d6p1:content>Договор</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>ЗаказПоставщику</dataPath>
@@ -2395,6 +2459,7 @@
 					<attributeUseRestriction>
 						<condition>true</condition>
 					</attributeUseRestriction>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>НашДолг</dataPath>
@@ -2405,6 +2470,7 @@
 							<d6p1:content>Наш долг</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Долг</dataPath>
@@ -2415,6 +2481,7 @@
 							<d6p1:content>Долг</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Соглашение</dataPath>
@@ -2431,6 +2498,7 @@
 					<attributeUseRestriction>
 						<condition>true</condition>
 					</attributeUseRestriction>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>ТипСоглашения</dataPath>
@@ -2441,6 +2509,7 @@
 							<d6p1:content>Тип соглашения</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Склад</dataPath>
@@ -2451,6 +2520,7 @@
 							<d6p1:content>Склад</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>ВходитВСегмент</dataPath>
@@ -2470,6 +2540,7 @@
 					<role>
 						<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
 					</role>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>СоглашениеОтбор</dataPath>
@@ -2480,6 +2551,7 @@
 							<d6p1:content>Соглашение отбор</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>СегментПартнеров</dataPath>
@@ -2490,6 +2562,7 @@
 							<d6p1:content>Сегмент партнеров</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Календарь</dataPath>
@@ -2500,6 +2573,7 @@
 							<d6p1:content>Календарь</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<dataSource>ИсточникДанных1</dataSource>
 				<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
@@ -2645,7 +2719,7 @@
 			ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ПриобретениеТоваровУслуг).Соглашение
 		ИНАЧЕ НЕОПРЕДЕЛЕНО
 	КОНЕЦ КАК СоглашениеИлиЗаказ,
-	ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.ДатаПлатежа, ЕСТЬNULL(ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ПриобретениеТоваровУслуг).ДатаПлатежа, ДАТАВРЕМЯ(1, 1, 1))) КАК ДатаПлатежа,
+	ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.ДатаПлатежа, ЕСТЬNULL(ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ПриобретениеТоваровУслуг).УдалитьДатаПлатежа, ДАТАВРЕМЯ(1, 1, 1))) КАК ДатаПлатежа,
 	СУММА(ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.Сумма, Обороты.СуммаОборот)) КАК СуммаОборот
 ПОМЕСТИТЬ ОборотыБезРазбиенияНаЭтапы
 ИЗ
@@ -2689,7 +2763,7 @@
 			ТОГДА ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ПриобретениеТоваровУслуг).Соглашение
 		ИНАЧЕ НЕОПРЕДЕЛЕНО
 	КОНЕЦ,
-	ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.ДатаПлатежа, ЕСТЬNULL(ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ПриобретениеТоваровУслуг).ДатаПлатежа, ДАТАВРЕМЯ(1, 1, 1))),
+	ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.ДатаПлатежа, ЕСТЬNULL(ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ПриобретениеТоваровУслуг).УдалитьДатаПлатежа, ДАТАВРЕМЯ(1, 1, 1))),
 	Обороты.Период
 ;
 
@@ -3050,6 +3124,7 @@
 							<d6p1:content>Долг</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>ГруппировкаВсего</dataPath>
@@ -3063,6 +3138,7 @@
 					<useRestriction>
 						<condition>true</condition>
 					</useRestriction>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>АналитикаУчетаПоПартнерам</dataPath>
@@ -3082,6 +3158,7 @@
 					<role>
 						<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
 					</role>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>НомерИнтервала</dataPath>
@@ -3092,6 +3169,7 @@
 							<d6p1:content>Номер интервала</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>СрокЗадолженностиДней</dataPath>
@@ -3106,6 +3184,7 @@
 						<periodNumber xmlns="http://v8.1c.ru/8.1/data-composition-system/common">3</periodNumber>
 						<periodType xmlns="http://v8.1c.ru/8.1/data-composition-system/common">Main</periodType>
 					</role>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Просрочено</dataPath>
@@ -3116,6 +3195,7 @@
 							<d6p1:content>Просрочено</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>ЗадержкаДней</dataPath>
@@ -3126,6 +3206,7 @@
 							<d6p1:content>Задержка дней</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Контрагент</dataPath>
@@ -3136,6 +3217,7 @@
 							<d6p1:content>Контрагент</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>НижняяГраницаИнтервала</dataPath>
@@ -3146,6 +3228,7 @@
 							<d6p1:content>Нижняя граница интервала</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Партнер</dataPath>
@@ -3156,6 +3239,7 @@
 							<d6p1:content>Партнер</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Организация</dataPath>
@@ -3166,6 +3250,7 @@
 							<d6p1:content>Организация</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>ДатаРегистратора</dataPath>
@@ -3186,6 +3271,7 @@
 						<periodNumber xmlns="http://v8.1c.ru/8.1/data-composition-system/common">2</periodNumber>
 						<periodType xmlns="http://v8.1c.ru/8.1/data-composition-system/common">Main</periodType>
 					</role>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Регистратор</dataPath>
@@ -3206,6 +3292,7 @@
 						<periodNumber xmlns="http://v8.1c.ru/8.1/data-composition-system/common">1</periodNumber>
 						<periodType xmlns="http://v8.1c.ru/8.1/data-composition-system/common">Main</periodType>
 					</role>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>НаименованиеИнтервала</dataPath>
@@ -3216,6 +3303,7 @@
 							<d6p1:content>Наименование интервала</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Валюта</dataPath>
@@ -3226,6 +3314,7 @@
 					<attributeUseRestriction>
 						<condition>true</condition>
 					</attributeUseRestriction>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>ОтсрочкаДней</dataPath>
@@ -3236,6 +3325,7 @@
 							<d6p1:content>Отсрочка дней</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>ДатаПлатежа</dataPath>
@@ -3246,6 +3336,7 @@
 							<d6p1:content>Дата платежа</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Договор</dataPath>
@@ -3256,6 +3347,7 @@
 							<d6p1:content>Договор</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>ЗаказПоставщику</dataPath>
@@ -3266,6 +3358,7 @@
 					<attributeUseRestriction>
 						<condition>true</condition>
 					</attributeUseRestriction>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>НашДолг</dataPath>
@@ -3276,6 +3369,7 @@
 							<d6p1:content>Наш долг</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Соглашение</dataPath>
@@ -3292,6 +3386,7 @@
 					<attributeUseRestriction>
 						<condition>true</condition>
 					</attributeUseRestriction>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>ТипСоглашения</dataPath>
@@ -3302,6 +3397,7 @@
 							<d6p1:content>Тип соглашения</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Склад</dataPath>
@@ -3312,6 +3408,7 @@
 							<d6p1:content>Склад</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>ВходитВСегмент</dataPath>
@@ -3331,6 +3428,7 @@
 					<role>
 						<dimension xmlns="http://v8.1c.ru/8.1/data-composition-system/common">true</dimension>
 					</role>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>СоглашениеОтбор</dataPath>
@@ -3341,6 +3439,7 @@
 							<d6p1:content>Соглашение отбор</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>СегментПартнеров</dataPath>
@@ -3351,6 +3450,7 @@
 							<d6p1:content>Сегмент партнеров</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<field xsi:type="DataSetFieldField">
 					<dataPath>Календарь</dataPath>
@@ -3361,6 +3461,7 @@
 							<d6p1:content>Календарь</d6p1:content>
 						</d6p1:item>
 					</title>
+					<appearance/>
 				</field>
 				<dataSource>ИсточникДанных1</dataSource>
 				<query>ВЫБРАТЬ РАЗРЕШЕННЫЕ РАЗЛИЧНЫЕ
@@ -3497,7 +3598,7 @@
 			ТОГДА ВЫРАЗИТЬ(Обороты.ЗаказПоставщику КАК Документ.ЗаказПоставщику).Склад
 		ИНАЧЕ НЕОПРЕДЕЛЕНО
 	КОНЕЦ КАК Склад,
-	ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.ДатаПлатежа, ЕСТЬNULL(ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ПриобретениеТоваровУслуг).ДатаПлатежа, Обороты.Период)) КАК ДатаПлатежа,
+	ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.ДатаПлатежа, ЕСТЬNULL(ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ПриобретениеТоваровУслуг).УдалитьДатаПлатежа, Обороты.Период)) КАК ДатаПлатежа,
 	СУММА(ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.Сумма, Обороты.СуммаОборот)) КАК СуммаОборот
 ПОМЕСТИТЬ ОборотыБезРазбиенияНаЭтапы
 ИЗ
@@ -3532,7 +3633,7 @@
 			ТОГДА ВЫРАЗИТЬ(Обороты.ЗаказПоставщику КАК Документ.ЗаказПоставщику).Склад
 		ИНАЧЕ НЕОПРЕДЕЛЕНО
 	КОНЕЦ,
-	ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.ДатаПлатежа, ЕСТЬNULL(ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ПриобретениеТоваровУслуг).ДатаПлатежа, Обороты.Период)),
+	ЕСТЬNULL(ДатыПлатежейПоВводамОстатков.ДатаПлатежа, ЕСТЬNULL(ВЫРАЗИТЬ(Обороты.Регистратор КАК Документ.ПриобретениеТоваровУслуг).УдалитьДатаПлатежа, Обороты.Период)),
 	Обороты.Период
 ;
 
